@@ -141,7 +141,32 @@
   }
 
   // -----------------------------------------------------------------
-  // Live lot counter ticker on byggkon.ai map
+  // Live project counter — ticks up every second
+  // Hero stat "Prosjekter" — starts at 4000+, grows
+  // -----------------------------------------------------------------
+  const projectsCounter = document.querySelector('[data-counter="4000"]');
+  if (projectsCounter) {
+    let value = 4000;
+    const updateProjects = () => {
+      projectsCounter.textContent = value.toLocaleString('no-NO') + '+';
+    };
+    // After the counter animation finishes, start the live ticker
+    setTimeout(() => {
+      updateProjects();
+      setInterval(() => {
+        // small chance of increment each second — feels live without being absurd
+        if (Math.random() < 0.55) {
+          value += 1;
+          updateProjects();
+          projectsCounter.classList.add('counter-pulse');
+          setTimeout(() => projectsCounter.classList.remove('counter-pulse'), 400);
+        }
+      }, 1000);
+    }, 2500);
+  }
+
+  // -----------------------------------------------------------------
+  // Live lot counter ticker on Hilde AI map
   // -----------------------------------------------------------------
   const lotCounter = document.getElementById('lot-counter');
   if (lotCounter) {
@@ -151,6 +176,19 @@
       val = Math.max(200, Math.min(420, val + delta));
       lotCounter.textContent = val;
     }, 1800);
+  }
+
+  // -----------------------------------------------------------------
+  // Live Loki embedding counter — feels alive
+  // -----------------------------------------------------------------
+  const lokiVec = document.getElementById('loki-vec-count');
+  if (lokiVec) {
+    let mb = 2.4; // 2.4M
+    const fmt = (m) => m.toFixed(2).replace('.', ',') + 'M';
+    setInterval(() => {
+      mb += Math.random() * 0.003;
+      lokiVec.textContent = fmt(mb);
+    }, 900);
   }
 
   // -----------------------------------------------------------------
