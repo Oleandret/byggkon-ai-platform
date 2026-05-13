@@ -65,6 +65,38 @@ button { font-family: inherit; cursor: pointer; background: none; border: 0; col
   opacity: 0.20;
 }
 
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--loki) 0%, var(--yellow) 50%, var(--ki) 100%);
+  z-index: 60;
+  box-shadow: 0 0 12px rgba(245, 180, 0, 0.5);
+  will-change: width;
+}
+
+/* Cursor spotlight — follows mouse over hero */
+.cursor-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 180, 0, 0.18) 0%, rgba(200, 16, 46, 0.06) 30%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  filter: blur(40px);
+  will-change: transform, opacity;
+}
+.cursor-glow.on { opacity: 1; }
+
+/* Magnetic button hover */
+.btn.magnetic { transition: transform .2s cubic-bezier(0.2, 0.9, 0.3, 1.15); }
+
 /* No aurora wash on light theme — keep it clean */
 
 /* ===================================================================
