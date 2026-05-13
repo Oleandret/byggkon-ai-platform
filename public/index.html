@@ -3,35 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BYGG-KON AI — Kunnskap. Kraft. Resultater.</title>
-<meta name="description" content="BYGG-KON AI-plattform. Slik samspiller Loki, Nova, Hilde, Tripletex og Fyxer — via egne MCP-servere — med Claude, ChatGPT og de øvrige toppmodellene for å produsere alt BYGG-KON leverer.">
-<meta property="og:title" content="BYGG-KON AI — Kunnskap. Kraft. Resultater.">
-<meta property="og:description" content="Slik bruker BYGG-KON kunstig intelligens — fra fagkunnskap til ferdig dokument.">
+<title>BYGG-KON.ai — All vår kunnskap. Ett system.</title>
+<meta name="description" content="BYGG-KON AI-plattform. Loki, Nova, Hilde, Tripletex og Epostagent — MCP-koblet til Claude, ChatGPT og de øvrige toppmodellene.">
+<meta property="og:title" content="BYGG-KON.ai — All vår kunnskap. Ett system.">
+<meta property="og:description" content="BYGG-KONs AI-infrastruktur. MCP-koblet til Claude Opus 4.7.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
+<!-- Persistent animated network background -->
+<canvas id="bg-network" aria-hidden="true"></canvas>
+
 <!-- =================================================================== -->
-<!-- HEADER / NAV -->
+<!-- HEADER -->
 <!-- =================================================================== -->
-<header class="site-header" id="site-header">
-  <div class="container nav">
-    <a href="#" class="logo">
-      <img src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/6971e131952541e3a72f462b_Navigation.png" alt="BYGG-KON" class="logo-img logo-img-light">
-      <span class="logo-suffix">.ai</span>
+<header class="hdr" id="hdr">
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <img src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/697229961ae6d73bf69636e8_BYGG-KON%20Logo%20W%26W.png" alt="BYGG-KON" class="brand-img">
+      <span class="brand-suffix">.ai</span>
     </a>
     <nav class="nav-links">
-      <a href="#flyt">Flyten</a>
-      <a href="#infra">Infrastruktur</a>
-      <a href="#systemer">Systemene</a>
-      <a href="#hilde">Hilde AI</a>
-      <a href="#leveranser">Leveranser</a>
-      <a href="https://www.byggkon.no" target="_blank" rel="noopener">byggkon.no →</a>
+      <a href="#system">Systemet</a>
+      <a href="#stack">Stack</a>
+      <a href="#hilde">Hilde</a>
+      <a href="#empower">Ansatte</a>
     </nav>
-    <a href="#kontakt" class="btn btn-primary nav-cta">Kom i gang</a>
+    <a href="#kontakt" class="btn btn-pill">Kontakt
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </header>
 
@@ -39,275 +42,434 @@
 <!-- HERO -->
 <!-- =================================================================== -->
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <canvas id="particles"></canvas>
-  </div>
-  <div class="container hero-inner">
-    <div class="badge">
-      <span class="dot"></span>
-      AI-Plattform · 2026
+  <div class="wrap">
+    <div class="kicker">
+      <span class="kicker-dot"></span>
+      Live · 6 MCP-servere · Claude Opus 4.7
     </div>
-    <h1 class="hero-title">
+    <h1 class="h1">
       All vår kunnskap.<br>
-      <span class="accent">Ett system.</span> Uendelig kraft.
+      <span class="g">Ett system.</span>
     </h1>
-    <p class="hero-sub">
-      I 40 år har BYGG-KONs ansatte bygget Norges sterkeste byggfaglige kompetanse — prosjekt for prosjekt.
-      Nå samles alt i ett intelligent system. Loki holder den interne kunnskapen, Nova den offentlige,
-      Hilde finner eiendommene, Tripletex driver økonomien, Fyxer holder styr på posten —
-      og Claude tenker på toppen av det hele.
-    </p>
-    <div class="hero-cta">
-      <a href="#flyt" class="btn btn-primary">Se hvordan det virker</a>
-      <a href="#systemer" class="btn btn-ghost">Utforsk systemene</a>
+    <p class="lede">40 år med BYGG-KONs erfaring — koblet til de ledende språkmodellene gjennom egne MCP-servere.</p>
+    <div class="cta-row">
+      <a href="#system" class="btn btn-primary">Se systemet
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+      <a href="#stack" class="btn btn-ghost">Under panseret</a>
     </div>
-
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num" data-counter="40">40+</div>
-        <div class="stat-lbl">År erfaring</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-counter="4000">4000+</div>
-        <div class="stat-lbl">Prosjekter</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-counter="5">5</div>
-        <div class="stat-lbl">AI-systemer</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">∞</div>
-        <div class="stat-lbl">Muligheter</div>
-      </div>
+    <div class="counters">
+      <div class="counter"><div class="c-num" data-counter="40">40</div><div class="c-lbl">År</div></div>
+      <div class="counter"><div class="c-num" id="hero-projects">4 000+</div><div class="c-lbl">Prosjekter</div></div>
+      <div class="counter"><div class="c-num">6</div><div class="c-lbl">MCPer</div></div>
+      <div class="counter"><div class="c-num"><span id="hero-embeds">2,40M</span></div><div class="c-lbl">Embeddings</div></div>
+      <div class="counter"><div class="c-num"><span id="hero-loc">76 200+</span></div><div class="c-lbl">Linjer kode</div></div>
     </div>
-  </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span>Skroll</span>
-    <div class="scroll-line"></div>
   </div>
 </section>
 
 <!-- =================================================================== -->
-<!-- MAIN FLOW DIAGRAM -->
+<!-- LOC — Single total LOC stat -->
 <!-- =================================================================== -->
-<section class="section section-flow" id="flyt">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Flytdiagram</div>
-      <h2>All kunnskap. <span class="accent">Ett knutepunkt.</span></h2>
-      <p>40 år med ansattes arbeid samles i Loki. Sammen med Nova, Hilde, Tripletex og Fyxer — orkestrert av Claude — produserer vi alt BYGG-KON leverer.</p>
+<section class="loc">
+  <div class="wrap">
+    <div class="loc-hero">
+      <div class="loc-hero-meta">
+        <span class="eyebrow">// Kodebase</span>
+        <p class="loc-hero-sub">Egenutviklet kode på tvers av alle seks AI-systemer, MCP-servere, vektordatabaser og infrastruktur.</p>
+      </div>
+      <div class="loc-hero-num">
+        <span id="loc-total">76 200</span><span class="loc-plus">+</span>
+        <div class="loc-hero-lbl">Linjer kode</div>
+      </div>
+      <div class="loc-hero-meta loc-hero-meta-right">
+        <div class="lhm-row"><span class="lhm-k">Språk</span><span class="lhm-v">TypeScript · Python · SQL</span></div>
+        <div class="lhm-row"><span class="lhm-k">Repos</span><span class="lhm-v">7 repositorier</span></div>
+        <div class="lhm-row"><span class="lhm-k">Tester</span><span class="lhm-v">3 800 linjer dekning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- SYSTEM MAP — The big interactive-feeling node graph -->
+<!-- =================================================================== -->
+<section class="sys" id="system">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// System</span>
+      <h2 class="h2">Slik kobler alt sammen.</h2>
     </div>
 
-    <!-- THE BIG FLOW DIAGRAM -->
-    <div class="flow-diagram">
-
-      <!-- Layer: Sources -->
-      <div class="flow-layer">
-        <div class="flow-layer-label">01 · De spesialiserte AI-systemene</div>
-        <div class="sources-grid">
-
-          <div class="node-card node-loki node-flagship" data-tilt>
-            <div class="node-flag">Intern kunnskap</div>
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            </div>
-            <div class="node-label">Kunnskapsmotoren</div>
-            <h3 class="node-title">Loki AI</h3>
-            <p class="node-desc">BYGG-KONs samlede interne kunnskap — 40 år med ansattes arbeid, prosjekterfaring, fagnotater, tegninger og beste praksis konsolidert i én AI.</p>
-            <div class="node-tags">
-              <span class="tag">4000+ prosjekter</span>
-              <span class="tag">Ansattes arbeid</span>
-              <span class="tag">40 år erfaring</span>
-            </div>
-            <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener" class="node-link">Åpne Loki →</a>
-          </div>
-
-          <div class="node-card node-nova" data-tilt>
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <div class="node-label">Offentlig kunnskap</div>
-            <h3 class="node-title">Nova AI</h3>
-            <p class="node-desc">Offentlig kunnskapsbase. TEK17, NS-standarder, byggteknisk forskrift, Direktoratet for byggkvalitet, Plan- og bygningsloven — alt søkbart og oppdatert.</p>
-            <div class="node-tags">
-              <span class="tag">TEK17</span>
-              <span class="tag">NS-standarder</span>
-              <span class="tag">DiBK</span>
-            </div>
-            <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener" class="node-link">Åpne Nova →</a>
-          </div>
-
-          <div class="node-card node-byggkonai" data-tilt>
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="node-label">Eiendomsagent</div>
-            <h3 class="node-title">Hilde AI</h3>
-            <p class="node-desc">Spesialagent som finner eiendomsinformasjon og identifiserer eiere — koblet direkte mot matrikkel og offentlige registre.</p>
-            <div class="node-tags">
-              <span class="tag">Matrikkel</span>
-              <span class="tag">Eiere</span>
-              <span class="tag">Eiendom</span>
-            </div>
-            <a href="#hilde" class="node-link">Møt Hilde →</a>
-          </div>
-
-          <div class="node-card node-tripletex" data-tilt>
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <div class="node-label">Økonomi via MCP</div>
-            <h3 class="node-title">Tripletex</h3>
-            <p class="node-desc">Hele økonomisystemet koblet inn via MCP. Fakturaer, regnskap, prosjektøkonomi og timeføring i sanntid.</p>
-            <div class="node-tags">
-              <span class="tag">Regnskap</span>
-              <span class="tag">Fakturering</span>
-              <span class="tag">Sanntid</span>
-            </div>
-            <span class="node-link">MCP koblet ✓</span>
-          </div>
-
-          <div class="node-card node-fyxer" data-tilt>
-            <div class="node-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="node-label">E-postintegrasjon</div>
-            <h3 class="node-title">Fyxer AI</h3>
-            <p class="node-desc">Håndterer all e-post på BYGG-KON. Sorterer, prioriterer, skriver svar i ansattes egen stil og fanger oppgaver fra innboksen.</p>
-            <div class="node-tags">
-              <span class="tag">E-post</span>
-              <span class="tag">Sortering</span>
-              <span class="tag">Auto-svar</span>
-            </div>
-            <span class="node-link">Aktiv ✓</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Connector 1: sources -> hub -->
-      <svg class="flow-connector" viewBox="0 0 1200 180" preserveAspectRatio="none" aria-hidden="true">
+    <div class="system-map">
+      <svg class="map-svg" viewBox="0 0 1200 880" xmlns="http://www.w3.org/2000/svg" aria-label="BYGG-KON AI systemkart">
         <defs>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          <radialGradient id="hub-grad">
+            <stop offset="0%" stop-color="#ffd34d"/>
+            <stop offset="40%" stop-color="#f5b400"/>
+            <stop offset="100%" stop-color="#7a4d00" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.5" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
           </filter>
+          <pattern id="grid-pat" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.04"/>
+          </pattern>
         </defs>
-        <!-- 5 paths from sources to hub (600,180) — Loki (flagship), Nova, Hilde, Tripletex, Fyxer -->
-        <path d="M 120,0 C 120,90 600,90 600,180" class="conn-line" stroke="#c8102e"/>
-        <path d="M 120,0 C 120,90 600,90 600,180" class="conn-stream conn-flagship" stroke="#c8102e" style="animation-delay:0s"/>
-        <path d="M 360,0 C 360,90 600,90 600,180" class="conn-line" stroke="#f5b400"/>
-        <path d="M 360,0 C 360,90 600,90 600,180" class="conn-stream" stroke="#f5b400" style="animation-delay:-0.3s"/>
-        <path d="M 600,0 L 600,180" class="conn-line" stroke="#0a6cf0"/>
-        <path d="M 600,0 L 600,180" class="conn-stream" stroke="#0a6cf0" style="animation-delay:-0.6s"/>
-        <path d="M 840,0 C 840,90 600,90 600,180" class="conn-line" stroke="#7a3fc8"/>
-        <path d="M 840,0 C 840,90 600,90 600,180" class="conn-stream" stroke="#7a3fc8" style="animation-delay:-0.9s"/>
-        <path d="M 1080,0 C 1080,90 600,90 600,180" class="conn-line" stroke="#ff6b35"/>
-        <path d="M 1080,0 C 1080,90 600,90 600,180" class="conn-stream" stroke="#ff6b35" style="animation-delay:-1.2s"/>
+
+        <rect width="1200" height="880" fill="url(#grid-pat)"/>
+
+        <!-- Concentric rings around hub at (600, 440) -->
+        <g class="rings" transform="translate(600 440)">
+          <circle r="340" class="ring"/>
+          <circle r="260" class="ring"/>
+          <circle r="180" class="ring"/>
+        </g>
+
+        <!-- Connection paths: 6 sources to hub -->
+        <g class="connections">
+          <!-- Loki: top (0°) — 600,100 -->
+          <path d="M 600 100 L 600 440" class="cn cn-loki"/>
+          <path d="M 600 100 L 600 440" class="cn-flow" stroke="#c8102e" style="--d:0s"/>
+          <!-- Nova: upper-right (60°) — 894,270 -->
+          <path d="M 894 270 L 600 440" class="cn cn-nova"/>
+          <path d="M 894 270 L 600 440" class="cn-flow" stroke="#f5b400" style="--d:-.3s"/>
+          <!-- Tripletex: lower-right (120°) — 894,610 -->
+          <path d="M 894 610 L 600 440" class="cn cn-tt"/>
+          <path d="M 894 610 L 600 440" class="cn-flow" stroke="#7a3fc8" style="--d:-.6s"/>
+          <!-- KI Tilbud: bottom (180°) — 600,780 -->
+          <path d="M 600 780 L 600 440" class="cn cn-ki"/>
+          <path d="M 600 780 L 600 440" class="cn-flow" stroke="#1f8a3a" style="--d:-.9s"/>
+          <!-- Epostagent: lower-left (240°) — 306,610 -->
+          <path d="M 306 610 L 600 440" class="cn cn-fx"/>
+          <path d="M 306 610 L 600 440" class="cn-flow" stroke="#ff6b35" style="--d:-1.2s"/>
+          <!-- Hilde: upper-left (300°) — 306,270 -->
+          <path d="M 306 270 L 600 440" class="cn cn-hilde"/>
+          <path d="M 306 270 L 600 440" class="cn-flow" stroke="#0a6cf0" style="--d:-1.5s"/>
+        </g>
+
+        <!-- HUB: Claude/MCP center -->
+        <g class="hub" transform="translate(600 440)">
+          <circle r="140" fill="url(#hub-grad)" opacity="0.5"/>
+          <circle r="84" class="hub-bg"/>
+          <circle r="84" class="hub-stroke"/>
+          <text y="-22" class="hub-mcp">MCP-HUB</text>
+          <text y="6" class="hub-claude">Claude</text>
+          <text y="28" class="hub-ver">Opus 4.7</text>
+          <text y="46" class="hub-extra">+ChatGPT +Gemini</text>
+        </g>
+
+        <!-- Orbit ring with dots (separate from text) -->
+        <g class="orbit-grp" transform="translate(600 440)">
+          <circle cx="0" cy="-108" r="4" class="orb o1"/>
+          <circle cx="93.5" cy="54" r="3.5" class="orb o2"/>
+          <circle cx="-93.5" cy="54" r="3.5" class="orb o3"/>
+        </g>
+
+        <!-- 6 SOURCE NODES (clickable) -->
+
+        <!-- Loki — top, flagship -->
+        <g class="node node-loki" data-modal="loki" tabindex="0" role="button" aria-label="Åpne detaljer for Loki">
+          <circle cx="600" cy="100" r="64" class="node-bg"/>
+          <circle cx="600" cy="100" r="64" class="node-stroke" stroke="#c8102e"/>
+          <circle cx="600" cy="100" r="7" class="node-dot" fill="#c8102e"/>
+          <text x="600" y="178" class="node-lbl">LOKI</text>
+          <text x="600" y="198" class="node-sub">Intern kunnskap · 40 år</text>
+          <text x="600" y="62" class="node-id">01</text>
+          <rect x="568" y="38" width="64" height="20" rx="10" fill="#f5b400"/>
+          <text x="600" y="52" class="node-flag-txt">BETA</text>
+        </g>
+
+        <!-- Nova — upper-right -->
+        <g class="node node-nova" data-modal="nova" tabindex="0" role="button" aria-label="Åpne detaljer for Nova">
+          <circle cx="894" cy="270" r="56" class="node-bg"/>
+          <circle cx="894" cy="270" r="56" class="node-stroke" stroke="#f5b400"/>
+          <circle cx="894" cy="270" r="7" class="node-dot" fill="#f5b400"/>
+          <text x="894" y="340" class="node-lbl">NOVA</text>
+          <text x="894" y="358" class="node-sub">Offentlig kunnskap</text>
+          <text x="894" y="236" class="node-id">02</text>
+        </g>
+
+        <!-- Hilde — upper-left -->
+        <g class="node node-hilde" data-modal="hilde" tabindex="0" role="button" aria-label="Åpne detaljer for Hilde">
+          <circle cx="306" cy="270" r="56" class="node-bg"/>
+          <circle cx="306" cy="270" r="56" class="node-stroke" stroke="#0a6cf0"/>
+          <circle cx="306" cy="270" r="7" class="node-dot" fill="#0a6cf0"/>
+          <text x="306" y="340" class="node-lbl">HILDE</text>
+          <text x="306" y="358" class="node-sub">Eiendom & eiere</text>
+          <text x="306" y="236" class="node-id">03</text>
+        </g>
+
+        <!-- Tripletex — lower-right -->
+        <g class="node node-tt" data-modal="tripletex" tabindex="0" role="button" aria-label="Åpne detaljer for Tripletex">
+          <circle cx="894" cy="610" r="56" class="node-bg"/>
+          <circle cx="894" cy="610" r="56" class="node-stroke" stroke="#7a3fc8"/>
+          <circle cx="894" cy="610" r="7" class="node-dot" fill="#7a3fc8"/>
+          <text x="894" y="680" class="node-lbl">TRIPLETEX</text>
+          <text x="894" y="698" class="node-sub">Økonomi · MCP</text>
+          <text x="894" y="576" class="node-id">04</text>
+        </g>
+
+        <!-- Epostagent — lower-left -->
+        <g class="node node-fx" data-modal="epost" tabindex="0" role="button" aria-label="Åpne detaljer for Epostagent">
+          <circle cx="306" cy="610" r="56" class="node-bg"/>
+          <circle cx="306" cy="610" r="56" class="node-stroke" stroke="#ff6b35"/>
+          <circle cx="306" cy="610" r="7" class="node-dot" fill="#ff6b35"/>
+          <text x="306" y="680" class="node-lbl">EPOSTAGENT</text>
+          <text x="306" y="698" class="node-sub">E-post & triage</text>
+          <text x="306" y="576" class="node-id">05</text>
+        </g>
+
+        <!-- KI Tilbud — bottom -->
+        <g class="node node-ki" data-modal="ki" tabindex="0" role="button" aria-label="Åpne detaljer for KI Tilbud">
+          <circle cx="600" cy="780" r="64" class="node-bg"/>
+          <circle cx="600" cy="780" r="64" class="node-stroke" stroke="#1f8a3a"/>
+          <circle cx="600" cy="780" r="7" class="node-dot" fill="#1f8a3a"/>
+          <text x="600" y="858" class="node-lbl">KI TILBUD</text>
+          <text x="600" y="744" class="node-id">06</text>
+          <rect x="568" y="720" width="64" height="20" rx="10" fill="#f5b400"/>
+          <text x="600" y="734" class="node-flag-txt">BETA</text>
+        </g>
+
+        <!-- Click hint -->
+        <text x="600" y="20" class="map-hint">Klikk på en node for pipeline-detaljer →</text>
       </svg>
 
-      <!-- Layer: MCP + LLM Hub -->
-      <div class="flow-layer">
-        <div class="flow-layer-label">02 · MCP-laget + LLM-hjernene</div>
-        <div class="hub-wrap">
-          <div class="hub">
-            <div class="hub-ring hub-ring-3"></div>
-            <div class="hub-ring hub-ring-2"></div>
-            <div class="hub-ring hub-ring-1"></div>
-            <div class="hub-core">
-              <div class="hub-mcp-badge">MCP</div>
-              <div class="hub-logo">Claude</div>
-              <div class="hub-sub">Opus 4.7 · Sonnet 4.6</div>
-              <div class="hub-llm-list">
-                <span>+ ChatGPT</span>
-                <span>+ Gemini</span>
-                <span>+ Grok</span>
-              </div>
-              <div class="hub-meta">BYGG-KON-MCPer fungerer på<br>alle ledende LLM-modeller</div>
-            </div>
-            <!-- Orbit dots -->
-            <div class="orbit orbit-1"><span></span></div>
-            <div class="orbit orbit-2"><span></span></div>
-            <div class="orbit orbit-3"><span></span></div>
+      <div class="map-legend">
+        <div class="leg" data-modal="loki"><span class="leg-dot" style="background:#c8102e"></span>Loki<small>2,4M vektorer</small></div>
+        <div class="leg" data-modal="nova"><span class="leg-dot" style="background:#f5b400"></span>Nova<small>890k vektorer</small></div>
+        <div class="leg" data-modal="hilde"><span class="leg-dot" style="background:#0a6cf0"></span>Hilde<small>Matrikkel-API</small></div>
+        <div class="leg" data-modal="tripletex"><span class="leg-dot" style="background:#7a3fc8"></span>Tripletex<small>OAuth REST</small></div>
+        <div class="leg" data-modal="epost"><span class="leg-dot" style="background:#ff6b35"></span>Epostagent<small>E-post & triage</small></div>
+        <div class="leg" data-modal="ki"><span class="leg-dot" style="background:#1f8a3a"></span>KI Tilbud<small>Anbud · NS 8400</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- AI SYSTEMS — Minimal node row -->
+<!-- =================================================================== -->
+<section class="sys-row">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// Agentene</span>
+      <h2 class="h2">Seks agenter. Ett oppdrag.</h2>
+    </div>
+
+    <div class="ai-grid">
+      <button class="ai-card" data-modal="loki" style="--c:#c8102e" type="button">
+        <div class="ai-card-top">
+          <span class="ai-num">01</span>
+          <span class="ai-status ai-status-beta"><span class="pulse"></span>Beta</span>
+        </div>
+        <div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3 class="ai-name">Loki</h3>
+        <p class="ai-role">Intern kunnskap — 40 år</p>
+        <div class="ai-meta">VECTOR · pgvector</div>
+        <span class="ai-arrow">→</span>
+      </button>
+
+      <button class="ai-card" data-modal="nova" style="--c:#f5b400" type="button">
+        <div class="ai-card-top">
+          <span class="ai-num">02</span>
+          <span class="ai-status"><span class="pulse"></span>Live</span>
+        </div>
+        <div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg></div>
+        <h3 class="ai-name">Nova</h3>
+        <p class="ai-role">Offentlig kunnskap</p>
+        <div class="ai-meta">TEK17 · NS · DiBK</div>
+        <span class="ai-arrow">→</span>
+      </button>
+
+      <button class="ai-card" data-modal="hilde" style="--c:#0a6cf0" type="button">
+        <div class="ai-card-top">
+          <span class="ai-num">03</span>
+          <span class="ai-status"><span class="pulse"></span>Live</span>
+        </div>
+        <div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3 class="ai-name">Hilde</h3>
+        <p class="ai-role">Eiendom & eiere</p>
+        <div class="ai-meta">MATRIKKEL · GRUNNBOK</div>
+        <span class="ai-arrow">→</span>
+      </button>
+
+      <button class="ai-card" data-modal="tripletex" style="--c:#7a3fc8" type="button">
+        <div class="ai-card-top">
+          <span class="ai-num">04</span>
+          <span class="ai-status"><span class="pulse"></span>MCP</span>
+        </div>
+        <div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3 class="ai-name">Tripletex</h3>
+        <p class="ai-role">Økonomi i sanntid</p>
+        <div class="ai-meta">OAUTH · REST</div>
+        <span class="ai-arrow">→</span>
+      </button>
+
+      <button class="ai-card" data-modal="epost" style="--c:#ff6b35" type="button">
+        <div class="ai-card-top">
+          <span class="ai-num">05</span>
+          <span class="ai-status"><span class="pulse"></span>Live</span>
+        </div>
+        <div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3 class="ai-name">Epostagent</h3>
+        <p class="ai-role">E-post & triage</p>
+        <div class="ai-meta">IMAP · M365</div>
+        <span class="ai-arrow">→</span>
+      </button>
+
+      <button class="ai-card ai-card-new" data-modal="ki" style="--c:#1f8a3a" type="button">
+        <div class="ai-card-top">
+          <span class="ai-num">06</span>
+          <span class="ai-status ai-status-beta"><span class="pulse"></span>Beta</span>
+        </div>
+        <div class="ai-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div>
+        <h3 class="ai-name">KI Tilbud</h3>
+        <p class="ai-role">Anbud & tilbud — automatisk</p>
+        <div class="ai-meta">NS 8400 · NS 3450</div>
+        <span class="ai-arrow">→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- DEMO — Pipeline for real BYGG-KON documents -->
+<!-- =================================================================== -->
+<section class="demo" id="demo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// Pipeline</span>
+      <h2 class="h2">Slik produserer vi <span class="g">ett ferdig dokument</span>.</h2>
+      <p class="lede">Velg eksempel — se nøyaktig hvilke systemer som leverer hva.</p>
+    </div>
+
+    <div class="demo-tabs" role="tablist">
+      <button class="dt active" data-flow="dispensasjon" type="button" role="tab" aria-selected="true">
+        <span class="dt-ico">📜</span>
+        <span class="dt-txt">Søknad om dispensasjon</span>
+      </button>
+      <button class="dt" data-flow="uak" type="button" role="tab">
+        <span class="dt-ico">✅</span>
+        <span class="dt-txt">Sjekkliste · UAK</span>
+      </button>
+      <button class="dt" data-flow="ks" type="button" role="tab">
+        <span class="dt-ico">🧱</span>
+        <span class="dt-txt">KS-plan betong · enebolig</span>
+      </button>
+      <button class="dt" data-flow="befaring" type="button" role="tab">
+        <span class="dt-ico">🔧</span>
+        <span class="dt-txt">Befaringsrapport · stål</span>
+      </button>
+    </div>
+
+    <div class="flow-board" id="flow-board">
+
+      <!-- Column 1: REQUEST -->
+      <div class="fb-col fb-col-req">
+        <div class="fb-stage">01 · Forespørsel</div>
+        <div class="fb-card fb-request">
+          <div class="fb-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
           </div>
+          <div class="fb-quote-wrap">
+            <span class="fb-quote-mark">"</span>
+            <p class="fb-quote" id="flow-input">Lag søknad om dispensasjon fra TEK17 §13-7 for prosjekt Solås.</p>
+          </div>
+          <div class="fb-by">BYGG-KON-ansatt</div>
         </div>
       </div>
 
-      <!-- Connector 2: hub -> outputs -->
-      <svg class="flow-connector" viewBox="0 0 1200 180" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M 600,0 C 600,90 100,90 100,180" class="conn-line" stroke="#c8102e"/>
-        <path d="M 600,0 C 600,90 100,90 100,180" class="conn-stream" stroke="#c8102e" style="animation-delay:0s"/>
-        <path d="M 600,0 C 600,90 350,90 350,180" class="conn-line" stroke="#f5b400"/>
-        <path d="M 600,0 C 600,90 350,90 350,180" class="conn-stream" stroke="#f5b400" style="animation-delay:-0.3s"/>
-        <path d="M 600,0 L 600,180" class="conn-line" stroke="#0a6cf0"/>
-        <path d="M 600,0 L 600,180" class="conn-stream" stroke="#0a6cf0" style="animation-delay:-0.6s"/>
-        <path d="M 600,0 C 600,90 850,90 850,180" class="conn-line" stroke="#7a3fc8"/>
-        <path d="M 600,0 C 600,90 850,90 850,180" class="conn-stream" stroke="#7a3fc8" style="animation-delay:-0.9s"/>
-        <path d="M 600,0 C 600,90 1100,90 1100,180" class="conn-line" stroke="#ff6b35"/>
-        <path d="M 600,0 C 600,90 1100,90 1100,180" class="conn-stream" stroke="#ff6b35" style="animation-delay:-1.2s"/>
+      <!-- SVG connector -->
+      <svg class="fb-conn fb-conn-1" viewBox="0 0 80 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,200 C40,200 40,40 80,40" class="fbc-line" data-line="loki"/>
+        <path d="M0,200 C40,200 40,108 80,108" class="fbc-line" data-line="nova"/>
+        <path d="M0,200 C40,200 40,176 80,176" class="fbc-line" data-line="hilde"/>
+        <path d="M0,200 C40,200 40,244 80,244" class="fbc-line" data-line="tt"/>
+        <path d="M0,200 C40,200 40,312 80,312" class="fbc-line" data-line="fx"/>
+        <path d="M0,200 C40,200 40,376 80,376" class="fbc-line" data-line="ki"/>
       </svg>
 
-      <!-- Layer: Outputs -->
-      <div class="flow-layer">
-        <div class="flow-layer-label">03 · Leveranser · Det BYGG-KON faktisk gjør</div>
-
-        <!-- Output category: Byggesak & søknader -->
-        <div class="output-category">
-          <div class="output-cat-label">Byggesak & ansvar</div>
-          <div class="outputs-grid" id="leveranser">
-            <div class="out-card"><div class="out-ico">📝</div><h4>SØK</h4><p>Ansvarlig søker — komplett byggesøknad</p></div>
-            <div class="out-card"><div class="out-ico">🛡️</div><h4>UAK</h4><p>Uavhengig kontroll-rapporter</p></div>
-            <div class="out-card"><div class="out-ico">📐</div><h4>PRO</h4><p>Ansvarlig prosjekterende</p></div>
-            <div class="out-card"><div class="out-ico">🏗️</div><h4>RIB</h4><p>Bærekonstruksjons-beregninger</p></div>
-            <div class="out-card"><div class="out-ico">✅</div><h4>Samsvarserklæring</h4><p>SAK10-dokumentasjon</p></div>
+      <!-- Column 2: AGENTS (parallel calls) -->
+      <div class="fb-col fb-col-agents">
+        <div class="fb-stage">02 · Henter data</div>
+        <div class="fb-agents">
+          <div class="fb-agent" data-agent="loki" style="--c:#c8102e">
+            <div class="fb-agent-head"><span class="fa-dot"></span>Loki</div>
+            <div class="fb-agent-task" data-task="loki">Tidligere disp-søknader (3 funn)</div>
+          </div>
+          <div class="fb-agent" data-agent="nova" style="--c:#f5b400">
+            <div class="fb-agent-head"><span class="fa-dot"></span>Nova</div>
+            <div class="fb-agent-task" data-task="nova">PBL §19-2 · TEK17 §13-7</div>
+          </div>
+          <div class="fb-agent" data-agent="hilde" style="--c:#0a6cf0">
+            <div class="fb-agent-head"><span class="fa-dot"></span>Hilde</div>
+            <div class="fb-agent-task" data-task="hilde">Gnr/bnr · eier verifisert</div>
+          </div>
+          <div class="fb-agent" data-agent="tt" style="--c:#7a3fc8">
+            <div class="fb-agent-head"><span class="fa-dot"></span>Tripletex</div>
+            <div class="fb-agent-task" data-task="tt">Prosjektnr 4072 hentet</div>
+          </div>
+          <div class="fb-agent" data-agent="fx" style="--c:#ff6b35">
+            <div class="fb-agent-head"><span class="fa-dot"></span>Epostagent</div>
+            <div class="fb-agent-task" data-task="fx">—</div>
+          </div>
+          <div class="fb-agent" data-agent="ki" style="--c:#1f8a3a">
+            <div class="fb-agent-head"><span class="fa-dot"></span>KI Tilbud</div>
+            <div class="fb-agent-task" data-task="ki">—</div>
           </div>
         </div>
+      </div>
 
-        <!-- Output category: Prosjektledelse -->
-        <div class="output-category">
-          <div class="output-cat-label">Prosjekt- & byggeledelse</div>
-          <div class="outputs-grid">
-            <div class="out-card"><div class="out-ico">📋</div><h4>Tilbud & anbud</h4><p>Prising og konkurransegrunnlag</p></div>
-            <div class="out-card"><div class="out-ico">🤝</div><h4>Kontrakter</h4><p>NS 8401 / 8405 / 8407</p></div>
-            <div class="out-card"><div class="out-ico">📅</div><h4>Fremdriftsplan</h4><p>Milepæler & kritisk vei</p></div>
-            <div class="out-card"><div class="out-ico">📊</div><h4>Statusrapporter</h4><p>Til byggherre & styret</p></div>
-            <div class="out-card"><div class="out-ico">⚠️</div><h4>Risikoanalyse</h4><p>Tidlig identifisering</p></div>
+      <!-- SVG connector -->
+      <svg class="fb-conn fb-conn-2" viewBox="0 0 80 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,40  C40,40  40,200 80,200" class="fbc-line" data-line="loki"/>
+        <path d="M0,108 C40,108 40,200 80,200" class="fbc-line" data-line="nova"/>
+        <path d="M0,176 C40,176 40,200 80,200" class="fbc-line" data-line="hilde"/>
+        <path d="M0,244 C40,244 40,200 80,200" class="fbc-line" data-line="tt"/>
+        <path d="M0,312 C40,312 40,200 80,200" class="fbc-line" data-line="fx"/>
+        <path d="M0,376 C40,376 40,200 80,200" class="fbc-line" data-line="ki"/>
+      </svg>
+
+      <!-- Column 3: CLAUDE -->
+      <div class="fb-col fb-col-claude">
+        <div class="fb-stage">03 · Syntese</div>
+        <div class="fb-card fb-claude">
+          <div class="fc-logo-wrap">
+            <div class="fc-logo">Claude</div>
+            <div class="fc-ver">Opus 4.7</div>
           </div>
+          <div class="fc-action" id="flow-claude-action">Komponerer søknad i BYGG-KON-mal</div>
+          <ul class="fc-steps" id="flow-claude-steps">
+            <li>Strukturerer dokumentet</li>
+            <li>Henter kildehenvisninger</li>
+            <li>Formaterer i mal</li>
+          </ul>
         </div>
+      </div>
 
-        <!-- Output category: Fagprosjektering -->
-        <div class="output-category">
-          <div class="output-cat-label">Fagprosjektering & rådgivning</div>
-          <div class="outputs-grid">
-            <div class="out-card"><div class="out-ico">📄</div><h4>Beskrivelser</h4><p>NS 3420 mengdebeskrivelser</p></div>
-            <div class="out-card"><div class="out-ico">📐</div><h4>Tegningsgrunnlag</h4><p>Arkitekt- & ingeniørtegning</p></div>
-            <div class="out-card"><div class="out-ico">🔍</div><h4>Tilstandsanalyse</h4><p>NS 3424 vurderinger</p></div>
-            <div class="out-card"><div class="out-ico">🏠</div><h4>Bygningsfysikk</h4><p>U-verdier, fukt, energi</p></div>
-            <div class="out-card"><div class="out-ico">📓</div><h4>FDV-dokumentasjon</h4><p>Forvaltning, drift, vedlikehold</p></div>
-          </div>
-        </div>
+      <!-- SVG connector -->
+      <svg class="fb-conn fb-conn-3" viewBox="0 0 80 400" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,200 C40,200 40,200 80,200" class="fbc-line fbc-active"/>
+      </svg>
 
-        <!-- Output category: HMS / KS -->
-        <div class="output-category">
-          <div class="output-cat-label">HMS, SHA & kvalitet</div>
-          <div class="outputs-grid">
-            <div class="out-card"><div class="out-ico">🦺</div><h4>SHA-plan</h4><p>Byggherrens HMS-ansvar</p></div>
-            <div class="out-card"><div class="out-ico">🔒</div><h4>KS-plan</h4><p>Kvalitetssikringssystem</p></div>
-            <div class="out-card"><div class="out-ico">📋</div><h4>Kontrollplaner</h4><p>Egenkontroll & UAK</p></div>
-            <div class="out-card"><div class="out-ico">📑</div><h4>Avviksrapporter</h4><p>Med tiltak & oppfølging</p></div>
-            <div class="out-card"><div class="out-ico">🧯</div><h4>Brannkonsept</h4><p>BR-skisser & evakueringsplaner</p></div>
+      <!-- Column 4: OUTPUT -->
+      <div class="fb-col fb-col-out">
+        <div class="fb-stage">04 · Levering</div>
+        <div class="fb-card fb-output">
+          <div class="fo-doc">
+            <span class="fo-ico" id="flow-output-ico">📜</span>
+            <div class="fo-text">
+              <div class="fo-name" id="flow-output-name">Dispensasjonssøknad.pdf</div>
+              <div class="fo-meta" id="flow-output-meta">4 sider · BYGG-KON-mal · klar til signatur</div>
+            </div>
           </div>
-        </div>
-
-        <!-- Output category: Økonomi & administrasjon -->
-        <div class="output-category">
-          <div class="output-cat-label">Økonomi, eiendom & administrasjon</div>
-          <div class="outputs-grid">
-            <div class="out-card"><div class="out-ico">💰</div><h4>Budsjett</h4><p>Kostnadsestimat & kalkyle</p></div>
-            <div class="out-card"><div class="out-ico">🧾</div><h4>Fakturering</h4><p>Direkte fra Tripletex MCP</p></div>
-            <div class="out-card"><div class="out-ico">📈</div><h4>Prosjektøkonomi</h4><p>Sanntid fra Tripletex</p></div>
-            <div class="out-card"><div class="out-ico">🗺️</div><h4>Eiendomsdata</h4><p>Hilde finner eier & matrikkel</p></div>
-            <div class="out-card"><div class="out-ico">📬</div><h4>E-post & svar</h4><p>Fyxer i ansattes egen stil</p></div>
-          </div>
+          <ul class="fo-actions" id="flow-output-actions">
+            <li>→ Sendt via Epostagent til byggherre</li>
+            <li>→ Arkivert i prosjektmappe</li>
+          </ul>
+          <div class="fo-time">⚡ <strong id="flow-time">38</strong> sek fra prompt til ferdig</div>
         </div>
       </div>
 
@@ -316,445 +478,231 @@
 </section>
 
 <!-- =================================================================== -->
-<!-- THE SYSTEMS — Detailed cards -->
+<!-- STACK — Compact 4-layer architecture -->
 <!-- =================================================================== -->
-<section class="section section-systems" id="systemer">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Systemene</div>
-      <h2>Fem spesialiserte <span class="accent">AI-systemer</span></h2>
-      <p>Hver med sitt eget oppdrag. Sammen — orkestrert av Claude — er de noe helt nytt.</p>
+<section class="stack" id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// Stack</span>
+      <h2 class="h2">Fire lag. Én signatur: <span class="g">MCP</span>.</h2>
     </div>
 
-    <div class="systems-grid">
-
-      <article class="system-card system-card-flagship" style="--accent: #c8102e;">
-        <div class="system-header">
-          <div class="system-num">01 · Flagship</div>
-          <div class="system-status"><span class="status-dot"></span>Live</div>
+    <div class="stack-layers">
+      <!-- L4: LLMs -->
+      <div class="layer">
+        <div class="layer-meta"><span class="layer-num">04</span><span class="layer-name">LLM</span></div>
+        <div class="layer-content">
+          <div class="chip chip-flag">Claude · Opus 4.7</div>
+          <div class="chip">ChatGPT · GPT-5</div>
+          <div class="chip">Gemini 2.5</div>
+          <div class="chip">Grok 4</div>
         </div>
-        <h3>Loki AI</h3>
-        <div class="system-role">Den interne kunnskapsmotoren</div>
-        <p>Loki er hjertet i hele plattformen. Den samler 40 år med BYGG-KONs ansattes arbeid — prosjekterfaring, fagnotater, tegninger, kontrollplaner, beskrivelser — i én vektordatabase som er søkbar på sekunder.</p>
-        <ul class="system-features">
-          <li>4000+ prosjekters erfaring</li>
-          <li>Vektorbasert kunnskapsgraf</li>
-          <li>Ansattes arbeid bevart</li>
-          <li>Lærer av hvert nye prosjekt</li>
-        </ul>
-        <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener" class="system-link">Åpne Loki →</a>
-      </article>
+      </div>
 
-      <article class="system-card" style="--accent: #f5b400;">
-        <div class="system-header">
-          <div class="system-num">02</div>
-          <div class="system-status"><span class="status-dot"></span>Live</div>
+      <!-- L3: MCP -->
+      <div class="layer layer-mcp">
+        <div class="layer-meta"><span class="layer-num">03</span><span class="layer-name">MCP</span></div>
+        <div class="layer-content">
+          <button class="mcp-pill" data-modal="loki" style="--c:#c8102e" type="button"><span class="mcp-d"></span>loki-mcp</button>
+          <button class="mcp-pill" data-modal="nova" style="--c:#f5b400" type="button"><span class="mcp-d"></span>nova-mcp</button>
+          <button class="mcp-pill" data-modal="hilde" style="--c:#0a6cf0" type="button"><span class="mcp-d"></span>hilde-mcp</button>
+          <button class="mcp-pill" data-modal="tripletex" style="--c:#7a3fc8" type="button"><span class="mcp-d"></span>tripletex-mcp</button>
+          <button class="mcp-pill" data-modal="epost" style="--c:#ff6b35" type="button"><span class="mcp-d"></span>epost-mcp</button>
+          <button class="mcp-pill" data-modal="ki" style="--c:#1f8a3a" type="button"><span class="mcp-d"></span>ki-tilbud-mcp</button>
         </div>
-        <h3>Nova AI</h3>
-        <div class="system-role">Den offentlige kunnskapsbasen</div>
-        <p>Nova holder all offentlig byggkunnskap oppdatert — TEK17, NS-standarder, Plan- og bygningsloven, Byggteknisk forskrift og DiBKs publikasjoner. Indeksert i vektordatabase for semantisk søk.</p>
-        <ul class="system-features">
-          <li>TEK17 & NS-standarder</li>
-          <li>Plan- og bygningsloven</li>
-          <li>DiBK-publikasjoner</li>
-          <li>Vektorbasert semantikk</li>
-        </ul>
-        <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener" class="system-link">Åpne Nova →</a>
-      </article>
+      </div>
 
-      <article class="system-card" style="--accent: #0a6cf0;">
-        <div class="system-header">
-          <div class="system-num">03</div>
-          <div class="system-status"><span class="status-dot"></span>Live</div>
+      <!-- L2: Vector DBs + APIs -->
+      <div class="layer">
+        <div class="layer-meta"><span class="layer-num">02</span><span class="layer-name">Data</span></div>
+        <div class="layer-content layer-data">
+
+          <div class="vec-card">
+            <div class="vec-title"><span class="vec-color" style="background:#c8102e"></span>Loki Vector</div>
+            <svg class="vec-svg" viewBox="0 0 200 80">
+              <ellipse cx="40" cy="14" rx="22" ry="6" class="vec-db" fill="#c8102e"/>
+              <rect x="18" y="14" width="44" height="50" class="vec-db" fill="#c8102e" opacity=".55"/>
+              <ellipse cx="40" cy="64" rx="22" ry="6" class="vec-db" fill="#c8102e"/>
+              <ellipse cx="40" cy="30" rx="22" ry="6" fill="none" stroke="#fff" stroke-width=".5" opacity=".25"/>
+              <ellipse cx="40" cy="48" rx="22" ry="6" fill="none" stroke="#fff" stroke-width=".5" opacity=".25"/>
+              <g class="vec-dots">
+                <circle cx="100" cy="20" r="2.5" fill="#c8102e" class="vd" style="--d:0s"/>
+                <circle cx="125" cy="35" r="2" fill="#c8102e" class="vd" style="--d:-.3s"/>
+                <circle cx="150" cy="22" r="2.5" fill="#c8102e" class="vd" style="--d:-.6s"/>
+                <circle cx="170" cy="45" r="2" fill="#c8102e" class="vd" style="--d:-.9s"/>
+                <circle cx="110" cy="55" r="2" fill="#c8102e" class="vd" style="--d:-1.2s"/>
+                <circle cx="140" cy="60" r="2.5" fill="#c8102e" class="vd" style="--d:-1.5s"/>
+                <circle cx="160" cy="68" r="2" fill="#c8102e" class="vd" style="--d:-1.8s"/>
+                <circle cx="120" cy="14" r="2" fill="#c8102e" class="vd" style="--d:-.5s"/>
+              </g>
+              <line x1="62" y1="40" x2="100" y2="20" stroke="#c8102e" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="150" y2="22" stroke="#c8102e" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="125" y2="35" stroke="#c8102e" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="140" y2="60" stroke="#c8102e" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="170" y2="45" stroke="#c8102e" stroke-width=".6" opacity=".4"/>
+            </svg>
+            <div class="vec-stats"><strong id="loki-emb">2,40M</strong> embeddings</div>
+          </div>
+
+          <div class="vec-card">
+            <div class="vec-title"><span class="vec-color" style="background:#f5b400"></span>Nova Vector</div>
+            <svg class="vec-svg" viewBox="0 0 200 80">
+              <ellipse cx="40" cy="14" rx="22" ry="6" fill="#f5b400"/>
+              <rect x="18" y="14" width="44" height="50" fill="#f5b400" opacity=".55"/>
+              <ellipse cx="40" cy="64" rx="22" ry="6" fill="#f5b400"/>
+              <ellipse cx="40" cy="30" rx="22" ry="6" fill="none" stroke="#fff" stroke-width=".5" opacity=".25"/>
+              <ellipse cx="40" cy="48" rx="22" ry="6" fill="none" stroke="#fff" stroke-width=".5" opacity=".25"/>
+              <g class="vec-dots">
+                <circle cx="100" cy="20" r="2.5" fill="#f5b400" class="vd" style="--d:-.1s"/>
+                <circle cx="130" cy="32" r="2" fill="#f5b400" class="vd" style="--d:-.4s"/>
+                <circle cx="155" cy="25" r="2.5" fill="#f5b400" class="vd" style="--d:-.7s"/>
+                <circle cx="175" cy="48" r="2" fill="#f5b400" class="vd" style="--d:-1s"/>
+                <circle cx="115" cy="58" r="2" fill="#f5b400" class="vd" style="--d:-1.3s"/>
+                <circle cx="145" cy="65" r="2.5" fill="#f5b400" class="vd" style="--d:-1.6s"/>
+                <circle cx="165" cy="70" r="2" fill="#f5b400" class="vd" style="--d:-1.9s"/>
+                <circle cx="125" cy="14" r="2" fill="#f5b400" class="vd" style="--d:-.6s"/>
+              </g>
+              <line x1="62" y1="40" x2="100" y2="20" stroke="#f5b400" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="155" y2="25" stroke="#f5b400" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="130" y2="32" stroke="#f5b400" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="145" y2="65" stroke="#f5b400" stroke-width=".6" opacity=".4"/>
+              <line x1="62" y1="40" x2="175" y2="48" stroke="#f5b400" stroke-width=".6" opacity=".4"/>
+            </svg>
+            <div class="vec-stats"><strong>890k</strong> embeddings</div>
+          </div>
+
+          <div class="api-stack">
+            <div class="api-row"><span class="api-d" style="background:#0a6cf0"></span><span class="api-name">Kartverket</span><span class="api-tag">Matrikkel</span></div>
+            <div class="api-row"><span class="api-d" style="background:#0a6cf0"></span><span class="api-name">Brønnøysund</span><span class="api-tag">Eiere</span></div>
+            <div class="api-row"><span class="api-d" style="background:#7a3fc8"></span><span class="api-name">Tripletex</span><span class="api-tag">OAuth</span></div>
+            <div class="api-row"><span class="api-d" style="background:#ff6b35"></span><span class="api-name">Microsoft 365</span><span class="api-tag">IMAP</span></div>
+          </div>
         </div>
-        <h3>Hilde AI</h3>
-        <div class="system-role">Eiendomsagenten</div>
-        <p>Spesialagenten som finner eiendomsinformasjon og identifiserer eiere. Koblet direkte mot matrikkel, grunnbok og offentlige eiendomsregistre.</p>
-        <ul class="system-features">
-          <li>Matrikkel-integrasjon</li>
-          <li>Eieridentifisering</li>
-          <li>Grunnboksdata</li>
-          <li>Kontaktinformasjon</li>
-        </ul>
-        <a href="#hilde" class="system-link">Møt Hilde →</a>
-      </article>
+      </div>
 
-      <article class="system-card" style="--accent: #7a3fc8;">
-        <div class="system-header">
-          <div class="system-num">04</div>
-          <div class="system-status"><span class="status-dot"></span>MCP koblet</div>
+      <!-- L1: Source -->
+      <div class="layer">
+        <div class="layer-meta"><span class="layer-num">01</span><span class="layer-name">Kilde</span></div>
+        <div class="layer-content layer-source">
+          <span class="src-pill">Prosjekter</span>
+          <span class="src-pill">Tegninger</span>
+          <span class="src-pill">Notater</span>
+          <span class="src-pill">Beregninger</span>
+          <span class="src-pill">Kalkyler</span>
+          <span class="src-pill">Sjekklister</span>
+          <span class="src-pill">Møter</span>
+          <span class="src-pill">E-post</span>
+          <span class="src-pill">Byggesaker</span>
+          <span class="src-pill">Erfaring</span>
         </div>
-        <h3>Tripletex</h3>
-        <div class="system-role">Økonomisystemet — via MCP</div>
-        <p>Hele BYGG-KONs økonomisystem koblet rett inn via Model Context Protocol. Claude kan hente fakturaer, regnskapstall, prosjektøkonomi og timeføring i sanntid — og produsere rapporter på sekunder.</p>
-        <ul class="system-features">
-          <li>Sanntids regnskap</li>
-          <li>Faktura- & ordrehåndtering</li>
-          <li>Prosjektøkonomi</li>
-          <li>Timeføring & kostnader</li>
-        </ul>
-        <a href="https://tripletex.no" target="_blank" rel="noopener" class="system-link">tripletex.no →</a>
-      </article>
-
-      <article class="system-card" style="--accent: #ff6b35;">
-        <div class="system-header">
-          <div class="system-num">05</div>
-          <div class="system-status"><span class="status-dot"></span>Live</div>
-        </div>
-        <h3>Fyxer AI</h3>
-        <div class="system-role">E-postintegrasjonen</div>
-        <p>AI-drevet innboks for hele BYGG-KON. Fyxer sorterer, prioriterer og skriver svar i ansattes egen stil. Leser kontekst, fanger oppgaver og oppsummerer møter.</p>
-        <ul class="system-features">
-          <li>Intelligent sortering</li>
-          <li>Auto-svar i din stil</li>
-          <li>Møteoppsummering</li>
-          <li>Oppgaver fra e-post</li>
-        </ul>
-        <a href="https://fyxer.com" target="_blank" rel="noopener" class="system-link">fyxer.com →</a>
-      </article>
-
+      </div>
     </div>
   </div>
 </section>
 
 <!-- =================================================================== -->
-<!-- AI INFRASTRUCTURE — Vector DBs, MCP layer, top LLMs -->
+<!-- OUTPUTS — Tight grid of deliverables -->
 <!-- =================================================================== -->
-<section class="section section-infra" id="infra">
-  <div class="container">
-    <div class="section-head section-head-light">
-      <div class="eyebrow eyebrow-light">Infrastruktur</div>
-      <h2>Under panseret: <span class="accent-yellow">BYGG-KONs AI-stack</span></h2>
-      <p>Vi bygger ikke bare AI-applikasjoner — vi bygger MCP-servere. Dermed kan hele kunnskapen vår brukes fra de ledende LLMene: Claude Opus 4.7, ChatGPT, Gemini og resten.</p>
+<section class="outputs">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// Leveranser</span>
+      <h2 class="h2">Det <span class="g">vi faktisk</span> bygger.</h2>
+    </div>
+    <div class="out-grid">
+      <div class="out">SØK</div>
+      <div class="out">UAK</div>
+      <div class="out">PRO</div>
+      <div class="out">RIB</div>
+      <div class="out">Tilbud</div>
+      <div class="out">Kontrakter</div>
+      <div class="out">Fremdrift</div>
+      <div class="out">Budsjett</div>
+      <div class="out">Risikoanalyse</div>
+      <div class="out">NS 3420</div>
+      <div class="out">NS 3424</div>
+      <div class="out">Bygningsfysikk</div>
+      <div class="out">FDV</div>
+      <div class="out">SHA-plan</div>
+      <div class="out">KS-plan</div>
+      <div class="out">Kontroll</div>
+      <div class="out">Avvik</div>
+      <div class="out">Brannkonsept</div>
+      <div class="out">Fakturaer</div>
+      <div class="out">Timesvar</div>
+      <div class="out">Eierdata</div>
+      <div class="out">E-postsvar</div>
+      <div class="out">Møtenotater</div>
+      <div class="out">Innboks-triage</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- HILDE — Spotlight on Hilde -->
+<!-- =================================================================== -->
+<section class="hilde" id="hilde">
+  <div class="wrap hilde-wrap">
+    <div class="hilde-text">
+      <span class="eyebrow eyebrow-blue">// Møt Hilde</span>
+      <h2 class="h2">Finn eiendommen.<br><span class="g-blue">På sekunder.</span></h2>
+      <p class="lede">Matrikkel. Grunnbok. Eiere. Kontaktdata. Hilde leverer alt — automatisk.</p>
+      <div class="hilde-feat">
+        <div class="hf"><span class="hf-i">🗺️</span><strong>Eiendomssøk</strong></div>
+        <div class="hf"><span class="hf-i">👤</span><strong>Eieridentifisering</strong></div>
+        <div class="hf"><span class="hf-i">📜</span><strong>Grunnboksdata</strong></div>
+        <div class="hf"><span class="hf-i">📞</span><strong>Kontaktklar</strong></div>
+      </div>
     </div>
 
-    <div class="infra-stack">
-
-      <!-- LAYER 4 — Top LLMs -->
-      <div class="infra-layer infra-layer-llm">
-        <div class="layer-tag">04 · LLM-laget</div>
-        <div class="layer-title">De ledende språkmodellene</div>
-        <div class="llm-row">
-          <div class="llm-chip llm-claude">
-            <div class="llm-name">Claude</div>
-            <div class="llm-ver">Opus 4.7 · Sonnet 4.6</div>
-            <div class="llm-flag">Anbefalt</div>
-          </div>
-          <div class="llm-chip">
-            <div class="llm-name">ChatGPT</div>
-            <div class="llm-ver">GPT-5 · GPT-4o</div>
-          </div>
-          <div class="llm-chip">
-            <div class="llm-name">Gemini</div>
-            <div class="llm-ver">2.5 Pro</div>
-          </div>
-          <div class="llm-chip">
-            <div class="llm-name">Grok</div>
-            <div class="llm-ver">4</div>
-          </div>
+    <div class="hilde-visual">
+      <div class="hilde-screen">
+        <div class="hs-head">
+          <span class="hs-pulse"></span>
+          <span class="hs-title">Live · Stavanger-regionen</span>
+          <span class="hs-count"><span id="lot-counter">247</span> funn</span>
         </div>
-      </div>
-
-      <div class="infra-flow-down" aria-hidden="true">
-        <svg viewBox="0 0 800 60" preserveAspectRatio="none">
-          <path d="M 100,0 L 100,60" class="infra-stream" stroke="#c8102e"/>
-          <path d="M 300,0 L 300,60" class="infra-stream" stroke="#f5b400" style="animation-delay:-0.4s"/>
-          <path d="M 500,0 L 500,60" class="infra-stream" stroke="#0a6cf0" style="animation-delay:-0.8s"/>
-          <path d="M 700,0 L 700,60" class="infra-stream" stroke="#7a3fc8" style="animation-delay:-1.2s"/>
+        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" class="hs-map">
+          <defs>
+            <pattern id="hmap" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M20 0H0V20" fill="none" stroke="#1a1f2e" stroke-width="1"/>
+            </pattern>
+            <radialGradient id="ping-g"><stop offset="0%" stop-color="#0a6cf0" stop-opacity=".6"/><stop offset="100%" stop-color="#0a6cf0" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="400" height="260" fill="url(#hmap)"/>
+          <g class="hilde-lots">
+            <polygon points="30,30 100,28 105,75 35,80" class="lot found"/>
+            <polygon points="115,28 195,32 192,75 112,77" class="lot"/>
+            <polygon points="210,30 280,35 275,80 205,77" class="lot found high"/>
+            <polygon points="290,38 365,40 360,85 285,82" class="lot"/>
+            <polygon points="35,90 110,87 115,140 40,142" class="lot"/>
+            <polygon points="125,85 200,85 195,135 120,138" class="lot found"/>
+            <polygon points="210,90 275,92 270,140 205,138" class="lot"/>
+            <polygon points="285,95 360,98 355,145 280,142" class="lot found"/>
+            <polygon points="40,150 120,148 125,210 45,212" class="lot"/>
+            <polygon points="130,150 200,150 198,205 125,205" class="lot found high"/>
+            <polygon points="210,155 275,155 273,210 200,210" class="lot"/>
+            <polygon points="280,158 360,160 358,215 275,215" class="lot found"/>
+          </g>
+          <g>
+            <circle cx="70" cy="55" r="5" fill="url(#ping-g)"/>
+            <circle cx="70" cy="55" r="2.5" class="ping" style="--d:0s"/>
+            <circle cx="245" cy="58" r="5" fill="url(#ping-g)"/>
+            <circle cx="245" cy="58" r="2.5" class="ping" style="--d:-.6s"/>
+            <circle cx="160" cy="115" r="5" fill="url(#ping-g)"/>
+            <circle cx="160" cy="115" r="2.5" class="ping" style="--d:-1.2s"/>
+            <circle cx="320" cy="180" r="5" fill="url(#ping-g)"/>
+            <circle cx="320" cy="180" r="2.5" class="ping" style="--d:-1.8s"/>
+            <circle cx="85" cy="180" r="5" fill="url(#ping-g)"/>
+            <circle cx="85" cy="180" r="2.5" class="ping" style="--d:-2.4s"/>
+          </g>
+          <line x1="0" y1="0" x2="400" y2="0" class="scan"/>
         </svg>
-        <div class="flow-arrow">↓ MCP-protokoll</div>
-      </div>
-
-      <!-- LAYER 3 — MCP layer -->
-      <div class="infra-layer infra-layer-mcp">
-        <div class="layer-tag">03 · MCP-laget</div>
-        <div class="layer-title">BYGG-KONs MCP-servere — det vi har bygget</div>
-        <div class="mcp-grid">
-          <div class="mcp-card"><div class="mcp-ico" style="--c:#c8102e">⚡</div><div class="mcp-name">loki-mcp</div><div class="mcp-meta">Intern kunnskap</div></div>
-          <div class="mcp-card"><div class="mcp-ico" style="--c:#f5b400">🚀</div><div class="mcp-name">nova-mcp</div><div class="mcp-meta">Offentlig kunnskap</div></div>
-          <div class="mcp-card"><div class="mcp-ico" style="--c:#0a6cf0">🗺️</div><div class="mcp-name">hilde-mcp</div><div class="mcp-meta">Eiendomsdata</div></div>
-          <div class="mcp-card"><div class="mcp-ico" style="--c:#7a3fc8">💼</div><div class="mcp-name">tripletex-mcp</div><div class="mcp-meta">Økonomi</div></div>
-          <div class="mcp-card"><div class="mcp-ico" style="--c:#ff6b35">📬</div><div class="mcp-name">fyxer-mcp</div><div class="mcp-meta">E-post</div></div>
-        </div>
-      </div>
-
-      <div class="infra-flow-down" aria-hidden="true">
-        <svg viewBox="0 0 800 60" preserveAspectRatio="none">
-          <path d="M 100,0 L 100,60" class="infra-stream" stroke="#c8102e"/>
-          <path d="M 250,0 L 250,60" class="infra-stream" stroke="#f5b400" style="animation-delay:-0.3s"/>
-          <path d="M 400,0 L 400,60" class="infra-stream" stroke="#0a6cf0" style="animation-delay:-0.6s"/>
-          <path d="M 550,0 L 550,60" class="infra-stream" stroke="#7a3fc8" style="animation-delay:-0.9s"/>
-          <path d="M 700,0 L 700,60" class="infra-stream" stroke="#ff6b35" style="animation-delay:-1.2s"/>
-        </svg>
-        <div class="flow-arrow">↓ Embedding / API</div>
-      </div>
-
-      <!-- LAYER 2 — Vector DBs & APIs -->
-      <div class="infra-layer infra-layer-data">
-        <div class="layer-tag">02 · Datalaget</div>
-        <div class="layer-title">Vektordatabaser & integrasjoner</div>
-        <div class="data-grid">
-
-          <div class="data-card data-vector">
-            <div class="data-header">
-              <div class="data-name"><span class="data-color" style="background:#c8102e"></span>Loki Vector DB</div>
-              <div class="data-tech">pgvector · 1536-dim</div>
-            </div>
-            <div class="vector-viz">
-              <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="50" cy="20" rx="32" ry="8" class="db-top"/>
-                <rect x="18" y="20" width="64" height="70" class="db-body"/>
-                <ellipse cx="50" cy="90" rx="32" ry="8" class="db-bot"/>
-                <ellipse cx="50" cy="40" rx="32" ry="8" class="db-ring"/>
-                <ellipse cx="50" cy="60" rx="32" ry="8" class="db-ring"/>
-                <ellipse cx="50" cy="80" rx="32" ry="8" class="db-ring"/>
-                <g class="vector-cloud">
-                  <circle cx="130" cy="30" r="3" class="vec-dot" style="--d:0s"/>
-                  <circle cx="155" cy="45" r="2.5" class="vec-dot" style="--d:-.2s"/>
-                  <circle cx="180" cy="35" r="3.5" class="vec-dot" style="--d:-.4s"/>
-                  <circle cx="200" cy="55" r="2" class="vec-dot" style="--d:-.6s"/>
-                  <circle cx="140" cy="65" r="2.5" class="vec-dot" style="--d:-.8s"/>
-                  <circle cx="170" cy="75" r="3" class="vec-dot" style="--d:-1s"/>
-                  <circle cx="195" cy="85" r="2.5" class="vec-dot" style="--d:-1.2s"/>
-                  <circle cx="125" cy="85" r="2" class="vec-dot" style="--d:-1.4s"/>
-                  <circle cx="160" cy="22" r="2" class="vec-dot" style="--d:-1.6s"/>
-                  <circle cx="135" cy="50" r="2" class="vec-dot" style="--d:-1.8s"/>
-                </g>
-                <line x1="82" y1="55" x2="130" y2="30" class="vec-line"/>
-                <line x1="82" y1="55" x2="180" y2="35" class="vec-line"/>
-                <line x1="82" y1="55" x2="155" y2="45" class="vec-line"/>
-                <line x1="82" y1="55" x2="140" y2="65" class="vec-line"/>
-                <line x1="82" y1="55" x2="170" y2="75" class="vec-line"/>
-              </svg>
-            </div>
-            <div class="data-stats">
-              <div><strong id="loki-vec-count">2.4M</strong> embeddings</div>
-              <div><strong>40</strong> år data</div>
-            </div>
-          </div>
-
-          <div class="data-card data-vector">
-            <div class="data-header">
-              <div class="data-name"><span class="data-color" style="background:#f5b400"></span>Nova Vector DB</div>
-              <div class="data-tech">pgvector · 1536-dim</div>
-            </div>
-            <div class="vector-viz">
-              <svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="50" cy="20" rx="32" ry="8" class="db-top db-nova"/>
-                <rect x="18" y="20" width="64" height="70" class="db-body db-nova"/>
-                <ellipse cx="50" cy="90" rx="32" ry="8" class="db-bot db-nova"/>
-                <ellipse cx="50" cy="40" rx="32" ry="8" class="db-ring db-nova"/>
-                <ellipse cx="50" cy="60" rx="32" ry="8" class="db-ring db-nova"/>
-                <ellipse cx="50" cy="80" rx="32" ry="8" class="db-ring db-nova"/>
-                <g class="vector-cloud">
-                  <circle cx="130" cy="25" r="3" class="vec-dot vec-nova" style="--d:0s"/>
-                  <circle cx="160" cy="40" r="2.5" class="vec-dot vec-nova" style="--d:-.3s"/>
-                  <circle cx="185" cy="30" r="3" class="vec-dot vec-nova" style="--d:-.6s"/>
-                  <circle cx="200" cy="60" r="2.5" class="vec-dot vec-nova" style="--d:-.9s"/>
-                  <circle cx="145" cy="70" r="3" class="vec-dot vec-nova" style="--d:-1.2s"/>
-                  <circle cx="175" cy="80" r="2.5" class="vec-dot vec-nova" style="--d:-1.5s"/>
-                  <circle cx="125" cy="80" r="2.5" class="vec-dot vec-nova" style="--d:-1.8s"/>
-                  <circle cx="170" cy="55" r="2" class="vec-dot vec-nova" style="--d:-.5s"/>
-                  <circle cx="135" cy="45" r="2" class="vec-dot vec-nova" style="--d:-1s"/>
-                </g>
-                <line x1="82" y1="55" x2="130" y2="25" class="vec-line vec-line-nova"/>
-                <line x1="82" y1="55" x2="160" y2="40" class="vec-line vec-line-nova"/>
-                <line x1="82" y1="55" x2="185" y2="30" class="vec-line vec-line-nova"/>
-                <line x1="82" y1="55" x2="145" y2="70" class="vec-line vec-line-nova"/>
-                <line x1="82" y1="55" x2="175" y2="80" class="vec-line vec-line-nova"/>
-              </svg>
-            </div>
-            <div class="data-stats">
-              <div><strong>890k</strong> embeddings</div>
-              <div><strong>15+</strong> kilder</div>
-            </div>
-          </div>
-
-          <div class="data-card">
-            <div class="data-header">
-              <div class="data-name"><span class="data-color" style="background:#0a6cf0"></span>Hilde · Public APIs</div>
-              <div class="data-tech">REST · GraphQL</div>
-            </div>
-            <ul class="data-list">
-              <li><span class="src-tag">Kartverket</span> Matrikkel & grunnbok</li>
-              <li><span class="src-tag">Brønnøysund</span> Eierregister</li>
-              <li><span class="src-tag">Geonorge</span> Kart & grenser</li>
-              <li><span class="src-tag">Skatteetaten</span> Hjemmelshavere</li>
-            </ul>
-          </div>
-
-          <div class="data-card">
-            <div class="data-header">
-              <div class="data-name"><span class="data-color" style="background:#7a3fc8"></span>Tripletex · API</div>
-              <div class="data-tech">OAuth · REST</div>
-            </div>
-            <ul class="data-list">
-              <li><span class="src-tag">Regnskap</span> Hovedbok & resultat</li>
-              <li><span class="src-tag">Faktura</span> Inn- & utgående</li>
-              <li><span class="src-tag">Prosjekt</span> Timer & kost</li>
-              <li><span class="src-tag">Kunde</span> Kontakter & avtaler</li>
-            </ul>
-          </div>
-
-          <div class="data-card">
-            <div class="data-header">
-              <div class="data-name"><span class="data-color" style="background:#ff6b35"></span>Fyxer · Mail</div>
-              <div class="data-tech">IMAP · Microsoft 365</div>
-            </div>
-            <ul class="data-list">
-              <li><span class="src-tag">Innboks</span> Sortering & triage</li>
-              <li><span class="src-tag">Tråder</span> Kontekstuell forståelse</li>
-              <li><span class="src-tag">Kalender</span> Møter & oppfølging</li>
-              <li><span class="src-tag">Skriving</span> I ansattes egen stil</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="infra-flow-down" aria-hidden="true">
-        <svg viewBox="0 0 800 60" preserveAspectRatio="none">
-          <path d="M 400,0 L 400,60" class="infra-stream" stroke="#1f8a3a"/>
-        </svg>
-        <div class="flow-arrow">↑ Embedding-pipeline</div>
-      </div>
-
-      <!-- LAYER 1 — Source data -->
-      <div class="infra-layer infra-layer-source">
-        <div class="layer-tag">01 · Datakildene</div>
-        <div class="layer-title">Det BYGG-KONs ansatte produserer hver eneste dag</div>
-        <div class="source-pill-row">
-          <span class="source-pill">📐 Prosjektmapper</span>
-          <span class="source-pill">📄 Tegninger</span>
-          <span class="source-pill">📝 Fagnotater</span>
-          <span class="source-pill">📋 Sjekklister</span>
-          <span class="source-pill">📊 Rapporter</span>
-          <span class="source-pill">🧮 Kalkyler</span>
-          <span class="source-pill">📐 Beregninger</span>
-          <span class="source-pill">📧 E-poster</span>
-          <span class="source-pill">📞 Møtenotater</span>
-          <span class="source-pill">🏗️ Byggesaker</span>
-          <span class="source-pill">📚 Erfaring 40 år</span>
-          <span class="source-pill">🎓 Faglig læring</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =================================================================== -->
-<!-- HILDE AI — Featured section -->
-<!-- =================================================================== -->
-<section class="section section-byggkonai" id="hilde">
-  <div class="container">
-    <div class="byggkonai-wrap">
-      <div class="byggkonai-text">
-        <div class="eyebrow eyebrow-blue">Møt · Hilde AI</div>
-        <h2>Finn riktig eiendom. Finn riktig eier. <span class="accent-blue">På sekunder.</span></h2>
-        <p class="lead">Hilde er BYGG-KONs egen eiendomsagent. Hun er koblet direkte mot matrikkel, grunnbok og offentlige eiendomsregistre — og leverer komplette eiendomsdossier klar til bruk i tidligfase.</p>
-
-        <div class="feature-grid">
-          <div class="feature">
-            <div class="feature-ico">🗺️</div>
-            <h4>Eiendomssøk</h4>
-            <p>Søk på matrikkelnummer, adresse eller område. Hilde finner eiendommen og henter all relevant data umiddelbart.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-ico">👤</div>
-            <h4>Eieridentifisering</h4>
-            <p>Hjemmelshavere, eierhistorikk og kontaktinformasjon — alt samlet i én oversikt.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-ico">📜</div>
-            <h4>Grunnboksdata</h4>
-            <p>Heftelser, pant, servitutter og tinglyste forhold — direkte fra Kartverkets registre.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-ico">📞</div>
-            <h4>Kontaktklar</h4>
-            <p>Hilde leverer alt du trenger for å ta neste steg — automatisk e-postutkast via Fyxer.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visual: Map-style mini diagram -->
-      <div class="byggkonai-visual">
-        <div class="map-card">
-          <div class="map-header">
-            <div class="map-title">
-              <span class="map-pulse"></span>
-              Live eiendomssøk · Stavanger-regionen
-            </div>
-            <div class="map-counter">
-              <span id="lot-counter">247</span> eiendommer funnet
-            </div>
-          </div>
-          <svg class="map-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
-            <!-- Grid -->
-            <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e5e7eb" stroke-width="1"/>
-              </pattern>
-              <radialGradient id="pinglow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#0a6cf0" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#0a6cf0" stop-opacity="0"/>
-              </radialGradient>
-            </defs>
-            <rect width="400" height="280" fill="url(#grid)"/>
-
-            <!-- Lot polygons -->
-            <g class="lots">
-              <polygon points="40,40 110,38 115,90 45,92" class="lot lot-found" />
-              <polygon points="120,40 200,42 198,85 118,88" class="lot" />
-              <polygon points="210,45 280,48 275,95 205,92" class="lot lot-found" />
-              <polygon points="290,50 360,52 355,100 285,98" class="lot" />
-              <polygon points="45,100 115,98 120,160 50,162" class="lot" />
-              <polygon points="125,95 200,95 195,150 120,155" class="lot lot-found lot-highlight" />
-              <polygon points="205,100 275,102 270,160 200,158" class="lot" />
-              <polygon points="280,105 360,108 355,165 280,162" class="lot" />
-              <polygon points="50,170 120,168 125,230 55,232" class="lot lot-found" />
-              <polygon points="130,165 200,165 198,225 125,225" class="lot" />
-              <polygon points="205,170 275,170 273,228 200,228" class="lot" />
-              <polygon points="280,175 360,175 358,230 275,230" class="lot lot-found" />
-            </g>
-
-            <!-- Animated pings -->
-            <g class="pings">
-              <circle cx="80" cy="65" r="6" class="ping-glow"/>
-              <circle cx="80" cy="65" r="3" class="ping-dot" style="animation-delay:0s"/>
-              <circle cx="245" cy="70" r="6" class="ping-glow"/>
-              <circle cx="245" cy="70" r="3" class="ping-dot" style="animation-delay:-0.7s"/>
-              <circle cx="160" cy="125" r="6" class="ping-glow"/>
-              <circle cx="160" cy="125" r="3" class="ping-dot" style="animation-delay:-1.4s"/>
-              <circle cx="320" cy="200" r="6" class="ping-glow"/>
-              <circle cx="320" cy="200" r="3" class="ping-dot" style="animation-delay:-2.1s"/>
-              <circle cx="85" cy="200" r="6" class="ping-glow"/>
-              <circle cx="85" cy="200" r="3" class="ping-dot" style="animation-delay:-2.8s"/>
-            </g>
-
-            <!-- Scanning line -->
-            <line x1="0" y1="0" x2="400" y2="0" class="scan-line"/>
-          </svg>
-
-          <div class="map-footer">
-            <div class="kv">
-              <div class="k">Eier</div>
-              <div class="v">Identifisert</div>
-            </div>
-            <div class="kv">
-              <div class="k">Hjemmel</div>
-              <div class="v">Verifisert</div>
-            </div>
-            <div class="kv">
-              <div class="k">Heftelser</div>
-              <div class="v">Hentet</div>
-            </div>
-            <div class="kv">
-              <div class="k">Status</div>
-              <div class="v"><span class="status-live"></span>Live</div>
-            </div>
-          </div>
+        <div class="hs-foot">
+          <div class="hsf"><span class="hsf-k">Eier</span><span class="hsf-v">✓</span></div>
+          <div class="hsf"><span class="hsf-k">Hjemmel</span><span class="hsf-v">✓</span></div>
+          <div class="hsf"><span class="hsf-k">Pant</span><span class="hsf-v">✓</span></div>
+          <div class="hsf"><span class="hsf-k">Kontakt</span><span class="hsf-v">✓</span></div>
         </div>
       </div>
     </div>
@@ -762,114 +710,51 @@
 </section>
 
 <!-- =================================================================== -->
-<!-- WORKFLOW — Step by step -->
+<!-- EMPOWERMENT — Each employee + their Claude -->
 <!-- =================================================================== -->
-<section class="section section-workflow">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Arbeidsflyt</div>
-      <h2>Fra <span class="accent">spørsmål</span> til <span class="accent">ferdig leveranse</span></h2>
-      <p>Fire steg. Ofte under ett minutt.</p>
+<section class="emp" id="empower">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">// Sluttresultatet</span>
+      <h2 class="h2">Hver ansatt får <span class="g">superkrefter</span>.</h2>
+      <p class="lede">Én person. Én Claude. Fem MCPer. Hele organisasjonen i én chat.</p>
     </div>
 
-    <div class="workflow">
-      <div class="workflow-line" aria-hidden="true"></div>
-
-      <div class="step">
-        <div class="step-num">01</div>
-        <h4>Spør</h4>
-        <p>Den ansatte stiller spørsmålet i naturlig språk. "Lag tilbud for utvidelse av Solås skole."</p>
+    <div class="emp-stage">
+      <!-- Orbiting MCP halo -->
+      <div class="orbit-rig">
+        <div class="orbit-ring"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="halo h-loki"><span>⚡</span><div>Loki</div></div>
+        <div class="halo h-nova"><span>🚀</span><div>Nova</div></div>
+        <div class="halo h-hilde"><span>🗺️</span><div>Hilde</div></div>
+        <div class="halo h-tt"><span>💼</span><div>Tripletex</div></div>
+        <div class="halo h-fx"><span>📬</span><div>Epost</div></div>
       </div>
 
-      <div class="step">
-        <div class="step-num">02</div>
-        <h4>Hent</h4>
-        <p>Claude orkestrerer. Loki henter intern kunnskap, Nova offentlige krav, Hilde eiendomsdata, Tripletex økonomi, Fyxer e-post.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">03</div>
-        <h4>Resonner</h4>
-        <p>Claude vurderer all input mot oppgaven, henter relevante maler og produserer utkast i BYGG-KONs stil.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-num">04</div>
-        <h4>Lever</h4>
-        <p>Ferdig dokument klart for gjennomgang og signering. Eksporteres til Word, PDF eller Excel.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =================================================================== -->
-<!-- EMPOWERMENT — Each employee gets full AI power -->
-<!-- =================================================================== -->
-<section class="section section-empower">
-  <div class="container">
-    <div class="section-head">
-      <div class="eyebrow">Sluttresultatet</div>
-      <h2>Hver eneste ansatt får <span class="accent">superkrefter</span>.</h2>
-      <p>Hver BYGG-KON-ansatt får sin egen Claude — med samtlige MCPer koblet på. Hele organisasjonens kunnskap, økonomi, eiendomsregister og e-post — i én chat.</p>
-    </div>
-
-    <div class="empower-stage">
-      <!-- Central employee with Claude -->
-      <div class="employee-card">
-        <div class="employee-avatar">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3">
-            <circle cx="32" cy="22" r="11"/>
-            <path d="M8 60c0-13 10-22 24-22s24 9 24 22"/>
-          </svg>
+      <!-- Person + Claude card -->
+      <div class="emp-card">
+        <div class="emp-avatar">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3"><circle cx="32" cy="22" r="11"/><path d="M8 60c0-13 10-22 24-22s24 9 24 22"/></svg>
         </div>
-        <div class="employee-info">
-          <div class="employee-name">Hver BYGG-KON-ansatt</div>
-          <div class="employee-role">+ Claude Desktop · 5 MCPer aktive</div>
-        </div>
-        <div class="employee-screen">
-          <div class="screen-bar">
-            <span class="screen-dot"></span>
-            <span class="screen-dot"></span>
-            <span class="screen-dot"></span>
-            <span class="screen-title">Claude · BYGG-KON</span>
+        <div class="emp-name">BYGG-KON-ansatt</div>
+        <div class="emp-role">+ Claude · 5 MCPer aktive</div>
+
+        <div class="emp-screen">
+          <div class="es-bar">
+            <span class="es-dot d1"></span><span class="es-dot d2"></span><span class="es-dot d3"></span>
+            <span class="es-title">Claude · BYGG-KON</span>
           </div>
-          <div class="screen-msg user">"Lag et tilbud for utvidelsen av Solås skole, hent kostnader fra Tripletex, sjekk regelverk og send utkast til byggherre."</div>
-          <div class="screen-msg ai">
-            <div class="ai-action">✓ Loki: hentet referanse fra Solås-prosjektet 2020</div>
-            <div class="ai-action">✓ Nova: TEK17 §13-7 & NS 8401 sjekket</div>
-            <div class="ai-action">✓ Tripletex: timepriser & kost hentet</div>
-            <div class="ai-action">✓ Hilde: eiendomsdata for gnr/bnr verifisert</div>
-            <div class="ai-action">✓ Fyxer: utkast sendt til byggherre</div>
-            <div class="ai-final">Tilbud klart for signering · 47 sek</div>
+          <div class="es-msg es-user">Lag tilbud for utvidelse av Solås skole. Sjekk kostnader, regelverk, eiendom. Send til byggherre.</div>
+          <div class="es-msg es-ai">
+            <div class="es-line" style="--d:.5s">→ Loki · hentet referanse Solås 2020</div>
+            <div class="es-line" style="--d:1s">→ Nova · TEK17 §13-7 sjekket</div>
+            <div class="es-line" style="--d:1.5s">→ Tripletex · timepriser hentet</div>
+            <div class="es-line" style="--d:2s">→ Hilde · gnr/bnr verifisert</div>
+            <div class="es-line" style="--d:2.5s">→ Epostagent · utkast sendt</div>
+            <div class="es-done">✓ Tilbud klart · 47 sek</div>
           </div>
         </div>
-      </div>
-
-      <!-- MCP halo around employee -->
-      <div class="employee-halo">
-        <div class="halo-mcp halo-loki"><span>⚡</span><div>Loki</div></div>
-        <div class="halo-mcp halo-nova"><span>🚀</span><div>Nova</div></div>
-        <div class="halo-mcp halo-hilde"><span>🗺️</span><div>Hilde</div></div>
-        <div class="halo-mcp halo-tripletex"><span>💼</span><div>Tripletex</div></div>
-        <div class="halo-mcp halo-fyxer"><span>📬</span><div>Fyxer</div></div>
-      </div>
-    </div>
-
-    <div class="empower-grid">
-      <div class="empower-stat">
-        <div class="empower-num">1 ansatt</div>
-        <div class="empower-lbl">+ 1 Claude</div>
-        <div class="empower-desc">Hver person får sin egen, personlige AI-assistent — bygd inn i Claude Desktop.</div>
-      </div>
-      <div class="empower-stat">
-        <div class="empower-num">5 MCPer</div>
-        <div class="empower-lbl">koblet på</div>
-        <div class="empower-desc">Hele BYGG-KONs infrastruktur tilgjengelig fra én chat-prompt.</div>
-      </div>
-      <div class="empower-stat">
-        <div class="empower-num">∞ leveranser</div>
-        <div class="empower-lbl">på sekunder</div>
-        <div class="empower-desc">Alt fra byggesøknader til e-post-svar — produsert raskere enn noensinne.</div>
       </div>
     </div>
   </div>
@@ -878,26 +763,14 @@
 <!-- =================================================================== -->
 <!-- CTA -->
 <!-- =================================================================== -->
-<section class="section section-cta" id="kontakt">
-  <div class="container">
+<section class="cta" id="kontakt">
+  <div class="wrap">
     <div class="cta-card">
-      <div class="cta-content">
-        <div class="eyebrow">Klar?</div>
-        <h2>Bygd for dem som <span class="accent">bygger</span>.</h2>
-        <p>BYGG-KON AI er ikke en lek med teknologi — det er et arbeidsverktøy bygd for hverdagen til våre ansatte og kunder. La oss vise deg hvordan.</p>
-        <div class="cta-actions">
-          <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="btn btn-primary">Besøk byggkon.no</a>
-          <a href="mailto:oat@byggkon.no" class="btn btn-ghost">Ta kontakt</a>
-        </div>
-      </div>
-      <div class="cta-visual">
-        <div class="cta-logo-mark">
-          <svg viewBox="0 0 100 100">
-            <rect x="20" y="20" width="60" height="60" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
-            <path d="M30 70 L30 35 L50 25 L70 35 L70 70" fill="none" stroke="currentColor" stroke-width="3"/>
-            <path d="M40 70 L40 50 L60 50 L60 70" fill="none" stroke="currentColor" stroke-width="3"/>
-          </svg>
-        </div>
+      <h2 class="h2">Bygd for dem som <span class="g">bygger</span>.</h2>
+      <p class="lede">BYGG-KON Stavanger · 40 år · 4 000+ prosjekter</p>
+      <div class="cta-row">
+        <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="btn btn-primary">byggkon.no</a>
+        <a href="mailto:oat@byggkon.no" class="btn btn-ghost">oat@byggkon.no</a>
       </div>
     </div>
   </div>
@@ -906,43 +779,205 @@
 <!-- =================================================================== -->
 <!-- FOOTER -->
 <!-- =================================================================== -->
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <div class="logo">
-        <img src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/697229961ae6d73bf69636e8_BYGG-KON%20Logo%20W%26W.png" alt="BYGG-KON" class="logo-img logo-img-dark">
-        <span class="logo-suffix logo-suffix-light">.ai</span>
-      </div>
-      <p>Komplett rådgivning for byggherrer, entreprenører og offentlige aktører. Nå med AI-kraft.</p>
+<footer class="ftr">
+  <div class="wrap ftr-inner">
+    <div class="ftr-brand">
+      <a href="#" class="brand">
+        <img src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/697229961ae6d73bf69636e8_BYGG-KON%20Logo%20W%26W.png" alt="BYGG-KON" class="brand-img">
+        <span class="brand-suffix">.ai</span>
+      </a>
+      <p>Travbaneveien 3 · 4031 Stavanger<br><a href="tel:+4751974400">+47 51 97 44 00</a></p>
     </div>
-    <div class="footer-col">
-      <h5>AI-Systemene</h5>
-      <a href="https://www.byggkon.no" target="_blank" rel="noopener">byggkon.no</a>
-      <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener">Loki AI</a>
-      <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener">Nova AI Agent</a>
-      <a href="#hilde">Hilde AI</a>
-      <a href="https://tripletex.no" target="_blank" rel="noopener">Tripletex (MCP)</a>
-      <a href="https://fyxer.com" target="_blank" rel="noopener">Fyxer AI</a>
+    <div class="ftr-col">
+      <h5>System</h5>
+      <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener">Loki</a>
+      <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener">Nova</a>
+      <a href="#hilde">Hilde</a>
+      <a href="https://tripletex.no" target="_blank" rel="noopener">Tripletex</a>
+      <a href="#" data-modal="epost">Epostagent</a>
     </div>
-    <div class="footer-col">
+    <div class="ftr-col">
       <h5>BYGG-KON</h5>
       <a href="https://www.byggkon.no/tjenester" target="_blank" rel="noopener">Tjenester</a>
       <a href="https://www.byggkon.no/referanser" target="_blank" rel="noopener">Referanser</a>
       <a href="https://www.byggkon.no/om-oss" target="_blank" rel="noopener">Om oss</a>
       <a href="https://www.byggkon.no/karriere" target="_blank" rel="noopener">Karriere</a>
     </div>
-    <div class="footer-col">
-      <h5>Kontakt</h5>
-      <p>Travbaneveien 3<br>4031 Stavanger</p>
-      <a href="tel:+4751974400">+47 51 97 44 00</a>
-      <a href="mailto:oat@byggkon.no">oat@byggkon.no</a>
-    </div>
   </div>
-  <div class="container footer-bottom">
-    <span>© 2026 BYGG-KON AS · Alle rettigheter reservert.</span>
-    <span>Bygd med Claude · Deployet på Railway</span>
+  <div class="wrap ftr-bot">
+    <span>© 2026 BYGG-KON AS</span>
+    <span>Bygd med Claude · Deploy: Railway</span>
   </div>
 </footer>
+
+<!-- =================================================================== -->
+<!-- MODALS — Pipeline detail per AI agent -->
+<!-- =================================================================== -->
+<div class="modal-root" id="modal-root" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+
+  <!-- LOKI -->
+  <div class="modal" data-modal-id="loki" style="--c:#c8102e" role="dialog" aria-modal="true" aria-labelledby="modal-loki-title">
+    <button class="modal-close" data-close aria-label="Lukk">✕</button>
+    <div class="modal-head">
+      <div class="modal-tag">01 · FLAGSHIP</div>
+      <h3 id="modal-loki-title">Loki <span class="modal-sub">— Den interne kunnskapsmotoren</span></h3>
+      <p>40 år med BYGG-KONs ansattes arbeid — vektorisert, søkbart, levende.</p>
+    </div>
+    <div class="modal-pipe">
+      <div class="pipe-step"><div class="ps-i">📁</div><div class="ps-n">Råkilde</div><div class="ps-d">Prosjektmapper, tegninger, notater</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🔍</div><div class="ps-n">Parser</div><div class="ps-d">OCR · PDF · DOCX</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🧮</div><div class="ps-n">Embedding</div><div class="ps-d">text-embedding-3-large</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🗄️</div><div class="ps-n">pgvector</div><div class="ps-d">2,4M vektorer · 1536-dim</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">⚡</div><div class="ps-n">loki-mcp</div><div class="ps-d">Servert til LLM</div></div>
+    </div>
+    <div class="modal-meta">
+      <div class="mm"><span class="mm-k">Stack</span><span class="mm-v">Node.js · Postgres · pgvector</span></div>
+      <div class="mm"><span class="mm-k">Datavolum</span><span class="mm-v">2,4M embeddings · 40 år</span></div>
+      <div class="mm"><span class="mm-k">Oppdatering</span><span class="mm-v">Sanntid via webhooks</span></div>
+      <div class="mm"><span class="mm-k">URL</span><span class="mm-v"><a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener">byggkon-loki-ai.railway.app ↗</a></span></div>
+    </div>
+  </div>
+
+  <!-- NOVA -->
+  <div class="modal" data-modal-id="nova" style="--c:#f5b400" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Lukk">✕</button>
+    <div class="modal-head">
+      <div class="modal-tag">02 · KUNNSKAP</div>
+      <h3>Nova <span class="modal-sub">— Offentlig kunnskapsbase</span></h3>
+      <p>Hele det norske byggregelverket — vektorisert, oppdatert, alltid tilgjengelig.</p>
+    </div>
+    <div class="modal-pipe">
+      <div class="pipe-step"><div class="ps-i">🏛️</div><div class="ps-n">Kilder</div><div class="ps-d">DiBK · Lovdata · NS-online</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🤖</div><div class="ps-n">Scraper</div><div class="ps-d">Daglig sync · diff-detection</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🧮</div><div class="ps-n">Embedding</div><div class="ps-d">+ paragraf-nivå chunking</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🗄️</div><div class="ps-n">pgvector</div><div class="ps-d">890k vektorer · semantisk</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🚀</div><div class="ps-n">nova-mcp</div><div class="ps-d">Sitat-presise svar</div></div>
+    </div>
+    <div class="modal-meta">
+      <div class="mm"><span class="mm-k">Dekker</span><span class="mm-v">TEK17 · SAK10 · BFE · NS-standarder</span></div>
+      <div class="mm"><span class="mm-k">Oppdatering</span><span class="mm-v">Daglig fra Lovdata + DiBK</span></div>
+      <div class="mm"><span class="mm-k">Sitat</span><span class="mm-v">Hver påstand med kildehenvisning</span></div>
+      <div class="mm"><span class="mm-k">URL</span><span class="mm-v"><a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener">nova-ai-agent.railway.app ↗</a></span></div>
+    </div>
+  </div>
+
+  <!-- HILDE -->
+  <div class="modal" data-modal-id="hilde" style="--c:#0a6cf0" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Lukk">✕</button>
+    <div class="modal-head">
+      <div class="modal-tag">03 · EIENDOM</div>
+      <h3>Hilde <span class="modal-sub">— Eiendoms- og eieragenten</span></h3>
+      <p>Fra adresse til komplett eiendomsdossier på sekunder.</p>
+    </div>
+    <div class="modal-pipe">
+      <div class="pipe-step"><div class="ps-i">📍</div><div class="ps-n">Input</div><div class="ps-d">Adresse · gnr/bnr · område</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🗺️</div><div class="ps-n">Kartverket</div><div class="ps-d">Matrikkel + grunnbok</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🏢</div><div class="ps-n">Brønnøysund</div><div class="ps-d">Eier · selskap</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">📊</div><div class="ps-n">Aggregator</div><div class="ps-d">Konsolidert dossier</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🗺️</div><div class="ps-n">hilde-mcp</div><div class="ps-d">Levert til Claude</div></div>
+    </div>
+    <div class="modal-meta">
+      <div class="mm"><span class="mm-k">Kilder</span><span class="mm-v">Kartverket · Brønnøysund · Geonorge</span></div>
+      <div class="mm"><span class="mm-k">Søk</span><span class="mm-v">Adresse · matrikkel · område</span></div>
+      <div class="mm"><span class="mm-k">Output</span><span class="mm-v">Eier · pant · heftelser · kontakt</span></div>
+      <div class="mm"><span class="mm-k">Tilgang</span><span class="mm-v">Via Claude · ChatGPT · Gemini</span></div>
+    </div>
+  </div>
+
+  <!-- TRIPLETEX -->
+  <div class="modal" data-modal-id="tripletex" style="--c:#7a3fc8" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Lukk">✕</button>
+    <div class="modal-head">
+      <div class="modal-tag">04 · ØKONOMI · MCP</div>
+      <h3>Tripletex <span class="modal-sub">— Økonomien direkte i chat</span></h3>
+      <p>Hele økonomisystemet eksponert som verktøy i samtalen.</p>
+    </div>
+    <div class="modal-pipe">
+      <div class="pipe-step"><div class="ps-i">🔑</div><div class="ps-n">OAuth</div><div class="ps-d">Sikker autentisering</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🌐</div><div class="ps-n">REST API</div><div class="ps-d">Tripletex v2</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🧰</div><div class="ps-n">MCP Tools</div><div class="ps-d">35+ verktøy eksponert</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🛡️</div><div class="ps-n">Rate-limit</div><div class="ps-d">Token-bucket · cache</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">💼</div><div class="ps-n">tripletex-mcp</div><div class="ps-d">Til LLM</div></div>
+    </div>
+    <div class="modal-meta">
+      <div class="mm"><span class="mm-k">Operasjoner</span><span class="mm-v">Faktura · ordre · regnskap · timer</span></div>
+      <div class="mm"><span class="mm-k">Modus</span><span class="mm-v">Lese + skrive (med bekreftelse)</span></div>
+      <div class="mm"><span class="mm-k">Sanntid</span><span class="mm-v">Direkte mot Tripletex Live</span></div>
+      <div class="mm"><span class="mm-k">Tilgang</span><span class="mm-v">Bygd som MCP — Claude-native</span></div>
+    </div>
+  </div>
+
+  <!-- EPOSTAGENT -->
+  <div class="modal" data-modal-id="epost" style="--c:#ff6b35" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Lukk">✕</button>
+    <div class="modal-head">
+      <div class="modal-tag">05 · E-POST</div>
+      <h3>Epostagent <span class="modal-sub">— Innboks som tenker selv</span></h3>
+      <p>Sortering, prioritering og auto-svar — i ansattes egen stil.</p>
+    </div>
+    <div class="modal-pipe">
+      <div class="pipe-step"><div class="ps-i">📥</div><div class="ps-n">Inbox</div><div class="ps-d">Microsoft 365 · IMAP</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🏷️</div><div class="ps-n">Klassifisering</div><div class="ps-d">Type · prioritet · prosjekt</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">🧠</div><div class="ps-n">Kontekst</div><div class="ps-d">Tråd + Loki-oppslag</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">✍️</div><div class="ps-n">Drafting</div><div class="ps-d">I ansattes stemme</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">📬</div><div class="ps-n">epost-mcp</div><div class="ps-d">Triage + svar</div></div>
+    </div>
+    <div class="modal-meta">
+      <div class="mm"><span class="mm-k">Kobling</span><span class="mm-v">Microsoft 365 · Gmail · IMAP</span></div>
+      <div class="mm"><span class="mm-k">Læring</span><span class="mm-v">Stil per ansatt — fra historikk</span></div>
+      <div class="mm"><span class="mm-k">Oppgaver</span><span class="mm-v">Konverterer e-post til to-do</span></div>
+      <div class="mm"><span class="mm-k">Møter</span><span class="mm-v">Oppsummerer & følger opp</span></div>
+    </div>
+  </div>
+
+  <!-- KI TILBUD -->
+  <div class="modal" data-modal-id="ki" style="--c:#1f8a3a" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Lukk">✕</button>
+    <div class="modal-head">
+      <div class="modal-tag">06 · NY · ANBUD</div>
+      <h3>KI Tilbud <span class="modal-sub">— Tilbud & anbud, automatisk</span></h3>
+      <p>Fra forespørsel til signaturklart tilbud — i ett gjennomløp.</p>
+    </div>
+    <div class="modal-pipe">
+      <div class="pipe-step"><div class="ps-i">📨</div><div class="ps-n">Forespørsel</div><div class="ps-d">Doseanmodning · BVP</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">📚</div><div class="ps-n">Loki + Nova</div><div class="ps-d">Referanser + krav hentet</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">💰</div><div class="ps-n">Tripletex</div><div class="ps-d">Timepriser + påslag</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">📐</div><div class="ps-n">Kalkulasjon</div><div class="ps-d">NS 3450 · poster + risiko</div></div>
+      <div class="pipe-arrow"></div>
+      <div class="pipe-step"><div class="ps-i">📄</div><div class="ps-n">Tilbudsdok</div><div class="ps-d">PDF · klar til signering</div></div>
+    </div>
+    <div class="modal-meta">
+      <div class="mm"><span class="mm-k">Standarder</span><span class="mm-v">NS 8400 · NS 8401 · NS 3450</span></div>
+      <div class="mm"><span class="mm-k">Output</span><span class="mm-v">Komplett tilbud · vedlegg · risiko</span></div>
+      <div class="mm"><span class="mm-k">Tid</span><span class="mm-v">Fra dager til timer</span></div>
+      <div class="mm"><span class="mm-k">Kobling</span><span class="mm-v">Bruker Loki + Nova + Tripletex</span></div>
+    </div>
+  </div>
+</div>
 
 <script src="/js/main.js"></script>
 </body>
