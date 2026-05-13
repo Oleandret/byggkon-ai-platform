@@ -2,42 +2,82 @@
 import { agents } from '../data/agents';
 const year = new Date().getFullYear();
 ---
-<footer class="bg-ink text-[#c5cad6] py-16 pb-6">
-  <div class="wrap grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-    <div>
-      <a href="/" class="inline-flex items-center gap-1 font-extrabold text-white">
-        <img
-          src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/697229961ae6d73bf69636e8_BYGG-KON%20Logo%20W%26W.png"
-          alt="BYGG-KON"
-          class="h-7"
-        />
-        <span class="text-2xl font-extrabold text-yellow leading-none">.ai</span>
-      </a>
-      <p class="text-sm text-[#8b94a8] mt-4 leading-relaxed max-w-sm">
-        Travbaneveien 3 · 4031 Stavanger<br>
-        <a href="tel:+4751974400" class="hover:text-white">+47 51 97 44 00</a>
-      </p>
-    </div>
+<footer class="border-t border-line bg-white">
+  <div class="wrap py-16 lg:py-20">
 
-    <div>
-      <h5 class="font-mono text-[11px] font-bold tracking-[0.18em] uppercase text-white mb-4">Agenter</h5>
-      {agents.map(a => (
-        <a href={`/agent/${a.slug}`} class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">
-          {a.name}
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+
+      <!-- Brand col -->
+      <div class="md:col-span-4">
+        <a href="/" class="inline-flex items-center gap-1 mb-5">
+          <img
+            src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/6971e131952541e3a72f462b_Navigation.png"
+            alt="BYGG-KON"
+            class="h-8 brightness-0"
+          />
+          <span class="text-2xl font-extrabold text-red leading-none">.ai</span>
         </a>
-      ))}
+        <p class="text-[15px] text-ink-3 leading-relaxed max-w-sm">
+          Intern AI-plattform for BYGG-KONs ansatte. Seks agenter koblet til Claude
+          via MCP &mdash; for raskere dokumentasjon og bedre kvalitet.
+        </p>
+      </div>
+
+      <!-- Snarveier -->
+      <div class="md:col-span-2">
+        <h5 class="text-sm font-bold text-ink mb-4">Snarveier</h5>
+        <div class="flex flex-col gap-2.5">
+          <a href="/" class="text-[14px] text-ink-3 hover:text-ink transition-colors">Hjem</a>
+          <a href="/#agenter" class="text-[14px] text-ink-3 hover:text-ink transition-colors">Agenter</a>
+          <a href="/#eksempler" class="text-[14px] text-ink-3 hover:text-ink transition-colors">Eksempler</a>
+          <a href="/#om" class="text-[14px] text-ink-3 hover:text-ink transition-colors">Om plattformen</a>
+          <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="text-[14px] text-ink-3 hover:text-ink transition-colors">byggkon.no ↗</a>
+        </div>
+      </div>
+
+      <!-- Agenter -->
+      <div class="md:col-span-3">
+        <h5 class="text-sm font-bold text-ink mb-4">Agenter</h5>
+        <div class="flex flex-col gap-2.5">
+          {agents.map(a => (
+            <a href={`/agent/${a.slug}`} class="text-[14px] text-ink-3 hover:text-ink transition-colors inline-flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full" style={`background:${a.color}`}></span>
+              {a.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="md:col-span-3">
+        <h5 class="text-sm font-bold text-ink mb-4">Kontakt</h5>
+        <div class="space-y-3">
+          <div class="flex items-start gap-2.5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1f8a3a" stroke-width="2.5" class="mt-0.5 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span class="text-[14px] text-ink-3">Travbaneveien 3<br>4031 Stavanger</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2.5" class="flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+4751974400" class="text-[14px] text-ink-3 hover:text-ink transition-colors">+47 51 97 44 00</a>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f5b400" stroke-width="2.5" class="flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:oat@byggkon.no" class="text-[14px] text-ink-3 hover:text-ink transition-colors">oat@byggkon.no</a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div>
-      <h5 class="font-mono text-[11px] font-bold tracking-[0.18em] uppercase text-white mb-4">BYGG-KON</h5>
-      <a href="https://www.byggkon.no/tjenester" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Tjenester</a>
-      <a href="https://www.byggkon.no/referanser" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Referanser</a>
-      <a href="https://www.byggkon.no/om-oss" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Om oss</a>
-      <a href="https://www.byggkon.no/karriere" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Karriere</a>
+    <!-- Bottom bar -->
+    <div class="pt-6 border-t border-line flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <span class="text-xs text-ink-3">© {year} BYGG-KON AS. Alle rettigheter reservert.</span>
+      <div class="flex items-center gap-5 text-xs text-ink-3">
+        <a href="https://www.byggkon.no/personvern" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Personvern</a>
+        <a href="https://www.byggkon.no/informasjonskapsler" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Informasjonskapsler</a>
+        <a href="https://www.byggkon.no/vilkar" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Vilkår</a>
+      </div>
     </div>
-  </div>
-  <div class="wrap pt-6 border-t border-white/[0.06] flex flex-col md:flex-row justify-between gap-2 font-mono text-[11px] text-[#6b7488] tracking-wider">
-    <span>© {year} BYGG-KON AS</span>
-    <span>Astro · Tailwind · Railway</span>
+
   </div>
 </footer>

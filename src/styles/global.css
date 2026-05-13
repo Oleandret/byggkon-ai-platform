@@ -3,56 +3,80 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  html { scroll-behavior: smooth; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: theme('colors.ink');
+    background: #ffffff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'ss01', 'cv11';
   }
-  ::selection {
-    background: theme('colors.yellow');
-    color: theme('colors.ink');
-  }
+  img, svg { display: block; max-width: 100%; }
+  ::selection { background: theme('colors.yellow'); color: theme('colors.ink'); }
 }
 
 @layer components {
-  .wrap { @apply max-w-wrap mx-auto px-7; }
+  .wrap { @apply max-w-wrap mx-auto px-6 md:px-8; }
+
+  /* Eyebrow — small label above headings (byggkon.no style) */
   .eyebrow {
-    @apply font-mono text-xs font-semibold tracking-[0.18em] uppercase text-loki;
+    @apply text-sm font-medium text-ink-3;
+    letter-spacing: 0.01em;
   }
-  .btn {
-    @apply inline-flex items-center gap-2 rounded-full font-semibold transition-all px-6 py-3 text-sm whitespace-nowrap;
-  }
-  .btn-primary {
-    @apply bg-ink text-white hover:-translate-y-px hover:shadow-[0_14px_36px_rgba(10,16,30,0.08)];
-  }
-  .btn-ghost {
-    @apply text-ink border border-[var(--line)] hover:border-ink hover:bg-soft;
-  }
+
+  /* Headings — byggkon.no uses tight, modern editorial weights */
   .h1 {
-    @apply font-extrabold text-ink leading-[0.98] tracking-[-0.04em];
-    font-size: clamp(42px, 7vw, 92px);
+    @apply font-extrabold text-ink;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
   }
   .h2 {
-    @apply font-extrabold text-ink leading-[1.1] tracking-[-0.025em];
-    font-size: clamp(30px, 4vw, 50px);
+    @apply font-extrabold text-ink;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
+  .h3 {
+    @apply font-bold text-ink;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  /* Body / lede */
   .lede {
-    @apply text-ink-3 max-w-[620px] leading-[1.55];
-    font-size: clamp(15px, 1.5vw, 18px);
+    @apply text-ink-2 leading-relaxed;
+    font-size: clamp(16px, 1.4vw, 18px);
   }
-  .status-dot {
-    @apply inline-block w-[7px] h-[7px] rounded-full;
-    box-shadow: 0 0 6px currentColor;
-    animation: pulseDot 1.8s ease-in-out infinite;
+
+  /* Buttons — byggkon.no style */
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm transition-all whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply bg-ink text-white hover:bg-black;
+  }
+  .btn-secondary {
+    @apply bg-white text-ink border border-line hover:border-ink;
+  }
+
+  /* Link with arrow (byggkon.no signature pattern) */
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-ink font-semibold text-sm transition-all;
+  }
+  .link-arrow::after {
+    content: '→';
+    transition: transform .2s ease;
+  }
+  .link-arrow:hover::after {
+    transform: translateX(3px);
   }
 }
 
 :root {
-  --line: rgba(10, 14, 22, 0.08);
+  --line: rgba(20, 24, 32, 0.10);
 }
 
-/* Scroll offset for fixed header */
 section[id] { scroll-margin-top: 80px; }

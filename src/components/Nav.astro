@@ -1,38 +1,37 @@
 ---
-const path = Astro.url.pathname;
-const isHome = path === '/' || path === '';
+// Nav matched to byggkon.no — clean, light, sticky
 ---
-<header class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-white/85 border-b border-transparent transition-colors" id="nav">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-transparent transition-all" id="nav">
   <div class="wrap flex items-center justify-between py-4 gap-6">
-    <a href="/" class="flex items-center gap-1 font-extrabold tracking-tight">
+    <a href="/" class="flex items-center gap-1 group">
       <img
         src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/6971e131952541e3a72f462b_Navigation.png"
         alt="BYGG-KON"
-        class="h-7 brightness-0"
+        class="h-8 brightness-0"
       />
-      <span class="text-2xl font-extrabold text-loki leading-none ml-0.5">.ai</span>
+      <span class="text-2xl font-extrabold text-red leading-none ml-0.5">.ai</span>
     </a>
 
-    <nav class="hidden md:flex gap-7 text-sm text-ink-2 font-medium">
-      <a href="/#agenter" class="hover:text-ink transition-colors">Agentene</a>
-      <a href="/#pipeline" class="hover:text-ink transition-colors">Pipeline</a>
-      <a href="/#stack" class="hover:text-ink transition-colors">Stack</a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-ink-2 font-medium">
+      <a href="/" class="hover:text-ink transition-colors">Hjem</a>
+      <a href="/#agenter" class="hover:text-ink transition-colors">Agenter</a>
+      <a href="/#eksempler" class="hover:text-ink transition-colors">Eksempler</a>
+      <a href="/#om" class="hover:text-ink transition-colors">Om plattformen</a>
       <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="hover:text-ink transition-colors">byggkon.no ↗</a>
     </nav>
 
-    <a href="/#kontakt" class="btn btn-primary text-xs px-4 py-2">
-      Kontakt
-    </a>
+    <a href="/#kontakt" class="btn btn-primary text-sm">Kom i gang</a>
   </div>
 </header>
 
 <script>
   const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (!nav) return;
-    if (window.scrollY > 8) nav.classList.add('shadow-sm', 'border-[var(--line)]');
-    else nav.classList.remove('shadow-sm', 'border-[var(--line)]');
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  if (nav) {
+    const onScroll = () => {
+      if (window.scrollY > 12) nav.classList.add('border-line');
+      else nav.classList.remove('border-line');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 </script>

@@ -4,34 +4,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink:     '#0e1116',
-        'ink-2': '#3a4150',
-        'ink-3': '#6b7280',
-        'ink-4': '#9aa3b2',
-        line:    'rgba(10, 14, 22, 0.08)',
-        soft:    '#f7f8fa',
-        loki:    '#c8102e',
-        nova:    '#f5b400',
-        hilde:   '#0a6cf0',
-        tt:      '#7a3fc8',
-        fx:      '#ff6b35',
-        ki:      '#1f8a3a',
-        yellow:  '#f5b400'
+        // Editorial
+        ink:    '#1a1d23',
+        'ink-2':'#3a4150',
+        'ink-3':'#6b7280',
+        'ink-4':'#9aa3b2',
+        line:   'rgba(20, 24, 32, 0.10)',
+        soft:   '#f6f7f8',
+        cream:  '#fafaf8',
+
+        // Brand accents (byggkon.no icon palette)
+        green:  '#1f8a3a',
+        red:    '#c8102e',
+        yellow: '#f5b400',
+        blue:   '#0a6cf0',
+        purple: '#7a3fc8',
+        orange: '#ff6b35',
+
+        // Agent slots (aliases)
+        loki:   '#c8102e',
+        nova:   '#f5b400',
+        hilde:  '#0a6cf0',
+        tt:     '#7a3fc8',
+        fx:     '#ff6b35',
+        ki:     '#1f8a3a'
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
       },
       maxWidth: {
         wrap: '1240px'
       },
-      animation: {
-        'fade-up': 'fadeUp 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1) both',
-        'pulse-dot': 'pulseDot 1.8s ease-in-out infinite'
-      },
-      keyframes: {
-        fadeUp:   { from: { opacity: '0', transform: 'translateY(20px)' }, to: { opacity: '1', transform: 'none' } },
-        pulseDot: { '0%, 100%': { opacity: '1', transform: 'scale(1)' }, '50%': { opacity: '.55', transform: 'scale(1.25)' } }
+      letterSpacing: {
+        tightest: '-0.03em',
+        tighter:  '-0.02em'
       }
     }
   },

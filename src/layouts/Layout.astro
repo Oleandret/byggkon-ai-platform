@@ -8,7 +8,10 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'BYGG-KON AI-plattform. Loki, Nova, Hilde, Tripletex, Epostagent og KI Tilbud — MCP-koblet til Claude.' } = Astro.props;
+const {
+  title,
+  description = 'BYGG-KON.ai — AI-plattform bygd på 40 års byggfaglig erfaring. Loki, Nova, Hilde, Tripletex, Epostagent og KI Tilbud koblet til Claude via MCP.'
+} = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="no">
@@ -21,9 +24,9 @@ const { title, description = 'BYGG-KON AI-plattform. Loki, Nova, Hilde, Triplete
   <title>{title}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-white text-ink antialiased">
+<body>
   <Nav />
   <main>
     <slot />

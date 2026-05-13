@@ -1,117 +1,86 @@
 # BYGG-KON.ai
 
-Astro-bygget nettside for BYGG-KONs AI-plattform. Lyst byggkon.no-tema, komponentstruktur, egne sider per agent.
+Astro-bygget nettside for BYGG-KONs AI-plattform. Design speilet etter [byggkon.no](https://www.byggkon.no) — ren, profesjonell, lyst tema.
 
 ## Stack
 
-- **Astro 4** med `@astrojs/node` standalone-adapter
-- **Tailwind CSS 3** for styling
-- **TypeScript** for type-sikre datafiler
-- **Railway** for deploy (eller hvilken som helst Node-host)
+- **Astro 4** + `@astrojs/node` standalone-adapter
+- **Tailwind CSS 3**
+- **TypeScript**
+- **Railway** for deploy
+
+## Sider
+
+- `/` &mdash; Landing (Hero, Tjenester, Eksempler, Om, CTA)
+- `/agent/loki`, `/agent/nova`, `/agent/hilde`, `/agent/tripletex`, `/agent/epost`, `/agent/ki-tilbud` &mdash; agent-detaljsider med pipeline og tekniske detaljer
+
+## Lokalt
+
+```bash
+npm install
+npm run dev          # http://localhost:4321
+npm run build
+npm start            # http://localhost:3000
+```
+
+## Deploy
+
+```bash
+git add .
+git commit -m "Rebuild: byggkon.no-inspired design"
+git push
+```
+
+Railway leser `nixpacks.toml` og bygger automatisk.
 
 ## Struktur
 
 ```
-byggkon-ai-platform/
-├── astro.config.mjs
-├── tailwind.config.mjs
-├── tsconfig.json
-├── package.json
-├── nixpacks.toml
-├── railway.json
-├── README.md
-└── src/
-    ├── data/
-    │   └── agents.ts            # Sentral kilde for alle agentdata
-    ├── layouts/
-    │   └── Layout.astro         # Felles HTML-skall
-    ├── components/
-    │   ├── Nav.astro
-    │   ├── Hero.astro
-    │   ├── AgentCard.astro
-    │   ├── AgentGrid.astro
-    │   ├── Pipeline.astro
-    │   ├── Stack.astro
-    │   ├── CTA.astro
-    │   └── Footer.astro
-    ├── pages/
-    │   ├── index.astro          # /
-    │   └── agent/[slug].astro   # /agent/loki, /agent/nova, osv.
-    └── styles/
-        └── global.css           # Tailwind + base styles
+src/
+├── data/agents.ts            # Sentral kilde for alle 6 agenter
+├── layouts/Layout.astro      # HTML-skall + Inter-font + nav/footer
+├── components/
+│   ├── Nav.astro             # Sticky header
+│   ├── Hero.astro            # Split-screen hero med arkitektur-illustrasjon
+│   ├── Tjenester.astro       # 6-kort agent-grid (byggkon.no Tjenester-style)
+│   ├── Eksempler.astro       # 4 case-cards med mock-dokumenter (Referanser-style)
+│   ├── Om.astro              # Om plattformen med mini-arkitektur
+│   ├── CTA.astro             # Kontakt-blokk
+│   └── Footer.astro          # 4-kol footer matchet til byggkon.no
+├── pages/
+│   ├── index.astro           # /
+│   └── agent/[slug].astro    # /agent/[loki|nova|...]
+└── styles/global.css         # Tailwind + base
 ```
 
-## Sider
+## Designvalg
 
-- `/` — landingsside (hero, agentgrid, pipeline-demo, stack, CTA)
-- `/agent/loki` — dedikert Loki-side med pipeline + detaljer
-- `/agent/nova` — Nova
-- `/agent/hilde` — Hilde
-- `/agent/tripletex` — Tripletex
-- `/agent/epost` — Epostagent
-- `/agent/ki-tilbud` — KI Tilbud
+- **Typografi**: Inter (samme som byggkon.no's modern editorial look)
+- **Farger**: Hvit base, sort tekst, BYGG-KONs ikonpalett (grønn/rød/gul/blå/lilla/oransje) som aksenter
+- **Layout**: Generøs padding, 3-col grids, runde hjørner (2xl)
+- **Komponenter**: Hovers løfter kort, link-arrows på CTA-er, ingen distraherende animasjoner
 
-Hver agent har en egen, fokusert side med pipeline-diagram, tekniske detaljer og lenker til relaterte agenter.
+## Endre tema-farger
 
-## Lokal utvikling
+Tailwind-config: `tailwind.config.mjs` → `theme.extend.colors`. Per-agent hex-fargen ligger i `src/data/agents.ts`.
 
-```bash
-# Klon eller pull endringene
-git pull
+## Legge til en agent
 
-# Installer (Astro + Tailwind + node-adapter)
-npm install
+Rediger `src/data/agents.ts`. Ny side på `/agent/[slug]` genereres automatisk. Legg til ikon-SVG i `src/components/Tjenester.astro`.
 
-# Dev-server (hot reload)
-npm run dev
-# → http://localhost:4321
+## Gamle filer fra forrige iterasjon
 
-# Bygg
-npm run build
-
-# Test prod-build lokalt
-npm start
-# → http://localhost:3000
-```
-
-## Deploy til Railway
-
-Push til GitHub — Railway oppdager automatisk endringene:
-
-```bash
-git add .
-git commit -m "Rebuild: Astro + Tailwind, component-based, agent pages"
-git push
-```
-
-Railway leser `nixpacks.toml`:
-1. Installerer Node 20 + alle dependencies (inkl. dev for Astro-bygg)
-2. Kjører `npm run build` (Astro bygger til `dist/`)
-3. Starter med `npm start` (kjører `dist/server/entry.mjs` på `PORT` fra env)
-
-## Migrering fra forrige versjon
-
-Den gamle versjonen brukte:
-- `server.js` (Express)
-- `public/index.html` (én stor side)
-- `public/css/styles.css`
-- `public/js/main.js`, `public/js/animations.js`
-
-Disse filene er nå ubrukte. Kan trygt slettes:
+Disse er ikke lenger i bruk og kan slettes:
+- `server.js`
+- `public/index.html`, `public/css/`, `public/js/`
+- `src/components/AgentCard.astro`, `AgentGrid.astro`, `Pipeline.astro`, `Stack.astro` (erstattet av nye komponenter)
 
 ```bash
 git rm server.js
 git rm -r public/
-git commit -m "Cleanup: remove legacy single-file setup"
+git rm src/components/AgentCard.astro src/components/AgentGrid.astro src/components/Pipeline.astro src/components/Stack.astro
+git commit -m "Cleanup: remove legacy components"
 ```
-
-## Legge til en ny agent
-
-Rediger `src/data/agents.ts` — legg til en ny entry i `agents`-arrayen. En ny side på `/agent/[slug]` genereres automatisk. Husk å legge til ikon i `src/components/AgentGrid.astro` om du vil ha den i grid-en.
-
-## Endre tema-farger
-
-Rediger `tailwind.config.mjs` → `theme.extend.colors`. Brand-fargene for hver agent ligger som hex-strenger i `src/data/agents.ts`.
 
 ## Lisens
 

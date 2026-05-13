@@ -1,0 +1,134 @@
+---
+// Om plattformen — speiler byggkon.no's "Folkene bak prosjektene"
+---
+<section id="om" class="py-20 lg:py-28 bg-cream">
+  <div class="wrap grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-20 items-center">
+
+    <!-- LEFT: Visual block -->
+    <div class="aspect-square bg-white rounded-3xl border border-line p-10 flex flex-col justify-between">
+      <div>
+        <div class="text-sm font-mono text-ink-3 mb-1">// Plattformen</div>
+        <div class="text-xl font-bold text-ink">Hvordan det fungerer</div>
+      </div>
+
+      <!-- Mini-architecture diagram -->
+      <div class="flex-1 flex items-center justify-center my-6">
+        <svg viewBox="0 0 360 240" class="w-full h-full max-h-[240px]">
+          <!-- Bottom row: 6 agents -->
+          <g>
+            <rect x="20"  y="180" width="46" height="38" rx="6" fill="#fff" stroke="#c8102e" stroke-width="2"/>
+            <text x="43"  y="204" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1d23">Loki</text>
+            <rect x="78"  y="180" width="46" height="38" rx="6" fill="#fff" stroke="#f5b400" stroke-width="2"/>
+            <text x="101" y="204" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1d23">Nova</text>
+            <rect x="136" y="180" width="46" height="38" rx="6" fill="#fff" stroke="#0a6cf0" stroke-width="2"/>
+            <text x="159" y="204" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1d23">Hilde</text>
+            <rect x="194" y="180" width="46" height="38" rx="6" fill="#fff" stroke="#7a3fc8" stroke-width="2"/>
+            <text x="217" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">Triple-</text>
+            <text x="217" y="211" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">tex</text>
+            <rect x="252" y="180" width="46" height="38" rx="6" fill="#fff" stroke="#ff6b35" stroke-width="2"/>
+            <text x="275" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">Epost-</text>
+            <text x="275" y="211" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">agent</text>
+            <rect x="310" y="180" width="46" height="38" rx="6" fill="#fff" stroke="#1f8a3a" stroke-width="2"/>
+            <text x="333" y="200" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">KI</text>
+            <text x="333" y="211" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">Tilbud</text>
+          </g>
+
+          <!-- Connecting lines up to MCP layer -->
+          <g stroke="#1a1d23" stroke-opacity="0.15" stroke-width="1">
+            <line x1="43"  y1="180" x2="43"  y2="130"/>
+            <line x1="101" y1="180" x2="101" y2="130"/>
+            <line x1="159" y1="180" x2="159" y2="130"/>
+            <line x1="217" y1="180" x2="217" y2="130"/>
+            <line x1="275" y1="180" x2="275" y2="130"/>
+            <line x1="333" y1="180" x2="333" y2="130"/>
+          </g>
+
+          <!-- MCP layer -->
+          <rect x="20" y="100" width="336" height="30" rx="6" fill="#f5b400" fill-opacity="0.10" stroke="#f5b400" stroke-opacity="0.45"/>
+          <text x="188" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#8a6300">MCP-protokoll</text>
+
+          <!-- Connecting line up to Claude -->
+          <line x1="188" y1="100" x2="188" y2="70" stroke="#1a1d23" stroke-opacity="0.25" stroke-width="1.5"/>
+
+          <!-- Claude top -->
+          <rect x="138" y="22" width="100" height="48" rx="24" fill="#1a1d23"/>
+          <text x="188" y="44" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Claude</text>
+          <text x="188" y="59" text-anchor="middle" font-size="9" font-weight="500" fill="#9aa3b2">Opus 4.7</text>
+        </svg>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 pt-5 border-t border-line">
+        <div class="text-center">
+          <div class="text-xl font-extrabold text-ink leading-none">6</div>
+          <div class="text-xs text-ink-3 mt-1">Agenter</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xl font-extrabold text-ink leading-none">76k</div>
+          <div class="text-xs text-ink-3 mt-1">Linjer kode</div>
+        </div>
+        <div class="text-center">
+          <div class="text-xl font-extrabold text-ink leading-none">2,4M</div>
+          <div class="text-xs text-ink-3 mt-1">Vektorer</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Text -->
+    <div>
+      <div class="eyebrow mb-3">Om plattformen</div>
+      <h2 class="h2 mb-6">Bygd av oss, for oss.</h2>
+      <p class="text-lg text-ink-2 leading-relaxed mb-5">
+        Plattformen er ikke kj&oslash;pt &mdash; den er bygget internt i BYGG-KON.
+        Vi har samlet 40 &aring;rs prosjekterfaring, faglig dokumentasjon og
+        intern beste praksis, og gjort det tilgjengelig for alle ansatte via Claude.
+      </p>
+      <p class="text-lg text-ink-2 leading-relaxed mb-8">
+        Hver agent er en MCP-server som eksponerer en del av virksomheten v&aring;r
+        til de ledende spr&aring;kmodellene &mdash; Claude, ChatGPT, Gemini.
+        Resultatet: en ansatt med plattformen kan p&aring; sekunder produsere det
+        som tidligere tok dager.
+      </p>
+
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="flex gap-3">
+          <span class="w-10 h-10 rounded-lg bg-green/10 flex items-center justify-center flex-shrink-0">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1f8a3a" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          </span>
+          <div>
+            <div class="font-bold text-ink">Egne MCP-servere</div>
+            <div class="text-sm text-ink-3 mt-0.5">Egenutviklet i Node.js</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="w-10 h-10 rounded-lg bg-red/10 flex items-center justify-center flex-shrink-0">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="2.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg>
+          </span>
+          <div>
+            <div class="font-bold text-ink">Norsk regelverk</div>
+            <div class="text-sm text-ink-3 mt-0.5">TEK17 · NS-standarder</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="w-10 h-10 rounded-lg bg-yellow/15 flex items-center justify-center flex-shrink-0">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5b400" stroke-width="2.5"><polyline points="13 2 13 9 20 9 11 22 11 15 4 15 13 2"/></svg>
+          </span>
+          <div>
+            <div class="font-bold text-ink">Sanntid</div>
+            <div class="text-sm text-ink-3 mt-0.5">Tripletex direkte koblet</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="w-10 h-10 rounded-lg bg-blue/10 flex items-center justify-center flex-shrink-0">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a6cf0" stroke-width="2.5"><path d="M3 3h18v18H3z"/><path d="M9 9h6v6H9z"/></svg>
+          </span>
+          <div>
+            <div class="font-bold text-ink">Vektorbasert</div>
+            <div class="text-sm text-ink-3 mt-0.5">pgvector · semantisk</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#kontakt" class="link-arrow">Ta kontakt for demo</a>
+    </div>
+  </div>
+</section>
