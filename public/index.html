@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BYGG-KON AI — Kunnskap. Kraft. Resultater.</title>
+<meta name="description" content="BYGG-KON AI-plattform. Slik samspiller byggkon.no, Loki AI, Nova AI Agent og byggkon.ai med Claude for å produsere dokumenter, brev, budsjetter, tilbud og mer.">
+<meta property="og:title" content="BYGG-KON AI — Kunnskap. Kraft. Resultater.">
+<meta property="og:description" content="Slik bruker BYGG-KON kunstig intelligens — fra fagkunnskap til ferdig dokument.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<!-- =================================================================== -->
+<!-- HEADER / NAV -->
+<!-- =================================================================== -->
+<header class="site-header" id="site-header">
+  <div class="container nav">
+    <a href="#" class="logo">
+      <span class="logo-mark"></span>
+      <span class="logo-text">BYGG-KON<span class="logo-dot">.ai</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#flyt">Flyten</a>
+      <a href="#systemer">Systemene</a>
+      <a href="#byggkonai">byggkon.ai</a>
+      <a href="#leveranser">Leveranser</a>
+      <a href="https://www.byggkon.no" target="_blank" rel="noopener">byggkon.no →</a>
+    </nav>
+    <a href="#kontakt" class="btn btn-primary nav-cta">Kom i gang</a>
+  </div>
+</header>
+
+<!-- =================================================================== -->
+<!-- HERO -->
+<!-- =================================================================== -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <canvas id="particles"></canvas>
+  </div>
+  <div class="container hero-inner">
+    <div class="badge">
+      <span class="dot"></span>
+      AI-Plattform · 2026
+    </div>
+    <h1 class="hero-title">
+      Fra <span class="accent">40 år</span> med fagkunnskap<br>
+      til <span class="accent">ferdig dokument</span> på sekunder.
+    </h1>
+    <p class="hero-sub">
+      BYGG-KON kobler hele sin samlede prosjekterfaring sammen med fire spesialiserte AI-systemer
+      og Claude som hjernen. Resultatet: dokumenter, brev, budsjetter, tilbud og rapporter —
+      profesjonelt levert, raskere enn noensinne.
+    </p>
+    <div class="hero-cta">
+      <a href="#flyt" class="btn btn-primary">Se hvordan det virker</a>
+      <a href="#systemer" class="btn btn-ghost">Utforsk systemene</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num" data-counter="40">40+</div>
+        <div class="stat-lbl">År erfaring</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-counter="4000">4000+</div>
+        <div class="stat-lbl">Prosjekter</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-counter="6">6</div>
+        <div class="stat-lbl">AI-systemer</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">∞</div>
+        <div class="stat-lbl">Muligheter</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Skroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- MAIN FLOW DIAGRAM -->
+<!-- =================================================================== -->
+<section class="section section-flow" id="flyt">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Flytdiagram</div>
+      <h2>Slik beveger <span class="accent">kunnskap</span> seg til <span class="accent">leveranse</span></h2>
+      <p>Fire kilder strømmer inn. Claude tolker, resonnerer og syntetiserer. Ferdige leveranser strømmer ut.</p>
+    </div>
+
+    <!-- THE BIG FLOW DIAGRAM -->
+    <div class="flow-diagram">
+
+      <!-- Layer: Sources -->
+      <div class="flow-layer">
+        <div class="flow-layer-label">01 · Kunnskapskildene</div>
+        <div class="sources-grid">
+
+          <div class="node-card node-knowledge" data-tilt>
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            </div>
+            <div class="node-label">Kunnskapsbase</div>
+            <h3 class="node-title">byggkon.no</h3>
+            <p class="node-desc">40 år med prosjekterfaring, fagstoff, regelverk og bransjeinnsikt — strukturert og søkbart.</p>
+            <div class="node-tags">
+              <span class="tag">4000+ prosjekter</span>
+              <span class="tag">Artikler</span>
+              <span class="tag">Referanser</span>
+            </div>
+          </div>
+
+          <div class="node-card node-loki" data-tilt>
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <div class="node-label">AI-Agent</div>
+            <h3 class="node-title">Loki AI</h3>
+            <p class="node-desc">Rask analyse, kreative løsninger og smart prosessering av byggfaglige problemstillinger.</p>
+            <div class="node-tags">
+              <span class="tag">Analyse</span>
+              <span class="tag">Resonnement</span>
+              <span class="tag">Lynrask</span>
+            </div>
+            <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener" class="node-link">Åpne Loki →</a>
+          </div>
+
+          <div class="node-card node-nova" data-tilt>
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="node-label">AI-Agent</div>
+            <h3 class="node-title">Nova AI</h3>
+            <p class="node-desc">Spesialisert agent for byggkonstruksjon — beregninger, regelverk, tekniske krav og dokumentstruktur.</p>
+            <div class="node-tags">
+              <span class="tag">Teknisk</span>
+              <span class="tag">Regelverk</span>
+              <span class="tag">Presisjon</span>
+            </div>
+            <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener" class="node-link">Åpne Nova →</a>
+          </div>
+
+          <div class="node-card node-byggkonai" data-tilt>
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="node-label">AI-Agent</div>
+            <h3 class="node-title">byggkon.ai</h3>
+            <p class="node-desc">Spesialagent som finner tomter, identifiserer eiere og avdekker utviklingsmuligheter — automatisk.</p>
+            <div class="node-tags">
+              <span class="tag">Tomter</span>
+              <span class="tag">Eiere</span>
+              <span class="tag">Matrikkel</span>
+            </div>
+            <a href="#byggkonai" class="node-link">Les mer →</a>
+          </div>
+
+          <div class="node-card node-tripletex" data-tilt>
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="node-label">MCP-Integrasjon</div>
+            <h3 class="node-title">Tripletex</h3>
+            <p class="node-desc">Direkte tilgang til økonomisystemet via MCP — fakturaer, regnskap, prosjekt­økonomi og timeføring i sanntid.</p>
+            <div class="node-tags">
+              <span class="tag">Regnskap</span>
+              <span class="tag">Fakturering</span>
+              <span class="tag">Sanntid</span>
+            </div>
+            <span class="node-link">MCP koblet ✓</span>
+          </div>
+
+          <div class="node-card node-fyxer" data-tilt>
+            <div class="node-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="node-label">AI-Agent</div>
+            <h3 class="node-title">Fyxer AI</h3>
+            <p class="node-desc">Intelligent e-postsystem som sorterer, prioriterer og skriver svar i din egen stemme. Aldri mer overfylt innboks.</p>
+            <div class="node-tags">
+              <span class="tag">E-post</span>
+              <span class="tag">Sortering</span>
+              <span class="tag">Auto-svar</span>
+            </div>
+            <span class="node-link">Aktiv ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connector 1: sources -> hub -->
+      <svg class="flow-connector" viewBox="0 0 1200 180" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- 6 paths from sources to hub (600,180) -->
+        <path d="M 100,0 C 100,90 600,90 600,180" class="conn-line" stroke="#1f8a3a"/>
+        <path d="M 100,0 C 100,90 600,90 600,180" class="conn-stream" stroke="#1f8a3a" style="animation-delay:0s"/>
+        <path d="M 300,0 C 300,90 600,90 600,180" class="conn-line" stroke="#c8102e"/>
+        <path d="M 300,0 C 300,90 600,90 600,180" class="conn-stream" stroke="#c8102e" style="animation-delay:-0.3s"/>
+        <path d="M 500,0 C 500,90 600,90 600,180" class="conn-line" stroke="#f5b400"/>
+        <path d="M 500,0 C 500,90 600,90 600,180" class="conn-stream" stroke="#f5b400" style="animation-delay:-0.6s"/>
+        <path d="M 700,0 C 700,90 600,90 600,180" class="conn-line" stroke="#0a6cf0"/>
+        <path d="M 700,0 C 700,90 600,90 600,180" class="conn-stream" stroke="#0a6cf0" style="animation-delay:-0.9s"/>
+        <path d="M 900,0 C 900,90 600,90 600,180" class="conn-line" stroke="#7a3fc8"/>
+        <path d="M 900,0 C 900,90 600,90 600,180" class="conn-stream" stroke="#7a3fc8" style="animation-delay:-1.2s"/>
+        <path d="M 1100,0 C 1100,90 600,90 600,180" class="conn-line" stroke="#ff6b35"/>
+        <path d="M 1100,0 C 1100,90 600,90 600,180" class="conn-stream" stroke="#ff6b35" style="animation-delay:-1.5s"/>
+      </svg>
+
+      <!-- Layer: Claude Hub -->
+      <div class="flow-layer">
+        <div class="flow-layer-label">02 · Hjernen</div>
+        <div class="hub-wrap">
+          <div class="hub">
+            <div class="hub-ring hub-ring-3"></div>
+            <div class="hub-ring hub-ring-2"></div>
+            <div class="hub-ring hub-ring-1"></div>
+            <div class="hub-core">
+              <div class="hub-logo">Claude</div>
+              <div class="hub-sub">Reasoning Engine</div>
+              <div class="hub-meta">
+                <div>Forstår kontekst</div>
+                <div>Skriver presist</div>
+                <div>Leverer ferdig</div>
+              </div>
+            </div>
+            <!-- Orbit dots -->
+            <div class="orbit orbit-1"><span></span></div>
+            <div class="orbit orbit-2"><span></span></div>
+            <div class="orbit orbit-3"><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connector 2: hub -> outputs -->
+      <svg class="flow-connector" viewBox="0 0 1200 180" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 600,0 C 600,90 100,90 100,180" class="conn-line" stroke="#111"/>
+        <path d="M 600,0 C 600,90 100,90 100,180" class="conn-stream" stroke="#1f8a3a" style="animation-delay:0s"/>
+        <path d="M 600,0 C 600,90 350,90 350,180" class="conn-line" stroke="#111"/>
+        <path d="M 600,0 C 600,90 350,90 350,180" class="conn-stream" stroke="#c8102e" style="animation-delay:-0.3s"/>
+        <path d="M 600,0 C 600,90 600,90 600,180" class="conn-line" stroke="#111"/>
+        <path d="M 600,0 L 600,180" class="conn-stream" stroke="#f5b400" style="animation-delay:-0.6s"/>
+        <path d="M 600,0 C 600,90 850,90 850,180" class="conn-line" stroke="#111"/>
+        <path d="M 600,0 C 600,90 850,90 850,180" class="conn-stream" stroke="#0a6cf0" style="animation-delay:-0.9s"/>
+        <path d="M 600,0 C 600,90 1100,90 1100,180" class="conn-line" stroke="#111"/>
+        <path d="M 600,0 C 600,90 1100,90 1100,180" class="conn-stream" stroke="#1f8a3a" style="animation-delay:-1.2s"/>
+      </svg>
+
+      <!-- Layer: Outputs -->
+      <div class="flow-layer">
+        <div class="flow-layer-label">03 · Leveranser · Klar til bruk</div>
+        <div class="outputs-grid" id="leveranser">
+          <div class="out-card"><div class="out-ico">📄</div><h4>Dokumenter</h4><p>FDV, HMS, tekniske beskrivelser</p></div>
+          <div class="out-card"><div class="out-ico">✉️</div><h4>Brev</h4><p>Profesjonell korrespondanse</p></div>
+          <div class="out-card"><div class="out-ico">💰</div><h4>Budsjetter</h4><p>Kostnadsestimat & kalkyler</p></div>
+          <div class="out-card"><div class="out-ico">📋</div><h4>Tilbud</h4><p>Anbud & pristilbud</p></div>
+          <div class="out-card"><div class="out-ico">📊</div><h4>Rapporter</h4><p>Status, fremdrift, analyse</p></div>
+          <div class="out-card"><div class="out-ico">📐</div><h4>Spesifikasjoner</h4><p>Tekniske krav & detaljer</p></div>
+          <div class="out-card"><div class="out-ico">🤝</div><h4>Kontrakter</h4><p>Avtaler & vilkår</p></div>
+          <div class="out-card"><div class="out-ico">✅</div><h4>Sjekklister</h4><p>Kvalitetsoppfølging</p></div>
+          <div class="out-card"><div class="out-ico">🗺️</div><h4>Tomteanalyse</h4><p>Eierskap & potensial</p></div>
+          <div class="out-card"><div class="out-ico">📅</div><h4>Fremdriftsplan</h4><p>Milepæler & kritisk vei</p></div>
+          <div class="out-card"><div class="out-ico">🧾</div><h4>Fakturaer</h4><p>Direkte fra Tripletex</p></div>
+          <div class="out-card"><div class="out-ico">📈</div><h4>Regnskapsrapport</h4><p>Tripletex sanntidsdata</p></div>
+          <div class="out-card"><div class="out-ico">⏱️</div><h4>Timesammendrag</h4><p>Prosjekt-timer & kost</p></div>
+          <div class="out-card"><div class="out-ico">📬</div><h4>E-postsvar</h4><p>Fyxer skriver i din stil</p></div>
+          <div class="out-card"><div class="out-ico">📥</div><h4>Innboks-triage</h4><p>Sortert & prioritert</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- THE SYSTEMS — Detailed cards -->
+<!-- =================================================================== -->
+<section class="section section-systems" id="systemer">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Systemene</div>
+      <h2>Fire spesialiserte <span class="accent">AI-systemer</span></h2>
+      <p>Hver med sitt eget oppdrag. Sammen er de noe helt nytt.</p>
+    </div>
+
+    <div class="systems-grid">
+
+      <article class="system-card" style="--accent: #1f8a3a;">
+        <div class="system-header">
+          <div class="system-num">01</div>
+          <div class="system-status"><span class="status-dot"></span>Live</div>
+        </div>
+        <h3>byggkon.no</h3>
+        <div class="system-role">Kunnskapsbasen</div>
+        <p>Hjertet i hele plattformen. Hele BYGG-KONs samlede fagkunnskap — fra 4000+ leverte prosjekter, artikler, referanser, intern dokumentasjon og bransjeerfaring.</p>
+        <ul class="system-features">
+          <li>40+ år med prosjektdata</li>
+          <li>Fagartikler & regelverk</li>
+          <li>Referanser & beste praksis</li>
+          <li>Strukturert & søkbart</li>
+        </ul>
+        <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="system-link">www.byggkon.no →</a>
+      </article>
+
+      <article class="system-card" style="--accent: #c8102e;">
+        <div class="system-header">
+          <div class="system-num">02</div>
+          <div class="system-status"><span class="status-dot"></span>Live</div>
+        </div>
+        <h3>Loki AI</h3>
+        <div class="system-role">Lynrask analyseagent</div>
+        <p>Spesialtrent AI-agent som analyserer, resonnerer og foreslår løsninger raskere enn du rekker å reise deg fra stolen.</p>
+        <ul class="system-features">
+          <li>Real-time analyse</li>
+          <li>Kreativ problemløsning</li>
+          <li>Tverrfaglig forståelse</li>
+          <li>API-tilkoblet Claude</li>
+        </ul>
+        <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener" class="system-link">Åpne Loki →</a>
+      </article>
+
+      <article class="system-card" style="--accent: #f5b400;">
+        <div class="system-header">
+          <div class="system-num">03</div>
+          <div class="system-status"><span class="status-dot"></span>Live</div>
+        </div>
+        <h3>Nova AI Agent</h3>
+        <div class="system-role">Bygg-konstruksjon</div>
+        <p>Spesialagent for byggkonstruksjon. Henter krav, beregner dimensjoner, sjekker mot regelverk og produserer ferdig teknisk underlag.</p>
+        <ul class="system-features">
+          <li>RIB-beregninger</li>
+          <li>TEK17 & forskrifter</li>
+          <li>Dokumentstrukturering</li>
+          <li>Kvalitetssikring</li>
+        </ul>
+        <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener" class="system-link">Åpne Nova →</a>
+      </article>
+
+      <article class="system-card" style="--accent: #0a6cf0;">
+        <div class="system-header">
+          <div class="system-num">04</div>
+          <div class="system-status"><span class="status-dot"></span>Live</div>
+        </div>
+        <h3>byggkon.ai</h3>
+        <div class="system-role">Tomter & eiere</div>
+        <p>Den nye spesialagenten som finner tomter, identifiserer eiere, sjekker reguleringsplaner og avdekker utviklingsmuligheter — automatisk.</p>
+        <ul class="system-features">
+          <li>Matrikkel-integrasjon</li>
+          <li>Eierhistorikk</li>
+          <li>Reguleringsanalyse</li>
+          <li>Markedsverdivurdering</li>
+        </ul>
+        <a href="#byggkonai" class="system-link">Utforsk byggkon.ai →</a>
+      </article>
+
+      <article class="system-card" style="--accent: #7a3fc8;">
+        <div class="system-header">
+          <div class="system-num">05</div>
+          <div class="system-status"><span class="status-dot"></span>MCP koblet</div>
+        </div>
+        <h3>Tripletex</h3>
+        <div class="system-role">Økonomisystem via MCP</div>
+        <p>Direkte koblet inn via Model Context Protocol. Claude kan hente fakturaer, regnskapstall, prosjektøkonomi og timeføring i sanntid — og produsere rapporter på sekunder.</p>
+        <ul class="system-features">
+          <li>Sanntids regnskap</li>
+          <li>Faktura- & ordrehåndtering</li>
+          <li>Prosjektøkonomi</li>
+          <li>Timeføring & kostnader</li>
+        </ul>
+        <a href="https://tripletex.no" target="_blank" rel="noopener" class="system-link">tripletex.no →</a>
+      </article>
+
+      <article class="system-card" style="--accent: #ff6b35;">
+        <div class="system-header">
+          <div class="system-num">06</div>
+          <div class="system-status"><span class="status-dot"></span>Live</div>
+        </div>
+        <h3>Fyxer AI</h3>
+        <div class="system-role">E-postsystemet</div>
+        <p>AI-drevet innboks som sorterer, prioriterer og skriver svar i din egen stil. Fyxer leser kontekst og foreslår leveranser før du har bedt om dem.</p>
+        <ul class="system-features">
+          <li>Intelligent sortering</li>
+          <li>Auto-svar i din stil</li>
+          <li>Møteoppsummering</li>
+          <li>Oppgaver fra e-post</li>
+        </ul>
+        <a href="https://fyxer.com" target="_blank" rel="noopener" class="system-link">fyxer.com →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- BYGGKON.AI — Featured section -->
+<!-- =================================================================== -->
+<section class="section section-byggkonai" id="byggkonai">
+  <div class="container">
+    <div class="byggkonai-wrap">
+      <div class="byggkonai-text">
+        <div class="eyebrow eyebrow-blue">Nytt · byggkon.ai</div>
+        <h2>Finn riktig tomt. Finn riktig eier. <span class="accent-blue">Automatisk.</span></h2>
+        <p class="lead">byggkon.ai er BYGG-KONs nyeste AI-agent — bygget for å akselerere tidligfase. Den kombinerer matrikkeldata, reguleringsplaner, eierregistre og markedsdata, og leverer ferdige analyser klar til kunde.</p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-ico">🗺️</div>
+            <h4>Tomtesøk</h4>
+            <p>Finn tomter som matcher kriteriene dine — størrelse, regulering, beliggenhet, infrastruktur.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-ico">👤</div>
+            <h4>Eieridentifisering</h4>
+            <p>Få umiddelbar oversikt over eier, historikk, heftelser og kontaktinformasjon.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-ico">📐</div>
+            <h4>Reguleringsanalyse</h4>
+            <p>Hva er tillatt? Hva er potensialet? AI-en leser planene og oppsummerer på sekunder.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-ico">💎</div>
+            <h4>Verdivurdering</h4>
+            <p>Markedsverdi, utviklingspotensial og ROI-estimat — datadrevet og oppdatert.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual: Map-style mini diagram -->
+      <div class="byggkonai-visual">
+        <div class="map-card">
+          <div class="map-header">
+            <div class="map-title">
+              <span class="map-pulse"></span>
+              Live tomtesøk · Stavanger-regionen
+            </div>
+            <div class="map-counter">
+              <span id="lot-counter">247</span> tomter funnet
+            </div>
+          </div>
+          <svg class="map-svg" viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid -->
+            <defs>
+              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+              </pattern>
+              <radialGradient id="pinglow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#0a6cf0" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#0a6cf0" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="280" fill="url(#grid)"/>
+
+            <!-- Lot polygons -->
+            <g class="lots">
+              <polygon points="40,40 110,38 115,90 45,92" class="lot lot-found" />
+              <polygon points="120,40 200,42 198,85 118,88" class="lot" />
+              <polygon points="210,45 280,48 275,95 205,92" class="lot lot-found" />
+              <polygon points="290,50 360,52 355,100 285,98" class="lot" />
+              <polygon points="45,100 115,98 120,160 50,162" class="lot" />
+              <polygon points="125,95 200,95 195,150 120,155" class="lot lot-found lot-highlight" />
+              <polygon points="205,100 275,102 270,160 200,158" class="lot" />
+              <polygon points="280,105 360,108 355,165 280,162" class="lot" />
+              <polygon points="50,170 120,168 125,230 55,232" class="lot lot-found" />
+              <polygon points="130,165 200,165 198,225 125,225" class="lot" />
+              <polygon points="205,170 275,170 273,228 200,228" class="lot" />
+              <polygon points="280,175 360,175 358,230 275,230" class="lot lot-found" />
+            </g>
+
+            <!-- Animated pings -->
+            <g class="pings">
+              <circle cx="80" cy="65" r="6" class="ping-glow"/>
+              <circle cx="80" cy="65" r="3" class="ping-dot" style="animation-delay:0s"/>
+              <circle cx="245" cy="70" r="6" class="ping-glow"/>
+              <circle cx="245" cy="70" r="3" class="ping-dot" style="animation-delay:-0.7s"/>
+              <circle cx="160" cy="125" r="6" class="ping-glow"/>
+              <circle cx="160" cy="125" r="3" class="ping-dot" style="animation-delay:-1.4s"/>
+              <circle cx="320" cy="200" r="6" class="ping-glow"/>
+              <circle cx="320" cy="200" r="3" class="ping-dot" style="animation-delay:-2.1s"/>
+              <circle cx="85" cy="200" r="6" class="ping-glow"/>
+              <circle cx="85" cy="200" r="3" class="ping-dot" style="animation-delay:-2.8s"/>
+            </g>
+
+            <!-- Scanning line -->
+            <line x1="0" y1="0" x2="400" y2="0" class="scan-line"/>
+          </svg>
+
+          <div class="map-footer">
+            <div class="kv">
+              <div class="k">Eier</div>
+              <div class="v">Identifisert</div>
+            </div>
+            <div class="kv">
+              <div class="k">Regulering</div>
+              <div class="v">B/F/K</div>
+            </div>
+            <div class="kv">
+              <div class="k">Potensial</div>
+              <div class="v">Høyt</div>
+            </div>
+            <div class="kv">
+              <div class="k">Status</div>
+              <div class="v"><span class="status-live"></span>Live</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- WORKFLOW — Step by step -->
+<!-- =================================================================== -->
+<section class="section section-workflow">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Arbeidsflyt</div>
+      <h2>Fra <span class="accent">spørsmål</span> til <span class="accent">ferdig leveranse</span></h2>
+      <p>Fire steg. Ofte under ett minutt.</p>
+    </div>
+
+    <div class="workflow">
+      <div class="workflow-line" aria-hidden="true"></div>
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Spør</h4>
+        <p>Den ansatte stiller spørsmålet i naturlig språk. "Lag tilbud for utvidelse av Solås skole."</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Hent</h4>
+        <p>Claude orkestrerer. byggkon.no leverer kontekst. Loki analyserer. Nova beregner. byggkon.ai sjekker tomten.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Resonner</h4>
+        <p>Claude vurderer all input mot oppgaven, henter relevante maler og produserer utkast i BYGG-KONs stil.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Lever</h4>
+        <p>Ferdig dokument klart for gjennomgang og signering. Eksporteres til Word, PDF eller Excel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- CTA -->
+<!-- =================================================================== -->
+<section class="section section-cta" id="kontakt">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <div class="eyebrow">Klar?</div>
+        <h2>Bygd for dem som <span class="accent">bygger</span>.</h2>
+        <p>BYGG-KON AI er ikke en lek med teknologi — det er et arbeidsverktøy bygd for hverdagen til våre ansatte og kunder. La oss vise deg hvordan.</p>
+        <div class="cta-actions">
+          <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="btn btn-primary">Besøk byggkon.no</a>
+          <a href="mailto:oat@byggkon.no" class="btn btn-ghost">Ta kontakt</a>
+        </div>
+      </div>
+      <div class="cta-visual">
+        <div class="cta-logo-mark">
+          <svg viewBox="0 0 100 100">
+            <rect x="20" y="20" width="60" height="60" rx="4" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M30 70 L30 35 L50 25 L70 35 L70 70" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M40 70 L40 50 L60 50 L60 70" fill="none" stroke="currentColor" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================================== -->
+<!-- FOOTER -->
+<!-- =================================================================== -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <span class="logo-text">BYGG-KON<span class="logo-dot">.ai</span></span>
+      </div>
+      <p>Komplett rådgivning for byggherrer, entreprenører og offentlige aktører. Nå med AI-kraft.</p>
+    </div>
+    <div class="footer-col">
+      <h5>AI-Systemene</h5>
+      <a href="https://www.byggkon.no" target="_blank" rel="noopener">byggkon.no</a>
+      <a href="https://byggkon-loki-ai-production.up.railway.app/" target="_blank" rel="noopener">Loki AI</a>
+      <a href="https://nova-ai-agent-bygg-kon-production.up.railway.app/" target="_blank" rel="noopener">Nova AI Agent</a>
+      <a href="#byggkonai">byggkon.ai</a>
+      <a href="https://tripletex.no" target="_blank" rel="noopener">Tripletex (MCP)</a>
+      <a href="https://fyxer.com" target="_blank" rel="noopener">Fyxer AI</a>
+    </div>
+    <div class="footer-col">
+      <h5>BYGG-KON</h5>
+      <a href="https://www.byggkon.no/tjenester" target="_blank" rel="noopener">Tjenester</a>
+      <a href="https://www.byggkon.no/referanser" target="_blank" rel="noopener">Referanser</a>
+      <a href="https://www.byggkon.no/om-oss" target="_blank" rel="noopener">Om oss</a>
+      <a href="https://www.byggkon.no/karriere" target="_blank" rel="noopener">Karriere</a>
+    </div>
+    <div class="footer-col">
+      <h5>Kontakt</h5>
+      <p>Travbaneveien 3<br>4031 Stavanger</p>
+      <a href="tel:+4751974400">+47 51 97 44 00</a>
+      <a href="mailto:oat@byggkon.no">oat@byggkon.no</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 BYGG-KON AS · Alle rettigheter reservert.</span>
+    <span>Bygd med Claude · Deployet på Railway</span>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
