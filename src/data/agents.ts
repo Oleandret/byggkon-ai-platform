@@ -8,8 +8,8 @@ export type Agent = {
   tagline: string;
   description: string;
   status: AgentStatus;
-  color: string;     // hex
-  colorClass: string; // tailwind name (loki, nova, etc.)
+  color: string;
+  colorClass: string;
   meta: string;
   pipeline: { i: string; n: string; d: string }[];
   details: { k: string; v: string }[];
@@ -21,25 +21,28 @@ export const agents: Agent[] = [
     slug: 'loki',
     num: '01',
     name: 'Loki',
-    role: 'Intern kunnskap',
-    tagline: '40 år med BYGG-KONs ansattes arbeid — vektorisert, søkbart, levende.',
-    description: 'Loki samler all intern fagkunnskap fra prosjekter, notater, tegninger og beste praksis i én vektordatabase. Den er hjertet i hele plattformen.',
+    role: 'Kunnskapsmotor — OneDrive + SharePoint',
+    tagline: 'Hele tenant-en søkbar via vektorindeks.',
+    description: 'Loki synkroniserer hele BYGG-KONs OneDrive og SharePoint tenant-wide til en Pinecone-vektorindeks. Alle filer parses, embeddes og blir søkbare — du kan spørre "hva har vi gjort av tilsvarende prosjekter de siste 5 årene?" og få treff på faktisk innhold, ikke bare filnavn.',
     status: 'beta',
     color: '#c8102e',
     colorClass: 'loki',
-    meta: 'pgvector · 2,4M embeddings',
+    meta: 'Pinecone · OpenAI · Tenant-wide',
     pipeline: [
-      { i: '📁', n: 'Råkilde',    d: 'Prosjekter · tegninger · notater' },
-      { i: '🔍', n: 'Parser',     d: 'OCR · PDF · DOCX' },
-      { i: '🧮', n: 'Embedding',  d: 'text-embedding-3-large' },
-      { i: '🗄️', n: 'pgvector',   d: '2,4M vektorer · 1536-dim' },
-      { i: '⚡', n: 'loki-mcp',   d: 'Servert til LLM' }
+      { i: '🔍', n: 'Discovery',  d: 'Tenant-wide drive-enumerering' },
+      { i: '🔄', n: 'Delta sync', d: 'Per-drive, hver 10. min' },
+      { i: '📄', n: 'Parser',     d: 'Unstructured · hi_res for PDF' },
+      { i: '🧮', n: 'Embedding',  d: 'OpenAI text-embedding-3-large' },
+      { i: '🗄️', n: 'Pinecone',   d: 'Vektorindeks, søkbar' }
     ],
     details: [
-      { k: 'Stack',       v: 'Node.js · Postgres · pgvector' },
-      { k: 'Datavolum',   v: '2,4M embeddings · 40 år' },
-      { k: 'Oppdatering', v: 'Sanntid via webhooks' },
-      { k: 'Tilgang',     v: 'Via Claude · ChatGPT · Gemini' }
+      { k: 'Stack',       v: 'Python · FastAPI · Docker' },
+      { k: 'Vektorstore', v: 'Pinecone · 1536-dim' },
+      { k: 'Embeddings',  v: 'OpenAI text-embedding-3-large' },
+      { k: 'Parser',      v: 'Unstructured (PDF, DOCX, m.fl.)' },
+      { k: 'Kilder',      v: 'OneDrive + SharePoint via Microsoft Graph' },
+      { k: 'Scheduler',   v: 'APScheduler · hver 10. min default' },
+      { k: 'Tilgang',     v: 'Admin-UI + MCP-server (loki-mcp)' }
     ],
     url: 'https://byggkon-loki-ai-production.up.railway.app/'
   },
@@ -47,25 +50,28 @@ export const agents: Agent[] = [
     slug: 'nova',
     num: '02',
     name: 'Nova',
-    role: 'Offentlig kunnskap',
-    tagline: 'Hele det norske byggregelverket — vektorisert, oppdatert, alltid tilgjengelig.',
-    description: 'Nova holder hele det offentlige byggregelverket søkbart — TEK17, NS-standarder, BFE og DiBKs publikasjoner.',
+    role: 'Multi-kanal AI-assistent',
+    tagline: 'Nova svarer i chat, Teams, e-post og webhook.',
+    description: 'Nova er en RAG-basert AI-assistent som svarer på spørsmål fra ansatte via chat, Microsoft Teams, e-post (Gmail) eller webhook. Hun indekserer Google Drive nattlig og parser vedlegg fra e-post — PDF, Word, Excel — og bruker det som kontekst når hun genererer svar.',
     status: 'live',
     color: '#f5b400',
     colorClass: 'nova',
-    meta: 'TEK17 · NS · DiBK',
+    meta: 'Pinecone · Multi-kanal RAG',
     pipeline: [
-      { i: '🏛️', n: 'Kilder',     d: 'DiBK · Lovdata · NS-online' },
-      { i: '🤖', n: 'Scraper',    d: 'Daglig sync · diff' },
-      { i: '🧮', n: 'Embedding',  d: 'Paragraf-nivå chunking' },
-      { i: '🗄️', n: 'pgvector',   d: '890k vektorer' },
-      { i: '🚀', n: 'nova-mcp',   d: 'Sitatpresise svar' }
+      { i: '📩', n: 'Mottak',      d: 'Chat · Teams · Gmail · webhook' },
+      { i: '📎', n: 'Vedlegg',     d: 'PDF, Word, Excel, CSV parses' },
+      { i: '🔎', n: 'RAG-søk',    d: 'Pinecone retrieval' },
+      { i: '🧠', n: 'Generering',  d: 'OpenAI med kanal-spesifikk prompt' },
+      { i: '↩️', n: 'Levering',   d: 'Tilbake til samme kanal' }
     ],
     details: [
-      { k: 'Dekker',      v: 'TEK17 · SAK10 · BFE · NS' },
-      { k: 'Oppdatering', v: 'Daglig fra Lovdata + DiBK' },
-      { k: 'Sitat',       v: 'Hver påstand med kilde' },
-      { k: 'Tilgang',     v: 'Via Claude · ChatGPT · Gemini' }
+      { k: 'Stack',        v: 'Node.js 20 · Express · SQLite' },
+      { k: 'Vektorstore',  v: 'Pinecone' },
+      { k: 'LLM',          v: 'OpenAI (konfigurerbar modell)' },
+      { k: 'Kanaler',      v: 'Chat · Teams (Graph API) · Gmail · webhook' },
+      { k: 'Indeksering',  v: 'Nattlig Google Drive + e-post-vedlegg' },
+      { k: 'Sikkerhet',    v: 'AES-256-GCM kryptert credentials i SQLite' },
+      { k: 'Tilgang',      v: 'Admin-UI + MCP-server (nova-mcp)' }
     ],
     url: 'https://nova-ai-agent-bygg-kon-production.up.railway.app/'
   },
@@ -73,17 +79,17 @@ export const agents: Agent[] = [
     slug: 'hilde',
     num: '03',
     name: 'Hilde',
-    role: 'Eiendom & eiendomseiere',
+    role: 'Eiendom og eiendomseiere',
     tagline: 'Hun finner eiendom og eiendomseiere.',
-    description: 'Hilde sporer opp riktig eiendom og kobler den til eier. Henter matrikkeldata, grunnbokutskrift og kontaktinformasjon — automatisk og oppdatert.',
+    description: 'Hilde sporer opp riktig eiendom og kobler den til eier. Matrikkeldata, grunnbok og kontaktinformasjon hentes direkte fra Kartverket og Brønnøysund — automatisk og oppdatert.',
     status: 'live',
     color: '#0a6cf0',
     colorClass: 'hilde',
     meta: 'Matrikkel · grunnbok',
     pipeline: [
-      { i: '📍', n: 'Input',         d: 'Adresse · gnr/bnr' },
-      { i: '🗺️', n: 'Kartverket',    d: 'Matrikkel + grunnbok' },
-      { i: '🏢', n: 'Brønnøysund',   d: 'Eier · selskap' },
+      { i: '📍', n: 'Input',         d: 'Adresse, gnr/bnr eller område' },
+      { i: '🗺️', n: 'Kartverket',    d: 'Matrikkel og grunnbok' },
+      { i: '🏢', n: 'Brønnøysund',   d: 'Eier og selskap' },
       { i: '📊', n: 'Aggregator',    d: 'Konsolidert dossier' },
       { i: '🗺️', n: 'hilde-mcp',     d: 'Servert til Claude' }
     ],
@@ -98,9 +104,9 @@ export const agents: Agent[] = [
     slug: 'tripletex',
     num: '04',
     name: 'Tripletex',
-    role: 'Økonomi (MCP)',
-    tagline: 'Hele økonomisystemet eksponert som verktøy i samtalen.',
-    description: 'BYGG-KONs økonomisystem koblet direkte inn via Model Context Protocol. 35+ verktøy for faktura, regnskap, prosjektøkonomi og timeføring.',
+    role: 'Økonomi via MCP',
+    tagline: 'Økonomisystemet eksponert som verktøy i samtalen.',
+    description: 'Tripletex er koblet direkte inn via Model Context Protocol. Faktura, regnskap, prosjektøkonomi og timeføring blir tilgjengelig som verktøy Claude kan bruke i sanntid — alltid med bekreftelse før skriveoperasjoner.',
     status: 'live',
     color: '#7a3fc8',
     colorClass: 'tt',
@@ -108,13 +114,13 @@ export const agents: Agent[] = [
     pipeline: [
       { i: '🔑', n: 'OAuth',       d: 'Sikker autentisering' },
       { i: '🌐', n: 'REST API',    d: 'Tripletex v2' },
-      { i: '🧰', n: 'MCP Tools',   d: '35+ verktøy' },
-      { i: '🛡️', n: 'Rate-limit',  d: 'Token-bucket + cache' },
+      { i: '🧰', n: 'MCP Tools',   d: '35+ verktøy eksponert' },
+      { i: '🛡️', n: 'Rate-limit',  d: 'Token-bucket og cache' },
       { i: '💼', n: 'tripletex-mcp', d: 'Til LLM' }
     ],
     details: [
       { k: 'Operasjoner', v: 'Faktura · ordre · regnskap · timer' },
-      { k: 'Modus',       v: 'Lese + skrive (med bekreftelse)' },
+      { k: 'Modus',       v: 'Lese og skrive (med bekreftelse)' },
       { k: 'Sanntid',     v: 'Direkte mot Tripletex Live' },
       { k: 'Tilgang',     v: 'Bygd som MCP — Claude-native' }
     ]
@@ -125,48 +131,48 @@ export const agents: Agent[] = [
     name: 'Epostagent',
     role: 'Kunnskapsdeling via e-post',
     tagline: 'Ingen svarer på samme spørsmål to ganger.',
-    description: 'Epostagenten lærer av hvert svar som blir gitt. Neste gang et lignende spørsmål kommer inn — fra kunde, byggherre eller intern — har den allerede et forslag til svar, basert på hvordan kollegaen din svarte forrige gang.',
+    description: 'Epostagenten lærer av hvert svar som blir gitt. Når et lignende spørsmål kommer inn fra kunde, byggherre eller intern — har systemet allerede et forslag basert på hvordan kollegaen din svarte forrige gang.',
     status: 'live',
     color: '#ff6b35',
     colorClass: 'fx',
     meta: 'IMAP · M365',
     pipeline: [
-      { i: '📥', n: 'Inbox',          d: 'Microsoft 365 · IMAP' },
-      { i: '🏷️', n: 'Klassifisering',d: 'Type · prioritet · prosjekt' },
-      { i: '🧠', n: 'Kontekst',       d: 'Tråd + Loki-oppslag' },
-      { i: '✍️', n: 'Drafting',      d: 'I ansattes stemme' },
-      { i: '📬', n: 'epost-mcp',      d: 'Triage + svar' }
+      { i: '📥', n: 'Inbox',          d: 'Microsoft 365 og IMAP' },
+      { i: '🏷️', n: 'Klassifisering', d: 'Type, prioritet, prosjekt' },
+      { i: '🧠', n: 'Kontekst',       d: 'Tråd og Loki-oppslag' },
+      { i: '✍️', n: 'Drafting',       d: 'I ansattes egen stemme' },
+      { i: '📬', n: 'epost-mcp',      d: 'Triage og svar' }
     ],
     details: [
       { k: 'Kobling', v: 'Microsoft 365 · Gmail · IMAP' },
       { k: 'Læring',  v: 'Stil per ansatt — fra historikk' },
       { k: 'Oppgaver',v: 'Konverterer e-post til to-do' },
-      { k: 'Møter',   v: 'Oppsummerer & følger opp' }
+      { k: 'Møter',   v: 'Oppsummerer og følger opp' }
     ]
   },
   {
     slug: 'ki-tilbud',
     num: '06',
     name: 'KI Tilbud',
-    role: 'Anbud & tilbud',
-    tagline: 'Fra forespørsel til signaturklart tilbud — i ett gjennomløp.',
-    description: 'Spesialagent som kombinerer Loki, Nova og Tripletex for å produsere komplette tilbud etter NS 8400 og NS 3450.',
+    role: 'Anbud og tilbud',
+    tagline: 'Fra forespørsel til signaturklart tilbud — på minutter.',
+    description: 'KI Tilbud kombinerer Loki, Nova og Tripletex til å produsere komplette tilbud etter NS 8400 og NS 3450. Referanser fra tidligere prosjekter, regelverkskrav og timepriser knyttes sammen automatisk.',
     status: 'beta',
     color: '#1f8a3a',
     colorClass: 'ki',
     meta: 'NS 8400 · NS 3450',
     pipeline: [
-      { i: '📨', n: 'Forespørsel',  d: 'Doseanmodning · BVP' },
-      { i: '📚', n: 'Loki + Nova',  d: 'Referanser + krav' },
-      { i: '💰', n: 'Tripletex',    d: 'Timepriser + påslag' },
-      { i: '📐', n: 'Kalkulasjon',  d: 'NS 3450 · risiko' },
-      { i: '📄', n: 'Tilbudsdok',   d: 'PDF · signaturklar' }
+      { i: '📨', n: 'Forespørsel',  d: 'Doseanmodning eller BVP' },
+      { i: '📚', n: 'Loki + Nova',  d: 'Referanser og krav' },
+      { i: '💰', n: 'Tripletex',    d: 'Timepriser og påslag' },
+      { i: '📐', n: 'Kalkulasjon',  d: 'NS 3450 med risiko' },
+      { i: '📄', n: 'Tilbudsdok',   d: 'PDF, signaturklar' }
     ],
     details: [
       { k: 'Standarder', v: 'NS 8400 · NS 8401 · NS 3450' },
-      { k: 'Output',     v: 'Komplett tilbud + vedlegg + risiko' },
+      { k: 'Output',     v: 'Komplett tilbud · vedlegg · risiko' },
       { k: 'Tid',        v: 'Fra dager til timer' },
-      { k: 'Kobling',    v: 'Bruker Loki + Nova + Tripletex' }
+      { k: 'Kobling',    v: 'Bruker Loki, Nova og Tripletex' }
     ]
   }
 ];

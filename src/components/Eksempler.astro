@@ -3,6 +3,7 @@ const cases = [
   {
     category: 'Byggesak',
     title: 'Søknad om dispensasjon',
+    description: 'Komplett dispensasjonssøknad med kildehenvisninger til PBL §19-2 og TEK17 §13-7, formatert i BYGG-KONs mal.',
     output: 'Dispensasjonssøknad.pdf',
     pages: '4 sider',
     time: '38 sek',
@@ -11,6 +12,7 @@ const cases = [
   {
     category: 'Uavhengig kontroll',
     title: 'Sjekkliste for UAK',
+    description: 'Kontrollpunkter knyttet mot TEK17 §13, NS 3420-T og BVN 31.110. Klar for distribusjon til UAK-foretak.',
     output: 'UAK-sjekkliste-Vatrom.pdf',
     pages: '6 sider',
     time: '22 sek',
@@ -19,6 +21,7 @@ const cases = [
   {
     category: 'Fagprosjektering',
     title: 'KS-plan betong, enebolig',
+    description: 'Kvalitetssikringsplan etter NS 3473 og Eurokode 2. 24 kontrollpunkter knyttet til risiko og fase.',
     output: 'KS-plan-Betong-4118.pdf',
     pages: '12 sider',
     time: '51 sek',
@@ -27,6 +30,7 @@ const cases = [
   {
     category: 'Befaring',
     title: 'Befaringsrapport stål',
+    description: 'Funn klassifisert etter alvorlighet med anbefalte tiltak per knutepunkt. Knyttet til NS-EN 1090 og NS-EN 1993.',
     output: 'Befaringsrapport-stal-4072.pdf',
     pages: '8 sider',
     time: '33 sek',
@@ -37,34 +41,61 @@ const cases = [
 <section id="eksempler" class="py-20 lg:py-28">
   <div class="wrap">
 
-    <div class="max-w-[640px] mb-12 lg:mb-16">
-      <div class="eyebrow mb-3">Eksempler</div>
-      <h2 class="h2 mb-5">Ferdige leveranser.</h2>
-      <p class="lede">Dokumenter plattformen produserer på ansattes forespørsel.</p>
+    <div class="max-w-[700px] mb-12 lg:mb-16">
+      <div class="eyebrow mb-4">Eksempler</div>
+      <h2 class="h2 mb-5">Ferdige leveranser fra plattformen</h2>
+      <p class="text-lg text-ink-2 leading-[1.65]">
+        Faktiske dokumenter som BYGG-KON.ai genererer på ansattes forespørsel.
+        Hver leveranse er produsert i samspill mellom flere agenter, ferdig
+        formatert i BYGG-KONs maler.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
       {cases.map(c => (
-        <article class="bg-white border border-line rounded-2xl p-7 lg:p-8 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-20px_rgba(20,24,32,0.10)]">
+        <article class="group bg-white border border-line rounded-2xl p-8 lg:p-9 transition-all hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(20,24,32,0.10)]">
+          <!-- Category tag -->
           <div class="flex items-center gap-2 mb-5">
             <span class="inline-block w-1.5 h-1.5 rounded-full" style={`background:${c.color}`}></span>
             <span class="text-xs font-semibold uppercase tracking-wider text-ink-3">{c.category}</span>
           </div>
 
-          <h3 class="text-xl font-extrabold text-ink leading-tight mb-3">
+          <!-- Title -->
+          <h3 class="text-2xl font-extrabold text-ink leading-tight mb-3">
             {c.title}
           </h3>
 
-          <div class="text-sm text-ink-3 mb-6">
-            {c.output} · {c.pages}
-          </div>
+          <!-- Description -->
+          <p class="text-[15px] text-ink-2 leading-[1.65] mb-7">
+            {c.description}
+          </p>
 
-          <div class="flex items-center justify-between pt-5 border-t border-line">
-            <span class="text-xs text-ink-3">Tid fra prompt til ferdig</span>
-            <span class="text-sm font-bold text-ink">{c.time}</span>
+          <!-- Meta info row -->
+          <div class="flex items-center gap-x-6 gap-y-2 flex-wrap pt-5 border-t border-line">
+            <div class="flex items-center gap-2 text-sm text-ink-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span class="font-mono text-xs">{c.output}</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-ink-3">
+              <span>{c.pages}</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-ink-3 ml-auto">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span class="font-semibold text-ink">{c.time}</span>
+            </div>
           </div>
         </article>
       ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/#agenter" class="link-arrow">Se hvilke agenter som leverer dette</a>
     </div>
   </div>
 </section>

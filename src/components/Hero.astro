@@ -1,48 +1,57 @@
 ---
-// Hero — static, minimal, byggkon.no aesthetic
+// Hero — text and visual rhythm matched to byggkon.no
 ---
 <section class="pt-32 pb-20 lg:pt-40 lg:pb-28">
-  <div class="wrap grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-center">
+  <div class="wrap grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
 
     <!-- LEFT: Text -->
     <div>
-      <div class="eyebrow mb-6">AI-plattform for BYGG-KON</div>
+      <!-- byggkon.no signature: icon badge + eyebrow text -->
+      <div class="flex items-center gap-3 mb-7">
+        <span class="w-9 h-9 rounded-full bg-yellow/15 flex items-center justify-center flex-shrink-0">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b88600" stroke-width="2.5">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </span>
+        <span class="text-[15px] text-ink-2 font-medium">Intern AI-plattform for BYGG-KON</span>
+      </div>
 
-      <h1 class="h1 mb-6">
-        Kunnskap i system med <span class="text-yellow">AI</span>.
+      <h1 class="h1 mb-7">
+        Kunnskap i system med AI
       </h1>
 
-      <p class="lede mb-9 max-w-[560px]">
-        Vi har samlet 40 års byggfaglig erfaring i én plattform. Seks AI-agenter
-        hjelper ansatte med å produsere ferdig dokumentasjon på sekunder.
+      <p class="text-lg lg:text-xl text-ink-2 leading-[1.6] mb-9 max-w-[600px]">
+        BYGG-KON.ai samler 40 års byggfaglig erfaring, økonomisystem og eiendomsregister
+        i én plattform. Seks spesialiserte AI-agenter, koblet til Claude via MCP &mdash;
+        slik at ansatte produserer kvalitetssikret dokumentasjon på sekunder, fra
+        dispensasjonssøknader til befaringsrapporter.
       </p>
 
-      <div class="flex flex-wrap gap-3 mb-12">
+      <div class="flex flex-wrap gap-3 mb-14">
         <a href="#agenter" class="btn btn-primary">Se agentene</a>
         <a href="#eksempler" class="btn btn-secondary">Se eksempler</a>
       </div>
 
-      <div class="flex flex-wrap items-center gap-x-10 gap-y-5">
+      <!-- Stats — byggkon.no inline layout -->
+      <div class="flex flex-wrap items-baseline gap-x-10 gap-y-5">
         <div>
-          <div class="text-3xl md:text-4xl font-extrabold text-ink leading-none tracking-tighter">6</div>
-          <div class="text-sm text-ink-3 mt-1.5">AI-agenter</div>
+          <div class="text-4xl lg:text-5xl font-extrabold text-ink leading-none tracking-tighter">6</div>
+          <div class="text-[13px] text-ink-3 mt-2">AI-agenter</div>
         </div>
         <div>
-          <div class="text-3xl md:text-4xl font-extrabold text-ink leading-none tracking-tighter">40+</div>
-          <div class="text-sm text-ink-3 mt-1.5">År erfaring</div>
+          <div class="text-4xl lg:text-5xl font-extrabold text-ink leading-none tracking-tighter">40<span class="text-yellow">+</span></div>
+          <div class="text-[13px] text-ink-3 mt-2">År erfaring</div>
         </div>
         <div>
-          <div class="text-3xl md:text-4xl font-extrabold text-ink leading-none tracking-tighter">4 000+</div>
-          <div class="text-sm text-ink-3 mt-1.5">Prosjekter</div>
+          <div class="text-4xl lg:text-5xl font-extrabold text-ink leading-none tracking-tighter">4 000<span class="text-yellow">+</span></div>
+          <div class="text-[13px] text-ink-3 mt-2">Prosjekter</div>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: Static, calm visual -->
+    <!-- RIGHT: Calm visual, no animations -->
     <div class="aspect-square bg-cream rounded-3xl border border-line p-8 lg:p-10 flex items-center justify-center">
-      <svg viewBox="0 0 360 360" class="w-full h-auto max-w-[400px]">
-        <!-- 6 agent dots around a central Claude circle. No animations. -->
-        <!-- Connecting lines -->
+      <svg viewBox="0 0 360 360" class="w-full h-auto max-w-[420px]">
         <g stroke="#1a1d23" stroke-opacity="0.10" stroke-width="1" fill="none">
           <line x1="180" y1="180" x2="180" y2="60"/>
           <line x1="180" y1="180" x2="285" y2="120"/>
@@ -52,33 +61,29 @@
           <line x1="180" y1="180" x2="75"  y2="120"/>
         </g>
 
-        <!-- Hub -->
         <circle cx="180" cy="180" r="52" fill="#ffffff" stroke="#1a1d23" stroke-width="1.5"/>
-        <text x="180" y="178" text-anchor="middle" font-size="16" font-weight="800" fill="#1a1d23">Claude</text>
-        <text x="180" y="195" text-anchor="middle" font-size="10" font-weight="500" fill="#6b7280">Opus 4.7</text>
+        <text x="180" y="178" text-anchor="middle" font-family="Inter" font-size="16" font-weight="800" fill="#1a1d23">Claude</text>
+        <text x="180" y="196" text-anchor="middle" font-family="Inter" font-size="10" font-weight="500" fill="#6b7280">Opus 4.7</text>
 
-        <!-- Nodes -->
-        <g>
-          <circle cx="180" cy="60"  r="24" fill="#ffffff" stroke="#c8102e" stroke-width="1.5"/>
-          <text x="180" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1d23">Loki</text>
+        <circle cx="180" cy="60"  r="24" fill="#ffffff" stroke="#c8102e" stroke-width="1.5"/>
+        <text x="180" y="65" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#1a1d23">Loki</text>
 
-          <circle cx="285" cy="120" r="24" fill="#ffffff" stroke="#f5b400" stroke-width="1.5"/>
-          <text x="285" y="125" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1d23">Nova</text>
+        <circle cx="285" cy="120" r="24" fill="#ffffff" stroke="#f5b400" stroke-width="1.5"/>
+        <text x="285" y="125" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#1a1d23">Nova</text>
 
-          <circle cx="285" cy="240" r="24" fill="#ffffff" stroke="#7a3fc8" stroke-width="1.5"/>
-          <text x="285" y="245" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">Tripletex</text>
+        <circle cx="285" cy="240" r="24" fill="#ffffff" stroke="#7a3fc8" stroke-width="1.5"/>
+        <text x="285" y="245" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">Tripletex</text>
 
-          <circle cx="180" cy="300" r="24" fill="#ffffff" stroke="#1f8a3a" stroke-width="1.5"/>
-          <text x="180" y="298" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">KI</text>
-          <text x="180" y="310" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">Tilbud</text>
+        <circle cx="180" cy="300" r="24" fill="#ffffff" stroke="#1f8a3a" stroke-width="1.5"/>
+        <text x="180" y="298" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">KI</text>
+        <text x="180" y="310" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">Tilbud</text>
 
-          <circle cx="75"  cy="240" r="24" fill="#ffffff" stroke="#ff6b35" stroke-width="1.5"/>
-          <text x="75" y="238" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">Epost-</text>
-          <text x="75" y="250" text-anchor="middle" font-size="9" font-weight="700" fill="#1a1d23">agent</text>
+        <circle cx="75"  cy="240" r="24" fill="#ffffff" stroke="#ff6b35" stroke-width="1.5"/>
+        <text x="75" y="238" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">Epost-</text>
+        <text x="75" y="250" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">agent</text>
 
-          <circle cx="75"  cy="120" r="24" fill="#ffffff" stroke="#0a6cf0" stroke-width="1.5"/>
-          <text x="75" y="125" text-anchor="middle" font-size="11" font-weight="700" fill="#1a1d23">Hilde</text>
-        </g>
+        <circle cx="75"  cy="120" r="24" fill="#ffffff" stroke="#0a6cf0" stroke-width="1.5"/>
+        <text x="75" y="125" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#1a1d23">Hilde</text>
       </svg>
     </div>
 
