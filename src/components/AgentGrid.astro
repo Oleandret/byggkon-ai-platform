@@ -1,0 +1,31 @@
+---
+import { agents } from '../data/agents';
+import AgentCard from './AgentCard.astro';
+
+// Icon map keyed by agent slug — kept inline so cards render server-side
+const icons: Record<string, string> = {
+  loki:        `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  nova:        `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>`,
+  hilde:       `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
+  tripletex:   `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+  epost:       `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
+  'ki-tilbud': `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/></svg>`
+};
+---
+<section id="agenter" class="py-24">
+  <div class="wrap">
+    <div class="text-center mb-14 max-w-[720px] mx-auto">
+      <span class="eyebrow">// Agentene</span>
+      <h2 class="h2 mt-3">Seks agenter. Ett oppdrag.</h2>
+      <p class="lede mt-3 mx-auto">Klikk for å se hva hver agent gjør og hvordan pipelinen ser ut.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {agents.map(agent => (
+        <AgentCard agent={agent}>
+          <Fragment slot="icon" set:html={icons[agent.slug] ?? ''} />
+        </AgentCard>
+      ))}
+    </div>
+  </div>
+</section>

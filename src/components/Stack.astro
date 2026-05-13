@@ -1,0 +1,70 @@
+---
+// Stack overview — 3 horizontal layers
+---
+<section id="stack" class="py-24">
+  <div class="wrap">
+    <div class="text-center mb-12 max-w-[720px] mx-auto">
+      <span class="eyebrow">// Stack</span>
+      <h2 class="h2 mt-3">Tre lag. Én signatur: <span class="text-loki">MCP</span>.</h2>
+    </div>
+
+    <div class="space-y-2 max-w-[1100px] mx-auto">
+
+      <!-- L3: LLM -->
+      <div class="grid grid-cols-[120px_1fr] gap-5 items-center bg-white border border-[var(--line)] rounded-2xl p-5">
+        <div class="border-r border-[var(--line)] pr-4">
+          <div class="font-mono text-2xl font-extrabold text-ink leading-none">03</div>
+          <div class="font-mono text-[10.5px] font-bold tracking-[0.18em] uppercase text-ink-3 mt-1">LLM</div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-yellow/15 text-[#8a6300] rounded-lg border border-yellow/40">Claude · Opus 4.7</span>
+          <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-soft rounded-lg border border-[var(--line)]">ChatGPT · GPT-5</span>
+          <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-soft rounded-lg border border-[var(--line)]">Gemini 2.5</span>
+          <span class="font-mono text-xs font-semibold px-3.5 py-2 bg-soft rounded-lg border border-[var(--line)]">Grok 4</span>
+        </div>
+      </div>
+
+      <!-- L2: MCP -->
+      <div class="grid grid-cols-[120px_1fr] gap-5 items-center bg-gradient-to-r from-yellow/[0.05] to-white border border-[var(--line)] rounded-2xl p-5">
+        <div class="border-r border-[var(--line)] pr-4">
+          <div class="font-mono text-2xl font-extrabold text-ink leading-none">02</div>
+          <div class="font-mono text-[10.5px] font-bold tracking-[0.18em] uppercase text-ink-3 mt-1">MCP</div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="font-mono text-xs font-bold px-3.5 py-2 bg-white rounded-lg border" style="border-color: #c8102e80; color: #0e1116;">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-loki mr-1.5 align-middle"></span>loki-mcp
+          </span>
+          <span class="font-mono text-xs font-bold px-3.5 py-2 bg-white rounded-lg border" style="border-color: #f5b40080;">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-nova mr-1.5 align-middle"></span>nova-mcp
+          </span>
+          <span class="font-mono text-xs font-bold px-3.5 py-2 bg-white rounded-lg border" style="border-color: #0a6cf080;">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-hilde mr-1.5 align-middle"></span>hilde-mcp
+          </span>
+          <span class="font-mono text-xs font-bold px-3.5 py-2 bg-white rounded-lg border" style="border-color: #7a3fc880;">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-tt mr-1.5 align-middle"></span>tripletex-mcp
+          </span>
+          <span class="font-mono text-xs font-bold px-3.5 py-2 bg-white rounded-lg border" style="border-color: #ff6b3580;">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-fx mr-1.5 align-middle"></span>epost-mcp
+          </span>
+          <span class="font-mono text-xs font-bold px-3.5 py-2 bg-white rounded-lg border" style="border-color: #1f8a3a80;">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-ki mr-1.5 align-middle"></span>ki-tilbud-mcp
+          </span>
+        </div>
+      </div>
+
+      <!-- L1: Kilde -->
+      <div class="grid grid-cols-[120px_1fr] gap-5 items-center bg-white border border-[var(--line)] rounded-2xl p-5">
+        <div class="border-r border-[var(--line)] pr-4">
+          <div class="font-mono text-2xl font-extrabold text-ink leading-none">01</div>
+          <div class="font-mono text-[10.5px] font-bold tracking-[0.18em] uppercase text-ink-3 mt-1">Kilder</div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          {['Prosjekter','Tegninger','Notater','Beregninger','Kalkyler','Møter','Byggesaker','Erfaring','Kartverket','Brønnøysund','Tripletex','M365'].map(s => (
+            <span class="font-mono text-[11px] px-3 py-1.5 bg-soft border border-[var(--line)] rounded-full text-ink-2">{s}</span>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+---
+import { agents } from '../data/agents';
+const year = new Date().getFullYear();
+---
+<footer class="bg-ink text-[#c5cad6] py-16 pb-6">
+  <div class="wrap grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+    <div>
+      <a href="/" class="inline-flex items-center gap-1 font-extrabold text-white">
+        <img
+          src="https://cdn.prod.website-files.com/6971dca24ade29a12176f9bf/697229961ae6d73bf69636e8_BYGG-KON%20Logo%20W%26W.png"
+          alt="BYGG-KON"
+          class="h-7"
+        />
+        <span class="text-2xl font-extrabold text-yellow leading-none">.ai</span>
+      </a>
+      <p class="text-sm text-[#8b94a8] mt-4 leading-relaxed max-w-sm">
+        Travbaneveien 3 · 4031 Stavanger<br>
+        <a href="tel:+4751974400" class="hover:text-white">+47 51 97 44 00</a>
+      </p>
+    </div>
+
+    <div>
+      <h5 class="font-mono text-[11px] font-bold tracking-[0.18em] uppercase text-white mb-4">Agenter</h5>
+      {agents.map(a => (
+        <a href={`/agent/${a.slug}`} class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">
+          {a.name}
+        </a>
+      ))}
+    </div>
+
+    <div>
+      <h5 class="font-mono text-[11px] font-bold tracking-[0.18em] uppercase text-white mb-4">BYGG-KON</h5>
+      <a href="https://www.byggkon.no/tjenester" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Tjenester</a>
+      <a href="https://www.byggkon.no/referanser" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Referanser</a>
+      <a href="https://www.byggkon.no/om-oss" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Om oss</a>
+      <a href="https://www.byggkon.no/karriere" target="_blank" rel="noopener" class="block text-sm text-[#8b94a8] py-1 hover:text-white transition-colors">Karriere</a>
+    </div>
+  </div>
+  <div class="wrap pt-6 border-t border-white/[0.06] flex flex-col md:flex-row justify-between gap-2 font-mono text-[11px] text-[#6b7488] tracking-wider">
+    <span>© {year} BYGG-KON AS</span>
+    <span>Astro · Tailwind · Railway</span>
+  </div>
+</footer>

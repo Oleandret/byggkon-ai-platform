@@ -1,0 +1,46 @@
+---
+import type { Agent } from '../data/agents';
+
+interface Props {
+  agent: Agent;
+}
+const { agent } = Astro.props;
+const statusLabel = agent.status === 'beta' ? 'Beta' : 'Live';
+const statusColor = agent.status === 'beta' ? '#b88600' : '#1f8a3a';
+---
+<a
+  href={`/agent/${agent.slug}`}
+  class="group relative block rounded-2xl border border-[var(--line)] bg-white p-6 transition-all hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(10,16,30,0.08)]"
+  style={`--c:${agent.color};`}
+>
+  <span class="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={`background:${agent.color}`}></span>
+
+  <div class="flex justify-between items-center mb-3.5">
+    <span class="font-mono text-[11px] font-bold tracking-[0.18em]" style={`color:${agent.color}`}>
+      {agent.num}
+    </span>
+    <span class="inline-flex items-center gap-1.5 font-mono text-[10.5px] font-semibold tracking-[0.12em] uppercase" style={`color:${statusColor}`}>
+      <span class="status-dot" style={`background:${statusColor}; color:${statusColor};`}></span>
+      {statusLabel}
+    </span>
+  </div>
+
+  <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-2"
+       style={`background:${agent.color}1a; color:${agent.color};`}>
+    <slot name="icon" />
+  </div>
+
+  <h3 class="text-[22px] font-extrabold text-ink tracking-tight">
+    {agent.name}
+  </h3>
+  <p class="text-sm text-ink-3 mt-1 mb-2.5 leading-snug">
+    {agent.role}
+  </p>
+  <div class="font-mono text-[10.5px] tracking-[0.12em] text-ink-4">
+    {agent.meta}
+  </div>
+
+  <span class="absolute top-6 right-6 text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" style={`color:${agent.color}`}>
+    →
+  </span>
+</a>
