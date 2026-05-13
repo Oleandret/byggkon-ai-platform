@@ -1,12 +1,11 @@
 ---
-// Hero — text and visual rhythm matched to byggkon.no
+// Hero — animated AI architecture, MCP-emphasised, byggkon.no aesthetic
 ---
 <section class="pt-32 pb-20 lg:pt-40 lg:pb-28">
   <div class="wrap grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-20 items-center">
 
     <!-- LEFT: Text -->
     <div>
-      <!-- byggkon.no signature: icon badge + eyebrow text -->
       <div class="flex items-center gap-3 mb-7">
         <span class="w-9 h-9 rounded-full bg-yellow/15 flex items-center justify-center flex-shrink-0">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b88600" stroke-width="2.5">
@@ -16,9 +15,7 @@
         <span class="text-[15px] text-ink-2 font-medium">Intern AI-plattform for BYGG-KON</span>
       </div>
 
-      <h1 class="h1 mb-7">
-        Kunnskap i system med AI
-      </h1>
+      <h1 class="h1 mb-7">Kunnskap i system med AI</h1>
 
       <p class="text-lg lg:text-xl text-ink-2 leading-[1.6] mb-9 max-w-[640px]">
         BYGG-KON.ai samler hele virksomheten i én plattform &mdash;
@@ -35,7 +32,6 @@
         <a href="#eksempler" class="btn btn-secondary">Se eksempler</a>
       </div>
 
-      <!-- Stats — byggkon.no inline layout -->
       <div class="flex flex-wrap items-baseline gap-x-10 gap-y-5">
         <div>
           <div class="text-4xl lg:text-5xl font-extrabold text-ink leading-none tracking-tighter">6</div>
@@ -52,43 +48,185 @@
       </div>
     </div>
 
-    <!-- RIGHT: Calm visual, no animations -->
-    <div class="aspect-square bg-cream rounded-3xl border border-line p-8 lg:p-10 flex items-center justify-center">
-      <svg viewBox="0 0 360 360" class="w-full h-auto max-w-[420px]">
-        <g stroke="#1a1d23" stroke-opacity="0.10" stroke-width="1" fill="none">
-          <line x1="180" y1="180" x2="180" y2="60"/>
-          <line x1="180" y1="180" x2="285" y2="120"/>
-          <line x1="180" y1="180" x2="285" y2="240"/>
-          <line x1="180" y1="180" x2="180" y2="300"/>
-          <line x1="180" y1="180" x2="75"  y2="240"/>
-          <line x1="180" y1="180" x2="75"  y2="120"/>
+    <!-- RIGHT: Animated architecture -->
+    <div class="aspect-square bg-cream rounded-3xl border border-line p-6 lg:p-8 flex items-center justify-center relative overflow-hidden">
+
+      <!-- MCP-badge top-left -->
+      <div class="absolute top-5 left-5 z-10">
+        <div class="text-[10px] font-mono font-bold tracking-[0.18em] text-ink-3 uppercase mb-1">// Arkitektur</div>
+        <div class="text-[13px] font-semibold text-ink">Alt via MCP til Claude</div>
+      </div>
+
+      <svg viewBox="0 0 400 400" class="w-full h-auto max-w-[440px] hero-arch">
+        <defs>
+          <!-- Hub glow -->
+          <radialGradient id="hubGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#f5b400" stop-opacity="0.30"/>
+            <stop offset="60%" stop-color="#f5b400" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="#f5b400" stop-opacity="0"/>
+          </radialGradient>
+
+          <!-- Paths for animated particles (one per agent → Claude) -->
+          <path id="hp-loki"  d="M 200 70  L 200 200" fill="none"/>
+          <path id="hp-nova"  d="M 330 130 L 200 200" fill="none"/>
+          <path id="hp-tt"    d="M 330 270 L 200 200" fill="none"/>
+          <path id="hp-ki"    d="M 200 330 L 200 200" fill="none"/>
+          <path id="hp-epost" d="M 70  270 L 200 200" fill="none"/>
+          <path id="hp-hilde" d="M 70  130 L 200 200" fill="none"/>
+        </defs>
+
+        <!-- Slow rotating concentric rings -->
+        <g class="rings">
+          <circle cx="200" cy="200" r="155" fill="none" stroke="#1a1d23" stroke-opacity="0.06" stroke-dasharray="2 6"/>
+          <circle cx="200" cy="200" r="115" fill="none" stroke="#1a1d23" stroke-opacity="0.04" stroke-dasharray="2 6"/>
         </g>
 
-        <circle cx="180" cy="180" r="52" fill="#ffffff" stroke="#1a1d23" stroke-width="1.5"/>
-        <text x="180" y="178" text-anchor="middle" font-family="Inter" font-size="16" font-weight="800" fill="#1a1d23">Claude</text>
-        <text x="180" y="196" text-anchor="middle" font-family="Inter" font-size="10" font-weight="500" fill="#6b7280">Opus 4.7</text>
+        <!-- Static base connections (subtle) -->
+        <g stroke-width="1" fill="none" stroke-opacity="0.15">
+          <line x1="200" y1="200" x2="200" y2="70"  stroke="#c8102e"/>
+          <line x1="200" y1="200" x2="330" y2="130" stroke="#f5b400"/>
+          <line x1="200" y1="200" x2="330" y2="270" stroke="#7a3fc8"/>
+          <line x1="200" y1="200" x2="200" y2="330" stroke="#1f8a3a"/>
+          <line x1="200" y1="200" x2="70"  y2="270" stroke="#ff6b35"/>
+          <line x1="200" y1="200" x2="70"  y2="130" stroke="#0a6cf0"/>
+        </g>
 
-        <circle cx="180" cy="60"  r="24" fill="#ffffff" stroke="#c8102e" stroke-width="1.5"/>
-        <text x="180" y="65" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#1a1d23">Loki</text>
+        <!-- Animated dashed flow lines -->
+        <g stroke-width="1.5" fill="none" stroke-dasharray="3 9" stroke-linecap="round" stroke-opacity="0.55">
+          <line x1="200" y1="70"  x2="200" y2="200" stroke="#c8102e" class="flow-line"/>
+          <line x1="330" y1="130" x2="200" y2="200" stroke="#f5b400" class="flow-line" style="animation-delay:-.25s"/>
+          <line x1="330" y1="270" x2="200" y2="200" stroke="#7a3fc8" class="flow-line" style="animation-delay:-.50s"/>
+          <line x1="200" y1="330" x2="200" y2="200" stroke="#1f8a3a" class="flow-line" style="animation-delay:-.75s"/>
+          <line x1="70"  y1="270" x2="200" y2="200" stroke="#ff6b35" class="flow-line" style="animation-delay:-1.0s"/>
+          <line x1="70"  y1="130" x2="200" y2="200" stroke="#0a6cf0" class="flow-line" style="animation-delay:-1.25s"/>
+        </g>
 
-        <circle cx="285" cy="120" r="24" fill="#ffffff" stroke="#f5b400" stroke-width="1.5"/>
-        <text x="285" y="125" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#1a1d23">Nova</text>
+        <!-- Traveling MCP data-particles (one per agent, staggered) -->
+        <g>
+          <circle r="4" fill="#c8102e" filter="url(#glow-loki)">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="0s"><mpath href="#hp-loki"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="4" fill="#f5b400">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-0.45s"><mpath href="#hp-nova"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="-0.45s"/>
+          </circle>
+          <circle r="4" fill="#7a3fc8">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-0.9s"><mpath href="#hp-tt"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="-0.9s"/>
+          </circle>
+          <circle r="4" fill="#1f8a3a">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-1.35s"><mpath href="#hp-ki"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="-1.35s"/>
+          </circle>
+          <circle r="4" fill="#ff6b35">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-1.8s"><mpath href="#hp-epost"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="-1.8s"/>
+          </circle>
+          <circle r="4" fill="#0a6cf0">
+            <animateMotion dur="2.8s" repeatCount="indefinite" begin="-2.25s"><mpath href="#hp-hilde"/></animateMotion>
+            <animate attributeName="opacity" values="0;1;1;0" dur="2.8s" repeatCount="indefinite" begin="-2.25s"/>
+          </circle>
+        </g>
 
-        <circle cx="285" cy="240" r="24" fill="#ffffff" stroke="#7a3fc8" stroke-width="1.5"/>
-        <text x="285" y="245" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">Tripletex</text>
+        <!-- Hub glow background -->
+        <circle cx="200" cy="200" r="100" fill="url(#hubGlow)" class="hub-glow"/>
 
-        <circle cx="180" cy="300" r="24" fill="#ffffff" stroke="#1f8a3a" stroke-width="1.5"/>
-        <text x="180" y="298" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">KI</text>
-        <text x="180" y="310" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">Tilbud</text>
+        <!-- Hub core -->
+        <circle cx="200" cy="200" r="48" fill="#ffffff" stroke="#1a1d23" stroke-width="1.5" class="hub-core"/>
+        <text x="200" y="194" text-anchor="middle" font-family="Inter" font-size="14" font-weight="800" fill="#1a1d23">Claude</text>
+        <text x="200" y="210" text-anchor="middle" font-family="Inter" font-size="9" font-weight="500" fill="#6b7280">Opus 4.7</text>
 
-        <circle cx="75"  cy="240" r="24" fill="#ffffff" stroke="#ff6b35" stroke-width="1.5"/>
-        <text x="75" y="238" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">Epost-</text>
-        <text x="75" y="250" text-anchor="middle" font-family="Inter" font-size="9" font-weight="700" fill="#1a1d23">agent</text>
+        <!-- MCP badge directly below hub -->
+        <g transform="translate(200 232)">
+          <rect x="-28" y="-7" width="56" height="14" rx="7" fill="#f5b400"/>
+          <text y="3" text-anchor="middle" font-family="Inter" font-size="9" font-weight="800" letter-spacing="2" fill="#1a1d23">MCP</text>
+        </g>
 
-        <circle cx="75"  cy="120" r="24" fill="#ffffff" stroke="#0a6cf0" stroke-width="1.5"/>
-        <text x="75" y="125" text-anchor="middle" font-family="Inter" font-size="11" font-weight="700" fill="#1a1d23">Hilde</text>
+        <!-- Agent nodes (each pulses softly) -->
+        <g class="agent-node node-1">
+          <circle cx="200" cy="70"  r="24" fill="#ffffff" stroke="#c8102e" stroke-width="1.5"/>
+          <text x="200" y="74" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#1a1d23">Loki</text>
+        </g>
+        <g class="agent-node node-2">
+          <circle cx="330" cy="130" r="24" fill="#ffffff" stroke="#f5b400" stroke-width="1.5"/>
+          <text x="330" y="134" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#1a1d23">Nova</text>
+        </g>
+        <g class="agent-node node-3">
+          <circle cx="330" cy="270" r="24" fill="#ffffff" stroke="#7a3fc8" stroke-width="1.5"/>
+          <text x="330" y="266" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#1a1d23">Triple-</text>
+          <text x="330" y="276" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#1a1d23">tex</text>
+        </g>
+        <g class="agent-node node-4">
+          <circle cx="200" cy="330" r="24" fill="#ffffff" stroke="#1f8a3a" stroke-width="1.5"/>
+          <text x="200" y="328" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#1a1d23">KI</text>
+          <text x="200" y="338" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#1a1d23">Tilbud</text>
+        </g>
+        <g class="agent-node node-5">
+          <circle cx="70"  cy="270" r="24" fill="#ffffff" stroke="#ff6b35" stroke-width="1.5"/>
+          <text x="70" y="266" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#1a1d23">Epost-</text>
+          <text x="70" y="276" text-anchor="middle" font-family="Inter" font-size="8" font-weight="700" fill="#1a1d23">agent</text>
+        </g>
+        <g class="agent-node node-6">
+          <circle cx="70"  cy="130" r="24" fill="#ffffff" stroke="#0a6cf0" stroke-width="1.5"/>
+          <text x="70" y="134" text-anchor="middle" font-family="Inter" font-size="10" font-weight="700" fill="#1a1d23">Hilde</text>
+        </g>
       </svg>
     </div>
 
   </div>
 </section>
+
+<style>
+  /* Animated dashed flow lines */
+  .hero-arch .flow-line {
+    animation: flow-dash 1.6s linear infinite;
+  }
+  @keyframes flow-dash { to { stroke-dashoffset: -24; } }
+
+  /* Concentric rings rotate slowly */
+  .hero-arch .rings {
+    transform-origin: 200px 200px;
+    animation: ring-rot 120s linear infinite;
+  }
+  @keyframes ring-rot { to { transform: rotate(360deg); } }
+
+  /* Hub pulse */
+  .hero-arch .hub-glow {
+    transform-origin: 200px 200px;
+    animation: hub-pulse 4s ease-in-out infinite;
+  }
+  @keyframes hub-pulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50%      { opacity: 1;   transform: scale(1.08); }
+  }
+  .hero-arch .hub-core {
+    filter: drop-shadow(0 2px 8px rgba(245, 180, 0, 0.20));
+  }
+
+  /* Subtle node breathing — each node lights up softly when its particle reaches Claude */
+  .hero-arch .agent-node circle {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: node-pulse 2.8s ease-in-out infinite;
+  }
+  .hero-arch .node-1 circle { animation-delay: -2.2s; }
+  .hero-arch .node-2 circle { animation-delay: -1.85s; }
+  .hero-arch .node-3 circle { animation-delay: -1.4s; }
+  .hero-arch .node-4 circle { animation-delay: -0.95s; }
+  .hero-arch .node-5 circle { animation-delay: -0.5s; }
+  .hero-arch .node-6 circle { animation-delay: -0.05s; }
+  @keyframes node-pulse {
+    0%, 90%, 100% { stroke-width: 1.5; }
+    95%           { stroke-width: 2.5; }
+  }
+
+  /* Reduced motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-arch *,
+    .hero-arch animateMotion,
+    .hero-arch animate {
+      animation: none !important;
+    }
+  }
+</style>

@@ -1,5 +1,17 @@
 ---
-const cases = [
+type Step = { icon: string; name: string; sub: string; agentColor?: string };
+type Case = {
+  category: string;
+  title: string;
+  description: string;
+  output: string;
+  pages: string;
+  time: string;
+  color: string;
+  flow: Step[];
+};
+
+const cases: Case[] = [
   {
     category: 'Byggesak',
     title: 'Søknad om dispensasjon',
@@ -7,7 +19,14 @@ const cases = [
     output: 'Dispensasjonssøknad.pdf',
     pages: '4 sider',
     time: '38 sek',
-    color: '#c8102e'
+    color: '#c8102e',
+    flow: [
+      { icon: '💬', name: 'Forespørsel', sub: '"Lag søknad om dispensasjon for prosjekt Solås"' },
+      { icon: '📚', name: 'Loki + Nova', sub: 'Henter interne søknader + PBL §19-2 + TEK17 §13-7', agentColor: '#c8102e' },
+      { icon: '🗺️', name: 'Hilde',        sub: 'Verifiserer gnr/bnr og eier', agentColor: '#0a6cf0' },
+      { icon: '⚙️', name: 'Claude',       sub: 'Komponerer søknad i BYGG-KON-mal' },
+      { icon: '📄', name: 'Levert',       sub: 'PDF sendt til byggherre og kommune' }
+    ]
   },
   {
     category: 'Uavhengig kontroll',
@@ -16,7 +35,14 @@ const cases = [
     output: 'UAK-sjekkliste-Vatrom.pdf',
     pages: '6 sider',
     time: '22 sek',
-    color: '#f5b400'
+    color: '#f5b400',
+    flow: [
+      { icon: '💬', name: 'Forespørsel', sub: '"Lag UAK-sjekkliste for våtrom"' },
+      { icon: '📚', name: 'Loki',         sub: 'BYGG-KONs UAK-maler for våtrom', agentColor: '#c8102e' },
+      { icon: '📋', name: 'Nova',         sub: 'TEK17 §13 · NS 3420-T · BVN 31.110', agentColor: '#f5b400' },
+      { icon: '⚙️', name: 'Claude',       sub: 'Bygger kontrollpunkter med kilder' },
+      { icon: '✅', name: 'Klar',         sub: 'PDF distribuert til UAK-foretak' }
+    ]
   },
   {
     category: 'Fagprosjektering',
@@ -25,7 +51,14 @@ const cases = [
     output: 'KS-plan-Betong-4118.pdf',
     pages: '12 sider',
     time: '51 sek',
-    color: '#0a6cf0'
+    color: '#0a6cf0',
+    flow: [
+      { icon: '💬', name: 'Forespørsel',     sub: '"Lag KS-plan for betongprosjektering"' },
+      { icon: '📚', name: 'Loki + Nova',     sub: 'Tidligere enebolig-KS + NS-EN 1992, NS 3473', agentColor: '#f5b400' },
+      { icon: '🗺️', name: 'Hilde + Tripletex', sub: 'Tomt og grunnforhold + prosjektnr', agentColor: '#7a3fc8' },
+      { icon: '⚙️', name: 'Claude',           sub: 'Knytter risikopunkter til Eurokode 2' },
+      { icon: '🧱', name: 'Klar',             sub: 'KS-plan klar til kvalitetsleder' }
+    ]
   },
   {
     category: 'Befaring',
@@ -34,7 +67,14 @@ const cases = [
     output: 'Befaringsrapport-stal-4072.pdf',
     pages: '8 sider',
     time: '33 sek',
-    color: '#7a3fc8'
+    color: '#7a3fc8',
+    flow: [
+      { icon: '💬', name: 'Forespørsel',  sub: '"Skriv befaringsrapport — stålknutepunkt 4072"' },
+      { icon: '📧', name: 'Epostagent',  sub: 'Henter befaringsnotater fra e-postkjede', agentColor: '#ff6b35' },
+      { icon: '📚', name: 'Loki + Nova', sub: 'Tidligere befaringer + NS-EN 1090, NS-EN 1993', agentColor: '#c8102e' },
+      { icon: '⚙️', name: 'Claude',      sub: 'Klassifiserer avvik og anbefaler tiltak' },
+      { icon: '🔧', name: 'Levert',      sub: 'Rapport sendt til byggherre + utførende' }
+    ]
   }
 ];
 ---
@@ -45,33 +85,51 @@ const cases = [
       <div class="eyebrow mb-4">Eksempler</div>
       <h2 class="h2 mb-5">Ferdige leveranser fra plattformen</h2>
       <p class="text-lg text-ink-2 leading-[1.65]">
-        Faktiske dokumenter som BYGG-KON.ai genererer på ansattes forespørsel.
-        Hver leveranse er produsert i samspill mellom flere agenter, ferdig
-        formatert i BYGG-KONs maler.
+        Hver leveranse er produsert i samspill mellom flere agenter. Diagrammet
+        viser prosessen fra første prompt til ferdig levert dokument.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
-      {cases.map(c => (
-        <article class="group bg-white border border-line rounded-2xl p-8 lg:p-9 transition-all hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(20,24,32,0.10)]">
-          <!-- Category tag -->
-          <div class="flex items-center gap-2 mb-5">
-            <span class="inline-block w-1.5 h-1.5 rounded-full" style={`background:${c.color}`}></span>
-            <span class="text-xs font-semibold uppercase tracking-wider text-ink-3">{c.category}</span>
+      {cases.map((c, ci) => (
+        <article class="group bg-white border border-line rounded-2xl overflow-hidden transition-all hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(20,24,32,0.10)]">
+          <!-- Card top: info -->
+          <div class="p-7 lg:p-8 pb-0">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="inline-block w-1.5 h-1.5 rounded-full" style={`background:${c.color}`}></span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-ink-3">{c.category}</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-ink leading-tight mb-3">{c.title}</h3>
+            <p class="text-[15px] text-ink-2 leading-[1.65] mb-5">{c.description}</p>
           </div>
 
-          <!-- Title -->
-          <h3 class="text-2xl font-extrabold text-ink leading-tight mb-3">
-            {c.title}
-          </h3>
+          <!-- Vertical flow diagram -->
+          <div class="px-7 lg:px-8 py-6 bg-cream border-y border-line" style={`--c:${c.color};`}>
+            <div class="text-[10.5px] font-bold uppercase tracking-[0.16em] text-ink-3 mb-5">
+              Prosess
+            </div>
 
-          <!-- Description -->
-          <p class="text-[15px] text-ink-2 leading-[1.65] mb-7">
-            {c.description}
-          </p>
+            <div class="ek-flow relative" style={`--flow-c:${c.color}; --steps:${c.flow.length};`}>
+              <!-- Vertical guide line + traveling pulse -->
+              <div class="ek-rail"></div>
+              <div class="ek-traveler" style={`--c:${c.color}; --delay:${ci * 0.3}s;`}></div>
 
-          <!-- Meta info row -->
-          <div class="flex items-center gap-x-6 gap-y-2 flex-wrap pt-5 border-t border-line">
+              <!-- Steps -->
+              {c.flow.map((step, i) => (
+                <div class="ek-step" style={`--delay:${(ci * 0.3 + i * 1.0)}s; --c:${step.agentColor || c.color};`}>
+                  <div class="ek-dot"></div>
+                  <div class="ek-icon">{step.icon}</div>
+                  <div class="ek-text">
+                    <div class="ek-name">{step.name}</div>
+                    <div class="ek-sub">{step.sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Card footer: meta -->
+          <div class="p-7 lg:p-8 pt-5 flex items-center gap-x-6 gap-y-2 flex-wrap">
             <div class="flex items-center gap-2 text-sm text-ink-3">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -79,9 +137,7 @@ const cases = [
               </svg>
               <span class="font-mono text-xs">{c.output}</span>
             </div>
-            <div class="flex items-center gap-2 text-sm text-ink-3">
-              <span>{c.pages}</span>
-            </div>
+            <div class="text-sm text-ink-3">{c.pages}</div>
             <div class="flex items-center gap-2 text-sm text-ink-3 ml-auto">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="12" cy="12" r="10"/>
@@ -99,3 +155,130 @@ const cases = [
     </div>
   </div>
 </section>
+
+<style>
+  /* ===========================================
+     Vertical flow diagram per case
+     =========================================== */
+  .ek-flow {
+    position: relative;
+    padding-left: 4px;
+  }
+
+  /* Static vertical rail behind dots */
+  .ek-rail {
+    position: absolute;
+    left: 11px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: rgba(20, 24, 32, 0.08);
+    border-radius: 2px;
+  }
+
+  /* Traveling pulse — slides top to bottom continuously */
+  .ek-traveler {
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--c);
+    box-shadow: 0 0 0 4px rgba(20, 24, 32, 0.06);
+    opacity: 0;
+    pointer-events: none;
+    animation: ek-travel 6s linear infinite;
+    animation-delay: var(--delay, 0s);
+  }
+  @keyframes ek-travel {
+    0%       { opacity: 0; transform: translateY(0); }
+    8%       { opacity: 1; }
+    92%      { opacity: 1; }
+    100%     { opacity: 0; transform: translateY(calc(60px * var(--steps, 5) - 10px)); }
+  }
+
+  /* Each step row */
+  .ek-step {
+    display: grid;
+    grid-template-columns: 24px 28px 1fr;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    position: relative;
+  }
+
+  /* The colored dot on the rail */
+  .ek-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid var(--c);
+    margin-left: 2px;
+    z-index: 1;
+    transition: all 0.25s ease;
+  }
+
+  /* When the traveler passes a step, the dot fills with the color (via animation timing) */
+  .ek-step {
+    animation: ek-fill 6s linear infinite;
+    animation-delay: var(--delay, 0s);
+  }
+  @keyframes ek-fill {
+    0%, 14%   { /* before */ }
+    15%, 100% { /* after — dot filled */ }
+  }
+  .ek-step::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--c);
+    opacity: 0;
+    margin-left: 7px;
+    animation: ek-dot-fill 6s linear infinite;
+    animation-delay: var(--delay, 0s);
+    pointer-events: none;
+  }
+  @keyframes ek-dot-fill {
+    0%, 14%   { opacity: 0; transform: scale(0.6); }
+    15%, 100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Icon */
+  .ek-icon {
+    font-size: 18px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  /* Text */
+  .ek-text {
+    min-width: 0;
+  }
+  .ek-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1d23;
+    line-height: 1.3;
+  }
+  .ek-sub {
+    font-size: 11.5px;
+    color: #6b7280;
+    line-height: 1.4;
+    margin-top: 1px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ek-traveler,
+    .ek-step,
+    .ek-step::before {
+      animation: none !important;
+    }
+    .ek-step::before { opacity: 1; }
+  }
+</style>
