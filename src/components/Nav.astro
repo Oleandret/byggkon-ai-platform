@@ -1,7 +1,38 @@
 ---
-// Nav matched to byggkon.no — clean, light, sticky
+import { agents } from '../data/agents';
+
+// Only agents that have a live URL show up as tabs
+const liveAgents = agents.filter(a => a.url);
 ---
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-transparent transition-all" id="nav">
+
+  <!-- Top tab strip: live agents -->
+  <div class="border-b border-line/60 bg-cream/60">
+    <div class="wrap flex items-center justify-between py-2 gap-3 overflow-x-auto">
+      <span class="text-[11px] font-semibold uppercase tracking-[0.18em] text-ink-3 whitespace-nowrap pr-3">
+        Åpne agent
+      </span>
+      <div class="flex items-center gap-2 flex-1">
+        {liveAgents.map(agent => (
+          <a
+            href={agent.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-line text-[12.5px] font-medium text-ink hover:border-ink transition-all whitespace-nowrap"
+            title={`Åpne ${agent.name}`}
+          >
+            <span class="w-1.5 h-1.5 rounded-full" style={`background:${agent.color}`}></span>
+            <span>{agent.name}</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-ink-3">
+              <path d="M7 17l10-10M9 7h8v8"/>
+            </svg>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav: logo + sections + CTA -->
   <div class="wrap flex items-center justify-between py-4 gap-6">
     <a href="/" class="flex items-center gap-1 group">
       <img
@@ -12,10 +43,11 @@
       <span class="text-2xl font-extrabold text-red leading-none ml-0.5">.ai</span>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-ink-2 font-medium">
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-ink-2 font-medium">
       <a href="/" class="hover:text-ink transition-colors">Hjem</a>
       <a href="/#agenter" class="hover:text-ink transition-colors">Agenter</a>
       <a href="/#eksempler" class="hover:text-ink transition-colors">Eksempler</a>
+      <a href="/#prosess" class="hover:text-ink transition-colors">Prosess</a>
       <a href="/#teknologi" class="hover:text-ink transition-colors">Teknologi</a>
       <a href="https://www.byggkon.no" target="_blank" rel="noopener" class="hover:text-ink transition-colors">byggkon.no ↗</a>
     </nav>
@@ -28,8 +60,8 @@
   const nav = document.getElementById('nav');
   if (nav) {
     const onScroll = () => {
-      if (window.scrollY > 12) nav.classList.add('border-line');
-      else nav.classList.remove('border-line');
+      if (window.scrollY > 12) nav.classList.add('border-line', 'shadow-[0_1px_0_rgba(20,24,32,0.05)]');
+      else nav.classList.remove('border-line', 'shadow-[0_1px_0_rgba(20,24,32,0.05)]');
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

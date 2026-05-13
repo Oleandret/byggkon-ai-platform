@@ -98,7 +98,8 @@ export const agents: Agent[] = [
       { k: 'Søk',     v: 'Adresse · matrikkel · område' },
       { k: 'Output',  v: 'Eier · pant · heftelser · kontakt' },
       { k: 'Tilgang', v: 'Via Claude · ChatGPT · Gemini' }
-    ]
+    ],
+    url: 'https://byggkon.bluemint.dev/'
   },
   {
     slug: 'tripletex',
@@ -173,7 +174,8 @@ export const agents: Agent[] = [
       { k: 'Output',     v: 'Komplett tilbud · vedlegg · risiko' },
       { k: 'Tid',        v: 'Fra dager til timer' },
       { k: 'Kobling',    v: 'Bruker Loki, Nova og Tripletex' }
-    ]
+    ],
+    url: 'https://bk-tilbud.aiki.as/login'
   }
 ];
 
