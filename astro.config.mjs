@@ -7,8 +7,5 @@ export default defineConfig({
   adapter: node({ mode: 'standalone' }),
   integrations: [tailwind()],
   server: { host: true, port: parseInt(process.env.PORT || '3000', 10) },
-  compressHTML: true,
-  vite: {
-    build: { cssMinify: 'lightningcss' }
-  }
+  compressHTML: true
 });

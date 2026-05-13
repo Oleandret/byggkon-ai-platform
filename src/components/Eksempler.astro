@@ -1,76 +1,36 @@
 ---
-// Eksempler — each case shows a full start-to-end flow diagram
-type Step = { i: string; n: string; d: string };
-type Case = {
-  category: string;
-  title: string;
-  output: string;
-  meta: string;
-  time: string;
-  color: string;
-  flow: Step[];
-};
-
-const cases: Case[] = [
+const cases = [
   {
     category: 'Byggesak',
     title: 'Søknad om dispensasjon',
     output: 'Dispensasjonssøknad.pdf',
-    meta: '4 sider · BYGG-KON-mal',
+    pages: '4 sider',
     time: '38 sek',
-    color: '#c8102e',
-    flow: [
-      { i: '💬', n: 'Prompt',     d: '"Lag søknad om dispensasjon fra TEK17 §13-7 for prosjekt Solås."' },
-      { i: '📚', n: 'Loki + Nova', d: 'Tidligere disp-søknader + PBL §19-2 + TEK17 §13-7 hentet' },
-      { i: '🗺️', n: 'Hilde',      d: 'Gnr/bnr verifisert, eier identifisert' },
-      { i: '⚙️', n: 'Claude',     d: 'Komponerer søknad i BYGG-KON-mal' },
-      { i: '📧', n: 'Levert',     d: 'PDF sendt til byggherre og kommune' }
-    ]
+    color: '#c8102e'
   },
   {
     category: 'Uavhengig kontroll',
     title: 'Sjekkliste for UAK',
     output: 'UAK-sjekkliste-Vatrom.pdf',
-    meta: '32 kontrollpunkter · 6 sider',
+    pages: '6 sider',
     time: '22 sek',
-    color: '#f5b400',
-    flow: [
-      { i: '💬', n: 'Prompt',     d: '"Lag UAK-sjekkliste for våtrom i prosjekt Steinerskolen."' },
-      { i: '📚', n: 'Loki',       d: 'BYGG-KONs UAK-maler for våtrom hentet' },
-      { i: '📋', n: 'Nova',       d: 'TEK17 §13, NS 3420-T, BVN 31.110 koblet' },
-      { i: '⚙️', n: 'Claude',     d: 'Bygger kontrollpunkter med kildehenvisning' },
-      { i: '✅', n: 'Klar',       d: 'PDF arkivert + sendt til UAK-foretak' }
-    ]
+    color: '#f5b400'
   },
   {
     category: 'Fagprosjektering',
     title: 'KS-plan betong, enebolig',
     output: 'KS-plan-Betong-4118.pdf',
-    meta: '12 sider · NS 3473 · 24 kontrollpunkter',
+    pages: '12 sider',
     time: '51 sek',
-    color: '#0a6cf0',
-    flow: [
-      { i: '💬', n: 'Prompt',         d: '"Lag KS-plan for betongprosjektering — enebolig på Solåsen."' },
-      { i: '📚', n: 'Loki + Nova',    d: 'Tidligere enebolig-KS + NS-EN 1992, NS 3473, TEK17 §10' },
-      { i: '🗺️', n: 'Hilde + Tripletex', d: 'Tomt og grunnforhold + prosjektnr og ansvarlig' },
-      { i: '⚙️', n: 'Claude',         d: 'Identifiserer risikopunkter, knytter mot Eurokode 2' },
-      { i: '🧱', n: 'Klar',           d: 'KS-plan klargjort til kvalitetsleder' }
-    ]
+    color: '#0a6cf0'
   },
   {
     category: 'Befaring',
-    title: 'Befaringsrapport stålknutepunkt',
+    title: 'Befaringsrapport stål',
     output: 'Befaringsrapport-stal-4072.pdf',
-    meta: '8 sider · 14 funn · 3 avvik',
+    pages: '8 sider',
     time: '33 sek',
-    color: '#7a3fc8',
-    flow: [
-      { i: '💬', n: 'Prompt',     d: '"Skriv befaringsrapport — stålknutepunkt på prosjekt Interwell 4072."' },
-      { i: '📧', n: 'Epostagent', d: 'Befaringsnotater + foto hentet fra siste e-postkjede' },
-      { i: '📚', n: 'Loki + Nova', d: 'Tidligere stålbefaringer + NS-EN 1090, NS-EN 1993, TEK17 §10' },
-      { i: '⚙️', n: 'Claude',     d: 'Klassifiserer avvik, anbefaler tiltak per knutepunkt' },
-      { i: '🔧', n: 'Levert',     d: 'Rapport sendt til byggherre + utførende, avvik logget' }
-    ]
+    color: '#7a3fc8'
   }
 ];
 ---
@@ -79,88 +39,32 @@ const cases: Case[] = [
 
     <div class="max-w-[640px] mb-12 lg:mb-16">
       <div class="eyebrow mb-3">Eksempler</div>
-      <h2 class="h2 mb-5">Ferdige leveranser — fra prompt til levert.</h2>
-      <p class="lede">
-        Faktiske dokumenter som BYGG-KON.ai genererer på forespørsel. Hver leveranse vises med
-        sin egen prosess — fra første prompt til ferdig levert dokument.
-      </p>
+      <h2 class="h2 mb-5">Ferdige leveranser.</h2>
+      <p class="lede">Dokumenter plattformen produserer på ansattes forespørsel.</p>
     </div>
 
-    <div class="space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       {cases.map(c => (
-        <article class="bg-white border border-line rounded-3xl overflow-hidden">
-
-          <!-- Header strip -->
-          <div class="flex flex-wrap items-center justify-between gap-3 px-7 lg:px-9 py-5 border-b border-line">
-            <div class="flex items-center gap-3 flex-wrap">
-              <span class="inline-block w-2 h-2 rounded-full" style={`background:${c.color}`}></span>
-              <span class="text-xs font-bold uppercase tracking-wider" style={`color:${c.color}`}>{c.category}</span>
-              <span class="hidden md:inline text-ink-4">·</span>
-              <h3 class="text-lg md:text-xl font-extrabold text-ink leading-tight">{c.title}</h3>
-            </div>
-            <div class="flex items-center gap-3 flex-wrap">
-              <span class="inline-flex items-center gap-1.5 text-xs text-ink-3">
-                <span class="inline-block">📄</span>
-                <span class="font-mono text-[11px]">{c.output}</span>
-              </span>
-              <span class="inline-flex items-center gap-1.5 bg-ink text-white text-xs font-bold px-3 py-1.5 rounded-full">
-                ⚡ {c.time}
-              </span>
-            </div>
+        <article class="bg-white border border-line rounded-2xl p-7 lg:p-8 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-20px_rgba(20,24,32,0.10)]">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="inline-block w-1.5 h-1.5 rounded-full" style={`background:${c.color}`}></span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-ink-3">{c.category}</span>
           </div>
 
-          <!-- Flow diagram -->
-          <div class="px-7 lg:px-9 py-8 lg:py-10 bg-cream">
-            <div class="font-mono text-[10.5px] font-bold tracking-[0.18em] uppercase text-ink-4 mb-5">
-              // Prosess — fra start til slutt
-            </div>
+          <h3 class="text-xl font-extrabold text-ink leading-tight mb-3">
+            {c.title}
+          </h3>
 
-            <!-- Horizontal flow on desktop, vertical stack on mobile -->
-            <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] gap-3 lg:gap-2 items-stretch">
-              {c.flow.map((step, i) => (
-                <>
-                  <div class="relative bg-white rounded-xl border border-line p-4 lg:p-5 flex flex-col">
-                    <div class="flex items-center gap-2 mb-2">
-                      <span class="text-xl">{step.i}</span>
-                      <span class="font-mono text-[10px] font-bold uppercase tracking-wider" style={`color:${c.color}`}>
-                        0{i + 1}
-                      </span>
-                    </div>
-                    <div class="text-sm font-bold text-ink mb-1.5">{step.n}</div>
-                    <div class="text-[12.5px] text-ink-3 leading-snug flex-1">{step.d}</div>
-                  </div>
-
-                  {i < c.flow.length - 1 && (
-                    <>
-                      <!-- Arrow horizontal (desktop) -->
-                      <div class="hidden lg:flex items-center justify-center text-ink-4 px-1">
-                        <svg width="20" height="14" viewBox="0 0 20 14" fill="none">
-                          <path d="M0 7 L14 7 M10 3 L16 7 L10 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </div>
-                      <!-- Arrow vertical (mobile) -->
-                      <div class="flex lg:hidden items-center justify-center text-ink-4 py-1">
-                        <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
-                          <path d="M7 0 L7 14 M3 10 L7 16 L11 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </div>
-                    </>
-                  )}
-                </>
-              ))}
-            </div>
-
-            <div class="text-xs text-ink-3 mt-6">
-              <span class="font-semibold">{c.meta}</span> · prosessen lukkes når dokumentet er levert og arkivert.
-            </div>
+          <div class="text-sm text-ink-3 mb-6">
+            {c.output} · {c.pages}
           </div>
 
+          <div class="flex items-center justify-between pt-5 border-t border-line">
+            <span class="text-xs text-ink-3">Tid fra prompt til ferdig</span>
+            <span class="text-sm font-bold text-ink">{c.time}</span>
+          </div>
         </article>
       ))}
-    </div>
-
-    <div class="text-center mt-12">
-      <a href="#agenter" class="link-arrow">Se alle agentene i detalj</a>
     </div>
   </div>
 </section>

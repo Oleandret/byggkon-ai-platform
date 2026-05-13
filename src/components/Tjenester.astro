@@ -1,7 +1,6 @@
 ---
 import { agents } from '../data/agents';
 
-// SVG icons keyed by slug (byggkon.no style — flat colored badge icons)
 const icons: Record<string, string> = {
   loki:        `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
   nova:        `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg>`,
@@ -14,51 +13,33 @@ const icons: Record<string, string> = {
 <section id="agenter" class="py-20 lg:py-28 bg-cream">
   <div class="wrap">
     <div class="max-w-[640px] mb-12 lg:mb-16">
-      <div class="eyebrow mb-3">Våre AI-agenter</div>
-      <h2 class="h2 mb-5">Seks spesialister &mdash; bygd for byggfaget.</h2>
-      <p class="lede">
-        Hver agent har sitt eget oppdrag. Sammen leverer de alt fra dispensasjons-søknader
-        til befaringsrapporter på sekunder.
-      </p>
+      <div class="eyebrow mb-3">Agentene</div>
+      <h2 class="h2 mb-5">Seks AI-agenter for byggfaget.</h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-      {agents.map(agent => {
-        const statusLabel = agent.status === 'beta' ? 'Beta' : 'Live';
-        const statusBg = agent.status === 'beta' ? 'bg-yellow/15' : 'bg-green/10';
-        const statusFg = agent.status === 'beta' ? 'text-[#8a6300]' : 'text-green';
-        return (
-          <a
-            href={`/agent/${agent.slug}`}
-            class="group block bg-white rounded-2xl p-7 lg:p-8 transition-all hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(20,24,32,0.12)]"
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {agents.map(agent => (
+        <a
+          href={`/agent/${agent.slug}`}
+          class="group block bg-white rounded-2xl p-7 lg:p-8 transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-20px_rgba(20,24,32,0.10)]"
+        >
+          <div
+            class="w-12 h-12 rounded-xl flex items-center justify-center mb-7"
+            style={`background:${agent.color}1a; color:${agent.color};`}
           >
-            <div class="flex items-start justify-between mb-7">
-              <div
-                class="w-12 h-12 rounded-xl flex items-center justify-center"
-                style={`background:${agent.color}1a; color:${agent.color};`}
-              >
-                <Fragment set:html={icons[agent.slug] ?? ''} />
-              </div>
-              <span class={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${statusBg} ${statusFg}`}>
-                <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
-                {statusLabel}
-              </span>
-            </div>
+            <Fragment set:html={icons[agent.slug] ?? ''} />
+          </div>
 
-            <h3 class="h3 mb-2">{agent.name}</h3>
-            <p class="text-[15px] text-ink-3 leading-relaxed mb-5">
-              {agent.tagline}
-            </p>
+          <h3 class="h3 mb-2">{agent.name}</h3>
+          <p class="text-[15px] text-ink-3 leading-relaxed mb-6">
+            {agent.tagline}
+          </p>
 
-            <div class="flex items-center justify-between pt-5 border-t border-line">
-              <span class="text-xs text-ink-3 font-medium">{agent.role}</span>
-              <span class="text-sm font-semibold transition-transform group-hover:translate-x-1" style={`color:${agent.color}`}>
-                Se mer →
-              </span>
-            </div>
-          </a>
-        );
-      })}
+          <span class="text-sm font-semibold link-arrow" style={`color:${agent.color}`}>
+            Se mer
+          </span>
+        </a>
+      ))}
     </div>
   </div>
 </section>
